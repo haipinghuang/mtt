@@ -2,18 +2,18 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="libs/android-async-http-1.4.3 .jar"/>
-	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
-	<classpathentry kind="lib" path="libs/emessoft_imageloader.jar"/>
-	<classpathentry kind="lib" path="libs/httpclient-4.2.1.jar"/>
-	<classpathentry kind="lib" path="libs/httpclient-cache-4.2.1.jar"/>
-	<classpathentry kind="lib" path="libs/httpcore-4.2.1.jar"/>
-	<classpathentry kind="lib" path="libs/httpmime-4.2.1.jar"/>
-	<classpathentry kind="lib" path="libs/jackson-annotations-2.0.1.jar"/>
-	<classpathentry kind="lib" path="libs/jackson-core-2.0.1.jar"/>
-	<classpathentry kind="lib" path="libs/jackson-databind-2.0.1.jar"/>
-	<classpathentry kind="lib" path="libs/pinyin4j-2.5.0.jar"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-async-http-1.4.3 .jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/emessoft_imageloader.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpclient-4.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpclient-cache-4.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpcore-4.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/httpmime-4.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/jackson-annotations-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/jackson-core-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/jackson-databind-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/pinyin4j-2.5.0.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="D:/adt-bundle-windows-x86_64-20140702/sdk/platforms/android-16/android.jar" sourcepath="D:/adt-bundle-windows-x86_64-20140702/sdk/sources/android-16">
