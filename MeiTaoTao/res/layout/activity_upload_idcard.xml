@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin_left1"
+        android:layout_marginRight="@dimen/text_margin_left1"
+        android:layout_marginTop="@dimen/text_margin_top2"
+        android:text="@string/upload_IDcard_info"
+        android:textColor="@color/text_color2"
+        android:textSize="@dimen/text_size2" />
+    <ImageView 
+        android:id="@+id/iv_idcard"
+        android:layout_width="294dp"
+        android:layout_height="192dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_marginTop="@dimen/image_margin_top1"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/signup_idcard__bg"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="109dip"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/signup_idcard__next_btn_bg"
+            android:text="@string/btn_next"
+            android:textColor="@color/hint_textcolor"
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/btn_next"
+            android:background="@color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

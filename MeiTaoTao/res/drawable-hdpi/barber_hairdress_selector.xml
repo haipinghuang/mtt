@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/hairdressing_hairdressing_ico_hairdressing" android:state_selected="true"></item>
+    <item android:drawable="@drawable/hairdressing_hairdressing_ico_hairdressing"></item>
+
+</selector>

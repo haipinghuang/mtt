@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/layout_height7"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="谢文东" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/btn_opus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/opus_num"
+                    style="@style/textview_style"
+                    android:text="11" />
+
+                <TextView
+                    android:id="@+id/opus"
+                    style="@style/textview_style"
+                    android:text="@string/opus" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_attention"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/attention_num"
+                    style="@style/textview_style"
+                    android:text="11" />
+
+                <TextView
+                    android:id="@+id/attention"
+                    style="@style/textview_style"
+                    android:text="@string/attention" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_fans"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/fans_num"
+                    style="@style/textview_style"
+                    android:text="11" />
+
+                <TextView
+                    android:id="@+id/fans"
+                    style="@style/textview_style"
+                    android:text="@string/fans" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/message_num"
+                    style="@style/textview_style"
+                    android:text="11" />
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="@string/message" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView style="@style/scrollbar_style" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/order"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top1"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/order"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/goodAt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top2"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/goodat"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/level"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top2"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/level"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/phoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top3"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/phoneNum"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top2"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/share"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/kefu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top3"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/kefu"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height1"
+                android:layout_marginTop="@dimen/layout_margin_top2"
+                android:background="@drawable/signup_location_bg"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/image_margin_left1"
+                        android:src="@drawable/signup_location_ico2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/text_margin_left2"
+                        android:text="@string/about"
+                        android:textColor="@color/text_color2"
+                        android:textSize="@dimen/text_size2" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

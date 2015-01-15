@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/ic_launcher"
+            android:gravity="center_horizontal"
+            android:text="v1.0" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/newVersion"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top2"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/image_margin_left1"
+            android:src="@drawable/signup_location_ico1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_margin_left2"
+            android:text="@string/check_new_version"
+            android:textColor="@color/text_color2"
+            android:textSize="@dimen/text_size2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/advance"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top2"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/image_margin_left1"
+            android:src="@drawable/signup_location_ico1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_margin_left2"
+            android:text="@string/advance"
+            android:textColor="@color/text_color2"
+            android:textSize="@dimen/text_size2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top2"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/image_margin_left1"
+            android:src="@drawable/signup_location_ico1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_margin_left2"
+            android:text="@string/exit"
+            android:textColor="@color/text_color2"
+            android:textSize="@dimen/text_size2" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+           
+            android:layout_marginBottom="5dp"
+            android:text="##版权公司所有\nCopyright @ 2014-2014 ###\nAll Right Reserved"
+            android:textColor="@color/text_color2"
+            android:textSize="@dimen/text_size2" >
+        </TextView>
+        <TextView
+            android:layout_above="@id/two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginBottom="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/service_protocol"
+            android:textColor="@color/text_color2"
+            android:textSize="@dimen/text_size2" >
+        </TextView>
+    </RelativeLayout>
+
+</LinearLayout>

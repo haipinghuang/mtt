@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top1"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_margin_left1"
+                android:src="@drawable/signup_location_ico1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin_left2"
+                android:text="@string/work_begin_time"
+                android:textColor="@color/text_color2"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/text_margin_right1"
+                android:text="2014-09"
+                android:textColor="@color/text_color3"
+                android:textSize="@dimen/text_size2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/image_margin_right1"
+                android:src="@drawable/signup_location_arrow2" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top2"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_margin_left1"
+                android:src="@drawable/signup_location_ico2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin_left2"
+                android:text="@string/work_end_time"
+                android:textColor="@color/text_color2"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/text_margin_right1"
+                android:text="2014-09"
+                android:textColor="@color/text_color3"
+                android:textSize="@dimen/text_size2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/image_margin_right1"
+                android:src="@drawable/signup_location_arrow2" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top2"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_margin_left1"
+                android:src="@drawable/signup_location_ico3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin_left2"
+                android:text="@string/work_location"
+                android:textColor="@color/text_color2"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/text_margin_right1"
+                android:text="南山海岸城店"
+                android:textColor="@color/text_color3"
+                android:textSize="@dimen/text_size2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/image_margin_right1"
+                android:src="@drawable/signup_location_arrow2" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top3"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_margin_left1"
+                android:src="@drawable/signup_location_ico4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin_left2"
+                android:text="@string/level"
+                android:textColor="@color/text_color2"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/text_margin_right1"
+                android:text="@string/level1"
+                android:textColor="@color/text_color3"
+                android:textSize="@dimen/text_size2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/image_margin_right1"
+                android:src="@drawable/signup_location_arrow2" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top1"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_margin_left1"
+                android:src="@drawable/signup_location_ico5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin_left2"
+                android:text="@string/witnesser_name"
+                android:textColor="@color/text_color2"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="肖炎"
+                android:layout_marginRight="@dimen/text_margin_right1"
+                android:textColor="@color/text_color3"
+                android:textSize="@dimen/text_size2" />
+
+            <ImageView
+                android:id="@+id/iv_witnesserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/image_margin_right1"
+                android:src="@drawable/signup_location_arrow2" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height1"
+        android:layout_marginTop="@dimen/layout_margin_top2"
+        android:background="@drawable/signup_location_bg"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/image_margin_left1"
+                android:src="@drawable/signup_location_ico6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/text_margin_left2"
+                android:text="@string/witnesser_phone"
+                android:textColor="@color/text_color2"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/text_margin_right1"
+                android:text="13033624562"
+                android:textColor="@color/text_color3"
+                android:textSize="@dimen/text_size2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/image_margin_right1"
+                android:src="@drawable/signup_location_arrow2" />
+        </LinearLayout>
+    </RelativeLayout>
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:gravity="center_vertical" >
+
+        
+        <Button
+            
+            android:id="@+id/btn_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/signup_input_pw_btn_bg"
+            android:text="@string/commit"
+            android:textColor="@color/hint_textcolor"
+            android:textSize="17sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/btn_commit"
+            android:background="@color/white" />
+        
+    </RelativeLayout>
+
+</LinearLayout>

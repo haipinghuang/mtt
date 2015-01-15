@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="27dip"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="68dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/signup_signup_ico_bg"
+            android:scaleType="centerInside"
+            android:src="@drawable/signup_input_pw_ico_lock" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/signup_input_pw_text_bg"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:paddingLeft="26dip"
+            android:singleLine="true"
+            android:textColor="@color/hint_textcolor"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="218dip"
+        android:gravity="center_vertical" >
+
+        
+        <Button
+            android:id="@+id/signup_btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/signup_input_pw_btn_bg"
+            android:text="@string/btn_next"
+            android:textColor="@color/hint_textcolor"
+            android:textSize="17sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/signup_btn_next"
+            android:background="@color/white" />
+        
+    </RelativeLayout>
+
+</LinearLayout>
