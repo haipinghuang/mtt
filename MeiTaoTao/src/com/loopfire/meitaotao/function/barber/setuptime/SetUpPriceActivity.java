@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class SetUpPriceActivity extends BaseActivity{
+public class SetUpPriceActivity extends BaseActivity {
 	@Override
 	public void initView() {
 		// TODO Auto-generated method stub
@@ -19,7 +19,7 @@ public class SetUpPriceActivity extends BaseActivity{
 	public void initListener() {
 		// TODO Auto-generated method stub
 		super.initListener();
-	    title_right.setOnClickListener(this);
+		title_right.setOnClickListener(this);
 	}
 
 	@Override
@@ -32,20 +32,16 @@ public class SetUpPriceActivity extends BaseActivity{
 		setTitle(getString(R.string.setup_price));
 		setRight(getString(R.string.new_add));
 	}
+
 	@Override
 	public void onClick(View v) {
-		
-		Util.out(v.getId()+"title_right");
-		
+
 		super.onClick(v);
-		switch(v.getId()){
+		switch (v.getId()) {
 		case R.id.top_right_linear:
-			/*
-			 * 这里有错，不能跳转
-			 */
 			startActivity(new Intent(this, UpdatePriceActivity.class));
 			break;
 		}
 	}
-	
+
 }

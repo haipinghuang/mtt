@@ -77,9 +77,9 @@ public class HairdressingForBarberIndex extends BaseFragment implements
 		page2 = (ImageView) view.findViewById(R.id.page2);
 
 		List<View> views1 = new ArrayList<View>();
-		View view0 = inflater.inflate(R.layout.barber_viewpage_page, null);
-		View view1 = inflater.inflate(R.layout.barber_viewpage_page, null);
-		View view2 = inflater.inflate(R.layout.barber_viewpage_page, null);
+		View view0 = inflater.inflate(R.layout.barber_hairdress_viewpage_page, null);
+		View view1 = inflater.inflate(R.layout.barber_hairdress_viewpage_page, null);
+		View view2 = inflater.inflate(R.layout.barber_hairdress_viewpage_page, null);
 		views1.add(view0);
 		views1.add(view1);
 		views1.add(view2);

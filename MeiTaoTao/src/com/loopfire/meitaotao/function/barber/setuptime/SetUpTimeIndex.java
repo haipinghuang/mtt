@@ -56,14 +56,15 @@ public class SetUpTimeIndex extends BaseFragment implements OnClickListener {
 	public void initView(View view) {
 		// TODO Auto-generated method stubs
 		super.initView(view);
-		lay_setup_price=(RelativeLayout) view.findViewById(R.id.setup_price);
-		lay_wallet=(RelativeLayout) view.findViewById(R.id.wallet);
-		lay_barber_shop=(RelativeLayout) view.findViewById(R.id.barbershop);
-		lay_schedule=(RelativeLayout) view.findViewById(R.id.schedule);
+		lay_setup_price = (RelativeLayout) view.findViewById(R.id.setup_price);
+		lay_wallet = (RelativeLayout) view.findViewById(R.id.wallet);
+		lay_barber_shop = (RelativeLayout) view.findViewById(R.id.barbershop);
+		lay_schedule = (RelativeLayout) view.findViewById(R.id.schedule);
 		setTitle("排期");
 		displayLeft();
 		displayRight();
 	}
+
 	@Override
 	public void initListener() {
 		// TODO Auto-generated method stub
@@ -96,8 +97,10 @@ public class SetUpTimeIndex extends BaseFragment implements OnClickListener {
 			startActivity(new Intent(context, WalletActivity.class));
 			break;
 		case R.id.barbershop:
+			startActivity(new Intent(context, BarberShopForBarberActivity.class));
 			break;
 		case R.id.schedule:
+			startActivity(new Intent(context, MyScheduleForBarberActivity.class));
 			break;
 		}
 

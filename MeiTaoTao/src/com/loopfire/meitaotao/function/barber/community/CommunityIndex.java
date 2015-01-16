@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -11,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,6 +22,7 @@ import com.loopfire.meitaotao.SApplication;
 import com.loopfire.meitaotao.common.BaseFragment;
 import com.loopfire.meitaotao.function.barber.adapter.ListViewAdapter;
 import com.loopfire.meitaotao.function.barber.adapter.MyPageAdapter;
+
 /**
  * 社区
  * 
@@ -38,7 +42,7 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 	private ListViewAdapter listAdapter;
 	private List<View> pageViews = new ArrayList<View>();
 	private List<View> listViews = new ArrayList<View>();
-	private int curPage;
+	private int curPage = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -67,10 +71,19 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 		viewPage.setOnPageChangeListener(new MyOnPageChangeListener());
 		ListView listView1 = (ListView) view1.findViewById(R.id.listView1);
 		View listView1_item = inflater.inflate(
-				R.layout.barber_community_viewpage_page_item, null);
+				R.layout.barber_community_viewpage_page_list_item, null);
 		listViews.add(listView1_item);
 		listAdapter = new ListViewAdapter(listViews);
 		listView1.setAdapter(listAdapter);
+		listView1.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				startActivity(new Intent(context,
+						MsgDetailForBarberActivity.class));
+			}
+		});
 
 		setTitle("社区");
 		displayLeft();
@@ -87,7 +100,6 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 
 		@Override
 		public void onPageScrolled(int arg0, float arg1, int arg2) {
-
 		}
 
 		@Override

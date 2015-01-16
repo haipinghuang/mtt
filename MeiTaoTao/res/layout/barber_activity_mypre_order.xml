@@ -13,19 +13,25 @@
         android:background="@drawable/signup_location_bg" >
 
         <TextView
-            android:id="@+id/tv_data"
+            android:id="@+id/tv_expire_order"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/data" />
+            android:text="@string/expire_order" />
 
         <TextView
-            android:id="@+id/tv_video"
+            android:id="@+id/tv_valid_order"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/video" />
+            android:text="@string/valid_order" />
     </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

@@ -10,9 +10,72 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/text_margin_top5"
         android:layout_marginLeft="@dimen/text_margin_left3"
-        android:layout_marginRight="@dimen/text_margin_right1"
+        android:layout_marginRight="@dimen/text_margin_left3"
         android:layout_marginTop="@dimen/text_margin_top5"
         android:text="@string/hint_setup_price" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/signup_signup_btn_check_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/textview_style2"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.4"
+            android:text="@string/series" />
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white" />
+
+        <TextView
+            style="@style/textview_style2"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            android:text="@string/type" />
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white" />
+
+        <TextView
+            style="@style/textview_style2"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            android:text="@string/price" />
+
+        <View
+            android:layout_width="0.7dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white" />
+
+        <TextView
+            style="@style/textview_style2"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.4"
+            android:text="@string/action" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="@string/can_appointment_barbershop" />
+    <!-- 这个作为lv_shopName的item -->
+
+    <TextView
+        android:id="@+id/shop_name_item"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="南山去海岸城工作室"
+        android:textColor="@color/blue" />
+    <!-- 这个作为lv_shopDetail的item -->
+
+    <LinearLayout
+        android:id="@+id/shop_detail_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/signup_location_input_bg"
+        android:orientation="vertical"
+        android:paddingLeft="20dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="南山区" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/body_backcolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" >
+
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="27dp"
+                android:gravity="center_vertical"
+                android:text="海岸城工作室：" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:gravity="center_vertical"
+                android:text="南山去后海路" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_shopName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/lv_shopDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+    </ListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
+            android:layout_marginLeft="@dimen/text_margin_left9"
+            android:layout_marginRight="@dimen/text_margin_left9"
+            android:background="@drawable/signup_signup_btn_check_bg"
+            android:gravity="center"
+            android:text="@string/sure" />
+    </RelativeLayout>
+
+</LinearLayout>

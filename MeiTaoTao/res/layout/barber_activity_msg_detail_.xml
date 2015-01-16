@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:paddingRight="20dp"
+        android:text="2011-11-11"
+        android:textColor="@color/text_color2"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin_left1"
+        android:layout_marginRight="@dimen/text_margin_left1"
+        android:layout_marginTop="20dp"
+        android:text="       发送i金佛is大家佛法fid斯蒂芬森扫地扫地加速度扫地扫地的司机随即发生的\n       发送i金佛is大家佛法fid斯蒂芬森扫地扫地加速度扫地扫地的司机随即发生的"
+        android:textColor="@color/text_color2"
+        android:textSize="15sp" />
+
+</LinearLayout>

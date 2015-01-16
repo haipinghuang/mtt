@@ -104,6 +104,7 @@ public class PersonalForBarberIndex extends BaseFragment implements
 		case R.id.btn_attention:
 			break;
 		case R.id.btn_message:
+			startActivity(new Intent(context, MyMsgForBarberActivity.class));
 			break;
 		case R.id.btn_fans:
 			break;

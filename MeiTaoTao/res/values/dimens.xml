@@ -69,5 +69,6 @@
     <dimen name="text_size2">13sp</dimen>
     <dimen name="text_size3">11sp</dimen>
     <dimen name="text_size4">12sp</dimen>
+    <dimen name="text_size5">14sp</dimen>
 
 </resources>

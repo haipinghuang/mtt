@@ -27,6 +27,7 @@
             android:id="@+id/dialog_msg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="@dimen/text_margin_top3"
             android:paddingLeft="@dimen/text_margin_left3"
             android:paddingRight="@dimen/text_margin_right1"
@@ -34,11 +35,7 @@
             android:textColor="@color/text_color1"
             android:textSize="@dimen/text_size2" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/line_color2" />
+        <include layout="@layout/line_horizontal" />
 
         <TextView
             android:id="@+id/tv_sure"
@@ -53,7 +50,7 @@
             android:id="@+id/sure_cancel"
             android:layout_width="match_parent"
             android:layout_height="@dimen/text_height4"
-            android:visibility="gone" >
+            android:visibility="visible" >
 
             <TextView
                 android:id="@+id/tv_cancel"
@@ -65,10 +62,7 @@
                 android:textColor="@color/text_color5"
                 android:textSize="@dimen/text_size1" />
 
-            <View
-                android:layout_width="@dimen/view_width"
-                android:layout_height="match_parent"
-                android:background="@color/line_color2" />
+            <include layout="@layout/line_vertical" />
 
             <TextView
                 android:id="@+id/tv_sure2"

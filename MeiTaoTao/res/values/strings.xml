@@ -19,7 +19,7 @@
     <string name="xlistview_header_last_time">上次更新时间：</string>
     <string name="xlistview_footer_hint_normal">查看更多</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
-    
+
     <!-- register -->
     <string name="validate_phone">验证手机</string>
     <string name="cancel">取消</string>
@@ -39,16 +39,13 @@
     <string name="work_end_time">工作结束时间</string>
     <string name="work_location">工作地点</string>
     <string name="commit">提交</string>
-    
     <string name="level">级别</string>
     <string name="level1">首席理发师</string>
-    
     <string name="witnesser_name">证明人姓名</string>
     <string name="witnesser_phone">证明人手机号码</string>
     <string name="reminder_title">温馨提示</string>
     <string name="reminder_msg">尊敬的用户，您已经提交资料，我们将尽快核实资料后和你确认。</string>
     <string name="sure">确认</string>
-    
     <string name="limit_appomint">限时抢约</string>
     <string name="week_stat">每周之星</string>
     <string name="recomment_for_you">为您推荐</string>
@@ -59,7 +56,6 @@
     <string name="technology">技术</string>
     <string name="time_keep">守时</string>
     <string name="attitude">态度</string>
-    
     <string name="hairdress1">剪发</string>
     <string name="hairdress2">染发</string>
     <string name="hairdress3">冷烫</string>
@@ -68,16 +64,13 @@
     <string name="hairdress6">中发</string>
     <string name="hairdress7">短发</string>
     <string name="hairdress8">男发</string>
-    
     <string name="hairdress9">烫发</string>
     <string name="hairdress10">护理</string>
     <string name="hairdress11">造型</string>
-    
     <string name="price_set">价格设置</string>
     <string name="wallet">钱包</string>
     <string name="barber_shop">可赴约理发店</string>
     <string name="schedule">我的排期</string>
-    
     <string name="series">系列</string>
     <string name="type">类型</string>
     <string name="action">操作</string>
@@ -86,20 +79,16 @@
     <string name="hint_update_price">请提供您能够提供的服务，产品自带，或者自行在您选择的点购买</string>
     <string name="hint_wallet">选择你可以支持的支付方式，以便我们支付您的理发费用</string>
     <string name="serve_select">业务类型（请点击选择）</string>
-
     <string name="name">名称</string>
     <string name="hint_describe">添加描述该作品</string>
     <string name="length">长度</string>
     <string name="length1">统一</string>
     <string name="length2">长</string>
     <string name="length3">短</string>
-    
     <string name="price">价格</string>
     <string name="hint_price">输入价格</string>
-    
     <string name="delete">删除</string>
     <string name="add_one_line">添加一行</string>
-    
     <string name="new_add">新增</string>
     <string name="setup_price">价格设置</string>
     <string name="pay_type1">支付宝支付</string>
@@ -113,51 +102,58 @@
     <string name="account1">支付宝帐号</string>
     <string name="account2">微信帐号</string>
     <string name="account3">银行卡帐号</string>
-
     <string name="order">预约单</string>
     <string name="goodat">擅长</string>
     <string name="phoneNum">手机号</string>
     <string name="share">分享</string>
     <string name="kefu">客服</string>
     <string name="about">关于</string>
-    
     <string name="opus">作品</string>
     <string name="attention">关注</string>
     <string name="fans">粉丝</string>
     <string name="message">消息</string>
-    
     <string name="check_new_version">检测新版本</string>
     <string name="advance">反馈意见</string>
     <string name="hint_advance">建议描述</string>
     <string name="exit">退出</string>
-    
     <string name="close">关闭</string>
     <string name="hint_close">关闭后您无法知道客户预约你</string>
     <string name="exit_login">退出登录</string>
     <string name="hint_exit_login">注销或切换其它帐号</string>
-    
     <string name="share_weixin">分享到微信</string>
     <string name="share_friends">分享到朋友圈</string>
     <string name="share_QQ">分享到QQ</string>
     <string name="share_weibo">分享到微博</string>
-    
     <string name="hint_myphone">该手机号用于400客服与您确认您的客户预约，不会对外公布。</string>
     <string name="myphone">我的手机</string>
     <string name="mypre_order">我的预约</string>
-    
     <string name="hint_goodat">您擅长的技术可以提供给用户判断，最多能选三个</string>
     <string name="hint_receive_honour">个人特长描述，可以描述在某个领域内获得什么奖项和荣誉，限制50个字，如：2014年参加###获得最佳理发奖</string>
     <string name="my_goodat">我最擅长</string>
     <string name="click_select">(点击选择)</string>
     <string name="receive_honour">获得荣誉:</string>
     <string name="honour_photo">荣誉照片</string>
-    
     <string name="data">资料</string>
     <string name="video">视频</string>
-    <string name="expire_order">已过期预约单</string>
-    <string name="valid_order">未过期预约单</string>
-    
-    
-    
+    <string name="expire_order">已过期预约</string>
+    <string name="valid_order">未过期预约</string>
+    <string name="already_schedule">已排期</string>
+    <string name="add_schedule">添加排期</string>
     <string name="publish">发布:</string>
+    <string name="date">日期:</string>
+    <string name="my_msg">我的消息</string>
+    <string name="can_appointment">可预约:</string>
+    <string name="can_go_appointment">可赴约理发店:</string>
+    <string name="can_appointment_barbershop">您选择可赴约的理发店有</string>
+    <string name="hint_add_schedule">请注意：洗剪吹系统设置1个小时，染发2个小时，烫发2个小时，护理1个小时，时间到后系统将自动释放位置，给其他人预约。</string>
+    <string name="hint_alredy_schedule">注意：如果已经被用户预约，则无法删除该排期</string>
+    <string name="business_type">业务类型</string>
+    <string name="appointment_location">预约地点</string>
+    <string name="finish_num">完成单数：</string>
+    <string name="finish_account">到账：</string>
+    <string name="yuan">元</string>
+    <string name="my_opus">我的作评</string>
+    <string name="takePhoto">手机拍照</string>
+    <string name="localUpload">本地上传</string>
+
 </resources>
