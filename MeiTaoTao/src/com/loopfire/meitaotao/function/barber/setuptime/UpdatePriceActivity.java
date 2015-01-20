@@ -26,7 +26,7 @@ public class UpdatePriceActivity extends BaseActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_update_price);
+		setContentView(R.layout.barber_settime_update_price);
 		initView();
 		initListener();
 		setTitle(getString(R.string.setup_price));

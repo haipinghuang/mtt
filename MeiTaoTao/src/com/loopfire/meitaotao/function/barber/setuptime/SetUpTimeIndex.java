@@ -97,7 +97,7 @@ public class SetUpTimeIndex extends BaseFragment implements OnClickListener {
 			startActivity(new Intent(context, WalletActivity.class));
 			break;
 		case R.id.barbershop:
-			startActivity(new Intent(context, BarberShopForBarberActivity.class));
+			startActivity(new Intent(context, KefuyueBarberShopForBarberActivity.class));
 			break;
 		case R.id.schedule:
 			startActivity(new Intent(context, MyScheduleForBarberActivity.class));

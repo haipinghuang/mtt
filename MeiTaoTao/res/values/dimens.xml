@@ -7,7 +7,7 @@
     <dimen name="text_margin_top2">19dp</dimen>
     <dimen name="text_margin_top3">27dp</dimen>
     <dimen name="text_margin_top4">1dp</dimen>
-    <dimen name="text_margin_top5">11dp</dimen>
+    <dimen name="text_margin_top5">8dp</dimen>
     <dimen name="text_margin_top6">5dp</dimen>
     <dimen name="text_margin_top7">13dp</dimen>
     <dimen name="text_margin_left1">16dp</dimen>
@@ -36,8 +36,10 @@
     <dimen name="layout_margin_top4">6dp</dimen>
     <dimen name="layout_margin_top5">10dp</dimen>
     <dimen name="layout_margin_top6">17dp</dimen>
+    <dimen name="layout_margin_top7">15dp</dimen>
     <dimen name="layout_margin_left1">9dp</dimen>
     <dimen name="layout_margin_left2">10dp</dimen>
+    <dimen name="layout_margin_left3">15dp</dimen>
     <dimen name="layout_margin_right2">10dp</dimen>
     <dimen name="layout_margin_right3">30dp</dimen>
     <dimen name="layout_margin_right4">50dp</dimen>
@@ -46,11 +48,12 @@
     <dimen name="layout_height3">96dp</dimen>
     <dimen name="layout_height4">40dp</dimen>
     <dimen name="layout_height5">55dp</dimen>
-    <dimen name="layout_height7">160dp</dimen>
+    <dimen name="layout_height7">165dp</dimen>
     <dimen name="layout_height8">35dp</dimen>
     <dimen name="layout_width">74dp</dimen>
     <dimen name="image_height">70dp</dimen>
     <dimen name="image_width">70dp</dimen>
+    <dimen name="image_width2">60dp</dimen>
     <dimen name="view_height">150dp</dimen>
     <dimen name="view_height2">170dp</dimen>
     <dimen name="view_height3">2dp</dimen>

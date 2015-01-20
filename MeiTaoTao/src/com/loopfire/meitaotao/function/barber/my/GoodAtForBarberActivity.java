@@ -2,6 +2,8 @@ package com.loopfire.meitaotao.function.barber.my;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridView;
+
 import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.common.BaseActivity;
 
@@ -12,10 +14,12 @@ import com.loopfire.meitaotao.common.BaseActivity;
  * 
  */
 public class GoodAtForBarberActivity extends BaseActivity {
+	private GridView gridView;
 
 	@Override
 	public void initView() {
 		super.initView();
+		gridView=(GridView) findViewById(R.id.gridview);
 	}
 
 	@Override
@@ -27,9 +31,11 @@ public class GoodAtForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_good_at);
+		setContentView(R.layout.barber_my_good_at);
 		initView();
 		initListener();
+		setTitle(getString(R.string.goodat));
+		displayRight();
 	}
 
 	@Override

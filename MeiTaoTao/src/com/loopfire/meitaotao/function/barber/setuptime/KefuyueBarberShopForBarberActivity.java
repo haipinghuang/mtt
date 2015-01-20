@@ -20,7 +20,7 @@ import com.loopfire.meitaotao.function.common.DialogCenterHintActivity;
  * @author Administrator
  * 
  */
-public class BarberShopForBarberActivity extends BaseActivity {
+public class KefuyueBarberShopForBarberActivity extends BaseActivity {
 	private ListView lv_shopName;
 	private ListView lv_shopDetail;
 	private TextView tv_shopName_item;
@@ -49,7 +49,7 @@ public class BarberShopForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_barber_shop);
+		setContentView(R.layout.barber_settime_kefuyue_barber_shop);
 		initView();
 		initListener();
 		setTitle(getString(R.string.barber_shop));

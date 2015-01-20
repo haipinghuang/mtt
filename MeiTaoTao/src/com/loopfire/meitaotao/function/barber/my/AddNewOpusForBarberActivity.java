@@ -37,7 +37,7 @@ public class AddNewOpusForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_addnew_opus);
+		setContentView(R.layout.barber_my_addnew_opus);
 		initView();
 		initListener();
 	}

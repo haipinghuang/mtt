@@ -42,6 +42,12 @@
         <item name="android:scrollbars">none</item>
     </style>
 
+    <style name="common_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top7</item>
+    </style>
+
     <style name="textview_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

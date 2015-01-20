@@ -39,7 +39,7 @@ public class AboutActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_about);
+		setContentView(R.layout.barber_my_about);
 		initView();
 		initListener();
 		setTitle(getString(R.string.about));

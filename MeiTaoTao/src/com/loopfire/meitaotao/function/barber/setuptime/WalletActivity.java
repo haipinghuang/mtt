@@ -29,7 +29,7 @@ public class WalletActivity extends BaseActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_wallet);
+		setContentView(R.layout.barber_settime_wallet);
 		initView();
 		initListener();
 		setTitle(getString(R.string.setup_price));

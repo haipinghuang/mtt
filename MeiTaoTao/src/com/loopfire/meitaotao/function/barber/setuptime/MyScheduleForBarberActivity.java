@@ -84,7 +84,7 @@ public class MyScheduleForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_my_schedule);
+		setContentView(R.layout.barber_settime_my_schedule);
 		initView();
 		initListener();
 		setTitle(getString(R.string.schedule));

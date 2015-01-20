@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -39,9 +40,7 @@ public class HairdressingForBarberIndex extends BaseFragment implements
 	private List<String> hairdressNames = new ArrayList<String>();
 	private List<String> hairdressImages = new ArrayList<String>();
 
-	public HairdressingForBarberIndex() {
-		super();
-	}
+	private TextView barbershop;// 临时的，注意删除
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -71,15 +70,19 @@ public class HairdressingForBarberIndex extends BaseFragment implements
 		views = new ArrayList<View>();
 		vPage = (ViewPager) view.findViewById(R.id.viewPage1);
 		vPage2 = (ViewPager) view.findViewById(R.id.viewPage2);
+		barbershop = (TextView) view.findViewById(R.id.barbershop);
 
 		page0 = (ImageView) view.findViewById(R.id.page0);
 		page1 = (ImageView) view.findViewById(R.id.page1);
 		page2 = (ImageView) view.findViewById(R.id.page2);
 
 		List<View> views1 = new ArrayList<View>();
-		View view0 = inflater.inflate(R.layout.barber_hairdress_viewpage_page, null);
-		View view1 = inflater.inflate(R.layout.barber_hairdress_viewpage_page, null);
-		View view2 = inflater.inflate(R.layout.barber_hairdress_viewpage_page, null);
+		View view0 = inflater.inflate(R.layout.barber_hairdress_viewpage_page,
+				null);
+		View view1 = inflater.inflate(R.layout.barber_hairdress_viewpage_page,
+				null);
+		View view2 = inflater.inflate(R.layout.barber_hairdress_viewpage_page,
+				null);
 		views1.add(view0);
 		views1.add(view1);
 		views1.add(view2);
@@ -129,11 +132,16 @@ public class HairdressingForBarberIndex extends BaseFragment implements
 		// TODO Auto-generated method stub
 		super.initListener();
 		vPage.setOnPageChangeListener(new MyOnPageChangeListener());
+		barbershop.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
-
+		switch (v.getId()) {
+		case R.id.barbershop:
+			startActivity(new Intent(context, BarberShopForBarberActivity.class));
+			break;
+		}
 	}
 
 	private class MyOnPageChangeListener implements OnPageChangeListener {

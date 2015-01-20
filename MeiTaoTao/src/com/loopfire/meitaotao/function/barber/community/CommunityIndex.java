@@ -81,10 +81,10 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				startActivity(new Intent(context,
-						MsgDetailForBarberActivity.class));
+						CommunityMsgForBarberActivity.class));
 			}
 		});
-
+		setIndicator(curPage);
 		setTitle("社区");
 		displayLeft();
 		displayRight();
@@ -104,19 +104,23 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 
 		@Override
 		public void onPageSelected(int arg0) {
-			switch (arg0) {
-			case 0:
-				tv_data.setTextColor(getResources().getColor(R.color.red));
-				tv_video.setTextColor(getResources().getColor(R.color.grey));
-				break;
-			case 1:
-				tv_data.setTextColor(getResources().getColor(R.color.grey));
-				tv_video.setTextColor(getResources().getColor(R.color.red));
-				break;
-			}
-			curPage = arg0;
+			setIndicator(arg0);
 		}
 
+	}
+
+	private void setIndicator(int arg0) {
+		switch (arg0) {
+		case 0:
+			tv_data.setTextColor(getResources().getColor(R.color.red));
+			tv_video.setTextColor(getResources().getColor(R.color.grey));
+			break;
+		case 1:
+			tv_data.setTextColor(getResources().getColor(R.color.grey));
+			tv_video.setTextColor(getResources().getColor(R.color.red));
+			break;
+		}
+		curPage = arg0;
 	}
 
 	@Override

@@ -45,10 +45,11 @@
         <activity
             android:name="com.loopfire.meitaotao.function.common.DialogCenterHintActivity"
             android:theme="@style/DialogCenterHint" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.hairdressing.BarberShopForBarberActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.setuptime.SetUpPriceActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.setuptime.UpdatePriceActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.setuptime.WalletActivity" />
-        <activity android:name="com.loopfire.meitaotao.function.barber.setuptime.BarberShopForBarberActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.setuptime.KefuyueBarberShopForBarberActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.setuptime.MyScheduleForBarberActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.my.AboutActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.my.AdviceActivity" />
@@ -57,10 +58,14 @@
         <activity android:name="com.loopfire.meitaotao.function.barber.my.MyOpusForBarberActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.my.MyPreOrderForBarberActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.my.MyMsgForBarberActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.my.MyAttentionForBarberActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.my.MyFansForBarberActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.my.MsgDetailForBarberActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.my.PersonalCenterForBarberActivity" />
         <activity
             android:name="com.loopfire.meitaotao.function.barber.my.AddNewOpusForBarberActivity"
             android:theme="@style/DialogCenterHint" />
-        <activity android:name="com.loopfire.meitaotao.function.barber.community.MsgDetailForBarberActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.barber.community.CommunityMsgForBarberActivity" />
         <activity
             android:name="com.loopfire.meitaotao.function.barber.my.ExitForBarberActivity"
             android:theme="@style/DialogCenterHint" />

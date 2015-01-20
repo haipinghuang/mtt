@@ -1,6 +1,4 @@
 package com.loopfire.meitaotao;
-
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.loopfire.meitaotao.common.BaseFragmentActivity;
 import com.loopfire.meitaotao.function.barber.community.CommunityIndex;
 import com.loopfire.meitaotao.function.barber.hairdressing.HairdressingForBarberIndex;
@@ -393,10 +390,11 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 						Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
 			} else {
-				Intent intent = new Intent(Intent.ACTION_MAIN);
-				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				intent.addCategory(Intent.CATEGORY_HOME);
-				startActivity(intent);
+//				Intent intent = new Intent(Intent.ACTION_MAIN);
+//				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//				intent.addCategory(Intent.CATEGORY_HOME);
+//				startActivity(intent);
+				System.exit(0);
 			}
 			return true;
 		}

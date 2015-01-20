@@ -11,7 +11,6 @@ import com.loopfire.meitaotao.function.barber.setuptime.UpdatePriceActivity;
 
 /**
  * 理发师--我的--作品
- * 
  * @author Administrator
  * 
  */
@@ -34,7 +33,7 @@ public class MyOpusForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_myopus);
+		setContentView(R.layout.barber_my_myopus);
 		initView();
 		initListener();
 		setTitle(getString(R.string.my_opus));

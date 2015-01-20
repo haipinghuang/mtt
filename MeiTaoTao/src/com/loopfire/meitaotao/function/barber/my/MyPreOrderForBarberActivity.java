@@ -83,7 +83,7 @@ public class MyPreOrderForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_mypre_order);
+		setContentView(R.layout.barber_my_mypre_order);
 		initView();
 		initListener();
 		setRight(getString(R.string.mypre_order));

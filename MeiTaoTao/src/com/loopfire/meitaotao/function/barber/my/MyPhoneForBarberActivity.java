@@ -27,7 +27,7 @@ public class MyPhoneForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_activity_myphone);
+		setContentView(R.layout.barber_my_myphone);
 		initView();
 		initListener();
 		setTitle(getString(R.string.myphone));

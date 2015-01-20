@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView.FindListener;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -34,7 +35,7 @@ public class PersonalForBarberIndex extends BaseFragment implements
 	private LinearLayout btn_attention;
 	private LinearLayout btn_fans;
 	private LinearLayout btn_message;
-
+	private ImageView iv_head;
 	private Context context;
 
 	@Override
@@ -58,6 +59,7 @@ public class PersonalForBarberIndex extends BaseFragment implements
 		btn_message = (LinearLayout) view.findViewById(R.id.btn_message);
 		btn_fans = (LinearLayout) view.findViewById(R.id.btn_fans);
 		btn_opus = (LinearLayout) view.findViewById(R.id.btn_opus);
+		iv_head = (ImageView) view.findViewById(R.id.iv_head);
 	}
 
 	@Override
@@ -75,6 +77,7 @@ public class PersonalForBarberIndex extends BaseFragment implements
 		lay_level.setOnClickListener(this);
 		lay_goodAt.setOnClickListener(this);
 		lay_order.setOnClickListener(this);
+		iv_head.setOnClickListener(this);
 	}
 
 	@Override
@@ -100,13 +103,19 @@ public class PersonalForBarberIndex extends BaseFragment implements
 		case R.id.phoneNo:
 			startActivity(new Intent(context, MyPhoneForBarberActivity.class));
 			break;
-
+		case R.id.iv_head:
+			startActivity(new Intent(context, PersonalCenterForBarberActivity.class));
+			break;
+		// -------------
 		case R.id.btn_attention:
+			startActivity(new Intent(context,
+					MyAttentionForBarberActivity.class));
 			break;
 		case R.id.btn_message:
 			startActivity(new Intent(context, MyMsgForBarberActivity.class));
 			break;
 		case R.id.btn_fans:
+			startActivity(new Intent(context, MyFansForBarberActivity.class));
 			break;
 		case R.id.btn_opus:
 			startActivity(new Intent(context, MyOpusForBarberActivity.class));
