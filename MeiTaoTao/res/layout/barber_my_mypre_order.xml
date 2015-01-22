@@ -12,21 +12,47 @@
         android:layout_height="@dimen/layout_height8"
         android:background="@drawable/signup_location_bg" >
 
-        <TextView
-            android:id="@+id/tv_expire_order"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/expire_order" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tv_valid_order"
+            <TextView
+                android:id="@+id/tv_expire_order"
+                style="@style/indicator_text_style"
+                android:text="@string/expire_order"
+                android:textColor="@color/tab_text_top_selecter" />
+
+            <ImageView
+                android:id="@+id/iv_expire_order"
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_height2"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/valid_order" />
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_valid_order"
+                style="@style/indicator_text_style"
+                android:text="@string/valid_order"
+                android:textColor="@color/tab_text_top_selecter" />
+
+            <ImageView
+                android:id="@+id/iv_valid_order"
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_height2"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter" />
+        </LinearLayout>
     </LinearLayout>
 
     <android.support.v4.view.ViewPager

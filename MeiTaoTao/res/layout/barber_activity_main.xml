@@ -16,7 +16,7 @@
         android:layout_width="fill_parent"
         android:layout_height="55dip"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/hairdressing_hairdressing_row_bottom_bg" >
+        android:background="@drawable/tab_bg" >
 
         <LinearLayout
             android:id="@+id/guide_goup"
@@ -39,11 +39,11 @@
                     android:id="@+id/img_homeindex"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/barber_hairdress_selector" />
+                    android:src="@drawable/tab_hairdress_background_selecter" />
 
                 <TextView
                     android:id="@+id/text_homeindex"
@@ -52,12 +52,14 @@
                     android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/hairdressing_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
             <!-- end -->
 
+
             <!-- 社区start -->
+
             <LinearLayout
                 android:id="@+id/sort"
                 android:layout_width="fill_parent"
@@ -70,11 +72,11 @@
                     android:id="@+id/img_sort"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/hairdressing_hairdressing_ico_store" />
+                    android:src="@drawable/tab_community_background_selecter" />
 
                 <TextView
                     android:id="@+id/text_sort"
@@ -83,10 +85,11 @@
                     android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/Community_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
-           <!-- end -->
+            <!-- end -->
+
 
             <!-- 排期start -->
 
@@ -102,11 +105,11 @@
                     android:id="@+id/img_discuss"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/hairdressing_hairdressing_ico_calendar" />
+                    android:src="@drawable/tab_settime_background_selecter" />
 
                 <TextView
                     android:id="@+id/text_discuss"
@@ -115,12 +118,14 @@
                     android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/setup_time_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
             <!-- end -->
 
-           <!-- 我的start -->
+
+            <!-- 我的start -->
+
             <LinearLayout
                 android:id="@+id/presonal"
                 android:layout_width="fill_parent"
@@ -133,11 +138,11 @@
                     android:id="@+id/img_presonal"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/hairdressing_hairdressing_ico_user" />
+                    android:src="@drawable/tab_my_background_selecter" />
 
                 <TextView
                     android:id="@+id/text_presonal"
@@ -146,16 +151,16 @@
                     android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/presonal_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
         </LinearLayout>
-           <!-- end -->
+        <!-- end -->
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="49dip"
             android:layout_alignParentBottom="true" >
-
 
             <TextView
                 android:layout_width="fill_parent"
@@ -186,7 +191,7 @@
                     android:textSize="10sp"
                     android:visibility="invisible" />
             </RelativeLayout>
-            
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="49dip"

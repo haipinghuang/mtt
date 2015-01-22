@@ -12,21 +12,49 @@
         android:layout_height="@dimen/layout_height8"
         android:background="@drawable/signup_location_bg" >
 
-        <TextView
-            android:id="@+id/tv_data"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/data" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tv_video"
+            <TextView
+                android:id="@+id/tv_data"
+                style="@style/indicator_text_style"
+                android:text="@string/data"
+                android:textColor="@color/tab_text_top_selecter" />
+
+            <ImageView
+                android:id="@+id/iv_data"
+                android:layout_width="@dimen/image_width2"
+                android:layout_height="1.5dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/video" />
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_video"
+                style="@style/indicator_text_style"
+                android:text="@string/video"
+                android:textColor="@color/tab_text_top_selecter" />
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="@dimen/image_width2"
+                android:layout_height="@dimen/image_height2"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter"
+                android:textSize="14sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <android.support.v4.view.ViewPager

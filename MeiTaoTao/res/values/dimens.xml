@@ -17,12 +17,13 @@
     <dimen name="text_margin_left5">14dp</dimen>
     <dimen name="text_margin_left6">18dp</dimen>
     <dimen name="text_margin_left7">4dp</dimen>
-    <dimen name="text_margin_left8">10dp</dimen>
+    <dimen name="text_margin_left8">13dp</dimen>
     <dimen name="text_margin_left9">60dp</dimen>
     <dimen name="text_margin_right1">17dp</dimen>
     <dimen name="text_margin_right2">15dp</dimen>
     <dimen name="text_margin_right3">16dp</dimen>
-    <dimen name="text_margin_bottom">15dp</dimen>
+    <dimen name="text_margin_right4">70dp</dimen>
+    <dimen name="text_margin_bottom">17dp</dimen>
     <dimen name="image_margin_top1">18dp</dimen>
     <dimen name="image_margin_left1">14dp</dimen>
     <dimen name="image_margin_left2">11dp</dimen>
@@ -31,7 +32,7 @@
     <dimen name="image_margin_right1">17dp</dimen>
     <dimen name="image_margin_right2">20dp</dimen>
     <dimen name="layout_margin_top1">11dp</dimen>
-    <dimen name="layout_margin_top2">2dp</dimen>
+    <dimen name="layout_margin_top2">1dp</dimen>
     <dimen name="layout_margin_top3">10dp</dimen>
     <dimen name="layout_margin_top4">6dp</dimen>
     <dimen name="layout_margin_top5">10dp</dimen>
@@ -48,17 +49,18 @@
     <dimen name="layout_height3">96dp</dimen>
     <dimen name="layout_height4">40dp</dimen>
     <dimen name="layout_height5">55dp</dimen>
-    <dimen name="layout_height7">165dp</dimen>
-    <dimen name="layout_height8">35dp</dimen>
+    <dimen name="layout_height7">183dp</dimen>
+    <dimen name="layout_height8">34dp</dimen>
     <dimen name="layout_width">74dp</dimen>
     <dimen name="image_height">70dp</dimen>
+    <dimen name="image_height2">1.5dp</dimen>
     <dimen name="image_width">70dp</dimen>
     <dimen name="image_width2">60dp</dimen>
     <dimen name="view_height">150dp</dimen>
     <dimen name="view_height2">170dp</dimen>
     <dimen name="view_height3">2dp</dimen>
     <dimen name="view_width">1dp</dimen>
-    <dimen name="text_height1">45dp</dimen>
+    <dimen name="text_height1">40.5dp</dimen>
     <dimen name="text_height4">47dp</dimen>
     <dimen name="dialog_width">304dp</dimen>
     <dimen name="dialog_height">173dp</dimen>
@@ -68,8 +70,8 @@
     <dimen name="padding">10dp</dimen>
     
     
-    <dimen name="text_size1">17sp</dimen>
-    <dimen name="text_size2">13sp</dimen>
+    <dimen name="text_size1">16sp</dimen>
+    <dimen name="text_size2">14sp</dimen>
     <dimen name="text_size3">11sp</dimen>
     <dimen name="text_size4">12sp</dimen>
     <dimen name="text_size5">14sp</dimen>

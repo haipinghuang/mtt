@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,6 +40,8 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 	// private TextView tv_text2;
 	private TextView tv_data;
 	private TextView tv_video;
+	private ImageView iv_data;
+	private ImageView iv_video;
 	private MyPageAdapter pageAdapter;
 	private ListViewAdapter listAdapter;
 	private List<View> pageViews = new ArrayList<View>();
@@ -72,7 +76,10 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 		ListView listView1 = (ListView) view1.findViewById(R.id.listView1);
 		View listView1_item = inflater.inflate(
 				R.layout.barber_community_viewpage_page_list_item, null);
+		View listView1_item2 = inflater.inflate(
+				R.layout.barber_community_viewpage_page_list_item, null);
 		listViews.add(listView1_item);
+		listViews.add(listView1_item2);
 		listAdapter = new ListViewAdapter(listViews);
 		listView1.setAdapter(listAdapter);
 		listView1.setOnItemClickListener(new OnItemClickListener() {
@@ -112,12 +119,17 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 	private void setIndicator(int arg0) {
 		switch (arg0) {
 		case 0:
-			tv_data.setTextColor(getResources().getColor(R.color.red));
-			tv_video.setTextColor(getResources().getColor(R.color.grey));
+			tv_data.setSelected(true);
+			tv_video.setSelected(false);
+			iv_data.setSelected(true);
+			iv_video.setSelected(false);
+
 			break;
 		case 1:
-			tv_data.setTextColor(getResources().getColor(R.color.grey));
-			tv_video.setTextColor(getResources().getColor(R.color.red));
+			tv_data.setSelected(false);
+			tv_video.setSelected(true);
+			iv_data.setSelected(false);
+			iv_video.setSelected(true);
 			break;
 		}
 		curPage = arg0;
@@ -128,12 +140,27 @@ public class CommunityIndex extends BaseFragment implements OnClickListener {
 		super.initView(view);
 		tv_data = (TextView) view.findViewById(R.id.tv_data);
 		tv_video = (TextView) view.findViewById(R.id.tv_video);
+		iv_data = (ImageView) view.findViewById(R.id.iv_data);
+		iv_video = (ImageView) view.findViewById(R.id.iv_video);
 		viewPage = (ViewPager) view.findViewById(R.id.viewPage);
 	}
 
 	@Override
-	public void onClick(View v) {
-
+	public void initListener() {
+		super.initListener();
+		tv_data.setOnClickListener(this);
+		tv_video.setOnClickListener(this);
 	}
 
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.tv_data:
+			viewPage.setCurrentItem(0);
+			break;
+		case R.id.tv_video:
+			viewPage.setCurrentItem(1);
+			break;
+		}
+	}
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.loopfire.meitaotao.R;
@@ -22,6 +23,8 @@ import com.loopfire.meitaotao.function.barber.adapter.MyPageAdapter;
 public class MyPreOrderForBarberActivity extends BaseActivity {
 	private TextView tv_expire_order;
 	private TextView tv_valid_order;
+	private ImageView iv_expire_order;
+	private ImageView iv_valid_order;
 	private ViewPager viewPage;
 	private List<View> views = new ArrayList<View>();
 	private int curPage = 0;
@@ -31,11 +34,13 @@ public class MyPreOrderForBarberActivity extends BaseActivity {
 		super.initView();
 		tv_expire_order = (TextView) findViewById(R.id.tv_expire_order);
 		tv_valid_order = (TextView) findViewById(R.id.tv_valid_order);
+		iv_expire_order = (ImageView) findViewById(R.id.iv_expire_order);
+		iv_valid_order = (ImageView) findViewById(R.id.iv_valid_order);
 		viewPage = (ViewPager) findViewById(R.id.viewPage);
 		View view1 = getLayoutInflater().inflate(
-				R.layout.barber_mypre_order_viewpage_page, null);
+				R.layout.barber_my_mypre_order_viewpage_page, null);
 		View view2 = getLayoutInflater().inflate(
-				R.layout.barber_mypre_order_viewpage_page, null);
+				R.layout.barber_my_mypre_order_viewpage_page, null);
 		views.add(view1);
 		views.add(view2);
 		viewPage.setAdapter(new MyPageAdapter(views));
@@ -55,28 +60,35 @@ public class MyPreOrderForBarberActivity extends BaseActivity {
 
 		@Override
 		public void onPageSelected(int arg0) {
-			switch (arg0) {
-			case 0:
-				tv_expire_order.setTextColor(getResources().getColor(
-						R.color.red));
-				tv_valid_order.setTextColor(getResources().getColor(
-						R.color.grey));
-				break;
-			case 1:
-				tv_expire_order.setTextColor(getResources().getColor(
-						R.color.grey));
-				tv_valid_order.setTextColor(getResources().getColor(
-						R.color.red));
-				break;
-			}
-			curPage = arg0;
+			setIndicator(arg0);
 		}
 
+	}
+
+	private void setIndicator(int arg0) {
+		switch (arg0) {
+		case 0:
+			tv_expire_order.setSelected(true);
+			tv_valid_order.setSelected(false);
+			iv_expire_order.setSelected(true);
+			iv_valid_order.setSelected(false);
+
+			break;
+		case 1:
+			tv_expire_order.setSelected(false);
+			tv_valid_order.setSelected(true);
+			iv_expire_order.setSelected(false);
+			iv_valid_order.setSelected(true);
+			break;
+		}
+		curPage = arg0;
 	}
 
 	@Override
 	public void initListener() {
 		super.initListener();
+		tv_expire_order.setOnClickListener(this);
+		tv_valid_order.setOnClickListener(this);
 	}
 
 	@Override
@@ -86,6 +98,7 @@ public class MyPreOrderForBarberActivity extends BaseActivity {
 		setContentView(R.layout.barber_my_mypre_order);
 		initView();
 		initListener();
+		setIndicator(curPage);
 		setRight(getString(R.string.mypre_order));
 		displayRight();
 	}
@@ -94,6 +107,12 @@ public class MyPreOrderForBarberActivity extends BaseActivity {
 	public void onClick(View v) {
 		super.onClick(v);
 		switch (v.getId()) {
+		case R.id.tv_expire_order:
+			viewPage.setCurrentItem(0);
+			break;
+		case R.id.tv_valid_order:
+			viewPage.setCurrentItem(1);
+			break;
 		}
 	}
 

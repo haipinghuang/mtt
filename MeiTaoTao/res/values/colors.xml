@@ -325,8 +325,9 @@
     <color name="action_down">#bfbfbf</color>
     <color name="action_on">#fff</color>
 
-    <!-- 头部背景 -->
+    <!-- 头部tab红色字体 -->
     <color name="titile_barcolor">#ff5748</color>
+    <!-- 头部tab灰色字体 -->
     <color name="hint_textcolor">#AAAAAA</color>
     <color name="text_grey">#666666</color>
     <color name="text_link">#4F4F4F</color>
@@ -334,9 +335,14 @@
     <color name="text_color2">#696969</color>
     <color name="text_color3">#888888</color>
     <color name="text_color4">#231815</color>
+    <!-- 天蓝色 -->
     <color name="text_color5">#3498DB</color>
-     <color name="background_color1">#4F4F4F</color>
-     <color name="line_color1">#4F4F4F</color>
-     <color name="line_color2">#DDDDDD</color>
+    <color name="text_color6">#444444</color>
+    <!-- 橙色 -->
+    <color name="text_color7">#ff9f4a</color>
+    <color name="background_color1">#4F4F4F</color>
+    <color name="line_color1">#4F4F4F</color>
+    <color name="line_color2">#DDDDDD</color>
+    <color name="border_color">#cfcfcf</color>
 
 </resources>

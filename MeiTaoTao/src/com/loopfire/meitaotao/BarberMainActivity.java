@@ -1,4 +1,5 @@
 package com.loopfire.meitaotao;
+
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,7 +18,7 @@ import com.loopfire.meitaotao.common.BaseFragmentActivity;
 import com.loopfire.meitaotao.function.barber.community.CommunityIndex;
 import com.loopfire.meitaotao.function.barber.hairdressing.HairdressingForBarberIndex;
 import com.loopfire.meitaotao.function.barber.my.PersonalForBarberIndex;
-import com.loopfire.meitaotao.function.barber.setuptime.SetUpTimeIndex;
+import com.loopfire.meitaotao.function.barber.schedule.SetUpTimeIndex;
 
 public class BarberMainActivity extends BaseFragmentActivity implements
 		OnClickListener {
@@ -25,9 +26,7 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 	private LinearLayout homeindex, sort, discuss, presonal;
 
 	private ImageView img_homeindex, img_sort, img_discuss, img_presonal;
-
 	private TextView text_homeindex, text_sort, text_discuss, text_presonal;
-
 	private TextView newMessageNum;
 
 	private HairdressingForBarberIndex Hairdressing;
@@ -90,7 +89,6 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 			currentId = R.id.homeindex;
 			changeUI(currentId);
 		}
-
 		// // 根据标识符判断是否从notificati).getStringExtra("fromNotification");
 		// if (fromNote != null && "1".on跳转
 		// String fromNote = getIntent(equals(fromNote)) {
@@ -139,6 +137,7 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 		text_sort = (TextView) findViewById(R.id.text_sort);
 		text_discuss = (TextView) findViewById(R.id.text_discuss);
 		text_presonal = (TextView) findViewById(R.id.text_presonal);
+
 	}
 
 	public void updateContent(int id) {
@@ -305,53 +304,53 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 
 		switch (checkid) {
 		case R.id.homeindex:
-			// img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_on));
-			// img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_down));
-			// img_discuss.setImageDrawable(resources.getDrawable(R.drawable.xiaoxi_down));
-			// img_presonal.setImageDrawable(resources.getDrawable(R.drawable.shezhi_down));
-			text_homeindex.setTextColor(resources.getColor(R.color.action_on));
-			text_sort.setTextColor(resources.getColor(R.color.action_down));
-			text_discuss.setTextColor(resources.getColor(R.color.action_down));
-			text_presonal.setTextColor(resources.getColor(R.color.action_down));
+			img_homeindex.setSelected(true);
+			img_sort.setSelected(false);
+			img_discuss.setSelected(false);
+			img_presonal.setSelected(false);
+			text_homeindex.setSelected(true);
+			text_sort.setSelected(false);
+			text_discuss.setSelected(false);
+			text_presonal.setSelected(false);
+
 			updateContent(checkid);
 			break;
 		case R.id.sort:
-			// img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_down));
-			// img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_on));
-			// img_discuss.setImageDrawable(resources.getDrawable(R.drawable.xiaoxi_down));
-			// img_presonal.setImageDrawable(resources.getDrawable(R.drawable.shezhi_down));
-			text_homeindex
-					.setTextColor(resources.getColor(R.color.action_down));
-			text_sort.setTextColor(resources.getColor(R.color.action_on));
-			text_discuss.setTextColor(resources.getColor(R.color.action_down));
-			text_presonal.setTextColor(resources.getColor(R.color.action_down));
+			img_homeindex.setSelected(false);
+			img_sort.setSelected(true);
+			img_discuss.setSelected(false);
+			img_presonal.setSelected(false);
+			text_homeindex.setSelected(false);
+			text_sort.setSelected(true);
+			text_discuss.setSelected(false);
+			text_presonal.setSelected(false);
 			updateContent(checkid);
 			break;
 		case R.id.discuss:
-			// img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_down));
-			// img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_down));
-			// img_discuss.setImageDrawable(resources.getDrawable(R.drawable.xiaoxi_on));
-			// img_presonal.setImageDrawable(resources.getDrawable(R.drawable.shezhi_down));
-			text_homeindex
-					.setTextColor(resources.getColor(R.color.action_down));
-			text_sort.setTextColor(resources.getColor(R.color.action_down));
-			text_discuss.setTextColor(resources.getColor(R.color.action_on));
-			text_presonal.setTextColor(resources.getColor(R.color.action_down));
+			img_homeindex.setSelected(false);
+			img_sort.setSelected(false);
+			img_discuss.setSelected(true);
+			img_presonal.setSelected(false);
+			text_homeindex.setSelected(false);
+			text_sort.setSelected(false);
+			text_discuss.setSelected(true);
+			text_presonal.setSelected(false);
 			updateContent(checkid);
 			break;
 		case R.id.presonal:
-			// img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_down));
-			// img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_down));
-			// img_discuss.setImageDrawable(resources.getDrawable(R.drawable.xiaoxi_down));
-			// img_presonal.setImageDrawable(resources.getDrawable(R.drawable.hezhi_on));
-			text_homeindex
-					.setTextColor(resources.getColor(R.color.action_down));
-			text_sort.setTextColor(resources.getColor(R.color.action_down));
-			text_discuss.setTextColor(resources.getColor(R.color.action_down));
-			text_presonal.setTextColor(resources.getColor(R.color.action_on));
+			img_homeindex.setSelected(false);
+			img_sort.setSelected(false);
+			img_discuss.setSelected(false);
+			img_presonal.setSelected(true);
+			text_homeindex.setSelected(false);
+			text_sort.setSelected(false);
+			text_discuss.setSelected(false);
+			text_presonal.setSelected(true);
+
 			updateContent(checkid);
 			break;
 		}
+		currentId = checkid;
 
 	}
 
@@ -390,10 +389,10 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 						Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
 			} else {
-//				Intent intent = new Intent(Intent.ACTION_MAIN);
-//				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//				intent.addCategory(Intent.CATEGORY_HOME);
-//				startActivity(intent);
+				// Intent intent = new Intent(Intent.ACTION_MAIN);
+				// intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				// intent.addCategory(Intent.CATEGORY_HOME);
+				// startActivity(intent);
 				System.exit(0);
 			}
 			return true;
@@ -405,7 +404,9 @@ public class BarberMainActivity extends BaseFragmentActivity implements
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		int id = v.getId();
-		changeUI(id);
+		if (currentId != id) {
+			changeUI(id);
+		}
 	}
 
 }

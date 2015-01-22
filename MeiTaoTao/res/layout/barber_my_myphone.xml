@@ -8,14 +8,13 @@
     <include layout="@layout/title_bar" />
 
     <TextView
+        style="@style/hint_text_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/text_margin_left1"
         android:layout_marginRight="@dimen/text_margin_left1"
         android:layout_marginTop="@dimen/text_margin_top2"
-        android:text="@string/hint_myphone"
-        android:textColor="@color/text_color2"
-        android:textSize="@dimen/text_size2" />
+        android:text="@string/hint_myphone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,19 +29,17 @@
             android:layout_height="match_parent"
             android:background="@drawable/signup_signup_ico_bg"
             android:scaleType="centerInside"
-            android:src="@drawable/signup_input_pw_ico_lock" />
+            android:src="@drawable/my_myphone_ico_phone" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_phone"
+            style="@style/form_right_editText_style"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/signup_input_pw_text_bg"
             android:hint="@string/hint_phone"
             android:inputType="phone"
-            android:paddingLeft="26dip"
-            android:singleLine="true"
-            android:textColor="@color/hint_textcolor"
-            android:textSize="13sp" />
+            android:paddingLeft="26dip" />
     </LinearLayout>
 
     <TextView
@@ -50,11 +47,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_height1"
         android:layout_marginLeft="@dimen/text_margin_left9"
-        android:layout_marginTop="40dp"
         android:layout_marginRight="@dimen/text_margin_left9"
+        android:layout_marginTop="40dp"
         android:background="@drawable/signup_signup_btn_check_bg"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:text="@string/commit" />
+        android:text="@string/commit"
+        android:textColor="@color/white" />
 
 </LinearLayout>

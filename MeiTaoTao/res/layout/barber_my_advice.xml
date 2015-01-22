@@ -8,14 +8,16 @@
     <include layout="@layout/title_bar" />
 
     <EditText
+        style="@style/hint_text_style"
         android:layout_width="match_parent"
-        android:gravity="left|top"
-        android:layout_height="160dp"
-        android:minLines="5"
-        android:hint="@string/hint_advance"
-        android:inputType="text"
+        android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="25dp"
+        android:background="@drawable/signup_signup_text_bg"
+        android:gravity="left|top"
+        android:hint="@string/hint_advance"
+        android:minLines="5"
+        android:padding="7dp" />
 
 </LinearLayout>

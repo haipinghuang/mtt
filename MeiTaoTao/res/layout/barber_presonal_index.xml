@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="@dimen/layout_height7"
+        android:background="@drawable/my_home_pic_bg"
         android:orientation="vertical" >
 
         <ImageView
@@ -19,15 +20,13 @@
             android:src="@drawable/ic_launcher" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            style="@style/textview_style"
             android:text="谢文东" />
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -45,6 +44,7 @@
                 <TextView
                     android:id="@+id/opus"
                     style="@style/textview_style"
+                    android:layout_marginTop="3dp"
                     android:text="@string/opus" />
             </LinearLayout>
 
@@ -63,6 +63,7 @@
                 <TextView
                     android:id="@+id/attention"
                     style="@style/textview_style"
+                    android:layout_marginTop="3dp"
                     android:text="@string/attention" />
             </LinearLayout>
 
@@ -81,6 +82,7 @@
                 <TextView
                     android:id="@+id/fans"
                     style="@style/textview_style"
+                    android:layout_marginTop="3dp"
                     android:text="@string/fans" />
             </LinearLayout>
 
@@ -98,6 +100,7 @@
 
                 <TextView
                     style="@style/textview_style"
+                    android:layout_marginTop="3dp"
                     android:text="@string/message" />
             </LinearLayout>
         </LinearLayout>
@@ -130,15 +133,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico1" />
+                        android:src="@drawable/my_home_ico_booklist" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/order"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                    <RelativeLayout
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            style="@style/form_left_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/text_margin_left2"
+                            android:text="@string/order" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/my_home_ico_new" />
+                    </RelativeLayout>
                 </LinearLayout>
             </RelativeLayout>
 
@@ -159,15 +173,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico2" />
+                        android:src="@drawable/my_home_ico_goodat" />
 
                     <TextView
+                        style="@style/form_left_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/goodat"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                        android:text="@string/goodat" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -188,15 +201,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico2" />
+                        android:src="@drawable/my_home_ico_level" />
 
                     <TextView
+                        style="@style/form_left_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/level"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                        android:text="@string/level" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -217,15 +229,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico6" />
+                        android:src="@drawable/my_home_ico_phone" />
 
                     <TextView
+                        style="@style/form_left_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/phoneNum"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                        android:text="@string/phoneNum" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -246,15 +257,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico2" />
+                        android:src="@drawable/my_home_ico_share" />
 
                     <TextView
+                        style="@style/form_left_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/share"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                        android:text="@string/share" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -275,15 +285,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico4" />
+                        android:src="@drawable/my_home_ico_service" />
 
                     <TextView
+                        style="@style/form_left_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/kefu"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                        android:text="@string/kefu" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -304,15 +313,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/image_margin_left1"
-                        android:src="@drawable/signup_location_ico2" />
+                        android:src="@drawable/my_home_ico_information" />
 
                     <TextView
+                        style="@style/form_left_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/text_margin_left2"
-                        android:text="@string/about"
-                        android:textColor="@color/text_color2"
-                        android:textSize="@dimen/text_size2" />
+                        android:text="@string/about" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/hint_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/hint_add_schedule"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/signup_location_input_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/date" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="90dp" >
+
+                <EditText
+                    style="@style/form_right_editText_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:inputType="date" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="7dp"
+                    android:src="@drawable/schedule_editschedule_btn_add" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/can_appointment" />
+
+            <TextView
+                style="@style/hint_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:text="@string/click_select" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/RadioButton"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:text="@string/hairdress1"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    style="@style/RadioButton"
+                    android:background="@drawable/schedule_addprice_btn"
+                    android:text="@string/hairdress2" />
+
+                <RadioButton
+                    style="@style/RadioButton"
+                    android:background="@drawable/schedule_addprice_btn"
+                    android:text="@string/hairdress9" />
+
+                <RadioButton
+                    style="@style/RadioButton"
+                    android:background="@drawable/schedule_addprice_btn"
+                    android:text="@string/hairdress10" />
+
+                <RadioButton
+                    style="@style/RadioButton"
+                    android:background="@drawable/schedule_addprice_btn"
+                    android:text="@string/hairdress11" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/can_go_appointment" />
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:text="您还没设置合适的理发店"
+                android:textColor="@color/titile_barcolor" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
+            android:layout_marginLeft="@dimen/text_margin_left9"
+            android:layout_marginRight="@dimen/text_margin_left9"
+            android:background="@drawable/signup_signup_btn_check_bg"
+            android:gravity="center"
+            android:text="@string/sure" />
+    </RelativeLayout>
+
+</LinearLayout>

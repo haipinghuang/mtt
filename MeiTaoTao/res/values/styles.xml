@@ -23,16 +23,19 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
-    <style name="RadioButton">
+    <style name="RadioButton" parent="form_left_text_style">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">35dp</item>
         <item name="android:button">@null</item>
         <item name="android:textSize">14sp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
     </style>
 
     <style name="textview_common">
+        <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -48,17 +51,49 @@
         <item name="android:layout_marginTop">@dimen/layout_margin_top7</item>
     </style>
 
+    <!-- 白色文字，基本可通用 -->
     <style name="textview_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/grey</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
     </style>
 
     <style name="textview_style2" parent="textview_common">
         <item name="android:layout_height">match_parent</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14.5sp</item>
+    </style>
+
+    <style name="indicator_text_style" parent="textview_common">
+        <item name="android:layout_height">33dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/hint_textcolor</item>
+    </style>
+    <!-- 表单左边的灰色文字#696969 -->
+    <style name="form_left_text_style" parent="blue_text_style">
+        <item name="android:textColor">@color/text_color2</item>
+    </style>
+    <!-- 蓝色文字 -->
+    <style name="blue_text_style" parent="textview_common">
+        <item name="android:textColor">@color/text_color5</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <!-- activity提示灰色文字 #AAAAAA -->
+    <style name="hint_text_style" parent="blue_text_style">
+        <item name="android:textColor">@color/hint_textcolor</item>
+    </style>
+    <!-- activity editText左边文字 #444444 -->
+    <style name="left_text_style2" parent="blue_text_style">
+        <item name="android:textColor">@color/text_color6</item>
+    </style>
+    <!-- 表单输入框文字 -->
+    <style name="form_right_editText_style" parent="blue_text_style">
+        <item name="android:textColor">@color/hint_textcolor</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">11dp</item>
+        <item name="android:background">@drawable/schedule_addprice_btn</item>
     </style>
 
 </resources>

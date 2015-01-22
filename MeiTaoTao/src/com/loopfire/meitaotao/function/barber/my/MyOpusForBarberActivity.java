@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.common.BaseActivity;
-import com.loopfire.meitaotao.function.barber.setuptime.UpdatePriceActivity;
+import com.loopfire.meitaotao.function.barber.schedule.UpdatePriceActivity;
 
 /**
  * 理发师--我的--作品
