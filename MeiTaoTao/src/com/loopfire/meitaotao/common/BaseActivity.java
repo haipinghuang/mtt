@@ -1,6 +1,5 @@
 package com.loopfire.meitaotao.common;
 
-
 import java.util.List;
 
 import android.app.Activity;
@@ -19,10 +18,9 @@ import com.loopfire.meitaotao.SApplication;
 import com.loopfire.meitaotao.util.FileUtils;
 import com.loopfire.meitaotao.util.MD5Util;
 
-
 /**
  * 通用Activity，所有Activity的父类
- *
+ * 
  */
 public class BaseActivity extends Activity implements IBaseActivity {
 
@@ -41,7 +39,7 @@ public class BaseActivity extends Activity implements IBaseActivity {
 	public Button button_left;
 	public TextView button_right;
 	private SharedPreferences spf;
-	
+
 	public void displayLeft() {
 		title_left.setVisibility(4);
 	}
@@ -85,15 +83,18 @@ public class BaseActivity extends Activity implements IBaseActivity {
 
 	}
 
+	public void setRightBackground(int resid) {
+		button_right.setBackgroundResource(resid);
+	}
+
 	public void onDestroy() {
 		app.allActivity.remove(this);
 		super.onDestroy();
 	}
-	
-	
+
 	public void save(Object obj, String file) {
-		//String uid = this.app.getLoginUserInfo().getUid();
-		String files = file ;//+ uid;
+		// String uid = this.app.getLoginUserInfo().getUid();
+		String files = file;// + uid;
 		files = MD5Util.MD5(files);
 		FileUtils.write2cache(obj, files, FileUtils.getDataPath());
 	}
@@ -101,19 +102,19 @@ public class BaseActivity extends Activity implements IBaseActivity {
 	public Object get(String file) {
 		Object obj = null;
 		try {
-			//String uid = this.app.getLoginUserInfo().getUid();//237dabing/830me
-			
-			String files = file; //+ uid+cateid;
+			// String uid =
+			// this.app.getLoginUserInfo().getUid();//237dabing/830me
+
+			String files = file; // + uid+cateid;
 			files = MD5Util.MD5(files);
 			obj = FileUtils.readFromCache(files, FileUtils.getDataPath());
-//			Log.i("honaf:obj", obj+"");
+			// Log.i("honaf:obj", obj+"");
 		} catch (Exception e) {
-			obj=null;
+			obj = null;
 			e.printStackTrace();
 		}
 		return obj;
 	}
-	
 
 	@Override
 	public void initView() {
@@ -123,7 +124,7 @@ public class BaseActivity extends Activity implements IBaseActivity {
 		title_right = (LinearLayout) findViewById(R.id.top_right_linear);
 		button_left = (Button) findViewById(R.id.title_Left);
 		button_right = (TextView) findViewById(R.id.title_right);
-		title_background=(LinearLayout) findViewById(R.id.title_background);
+		title_background = (LinearLayout) findViewById(R.id.title_background);
 	}
 
 	public void initListener() // / 初始化事件
@@ -137,23 +138,24 @@ public class BaseActivity extends Activity implements IBaseActivity {
 		int flag = ((Integer) param[0]).intValue();// 获取第一个参数
 		switch (flag) {
 		case BaseActivity.ERROR:
-//			Toast.makeText(this, "网络中断,请稍后操作！", 3000).show();
+			// Toast.makeText(this, "网络中断,请稍后操作！", 3000).show();
 			break;
 		case BaseActivity.COOKIE_INVILD:
 			Toast.makeText(this, R.string.cookie_invild, 3000).show();
-//			app.getLoginUserInfo().setUid("0");
-//			spf = this.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-//			spf.edit().putBoolean("AUTO_ISCHECK", false).commit();
-//			Intent intent = new Intent(this, LoginActivity.class);
-//			this.startActivity(intent);
-//			for(Activity activity : app.getAllActivity())
-//			{
-//				if(activity.getClass().getName().indexOf("Login") == -1)
-//				{
-//					activity.finish();
-//				}
-//			}
-			
+			// app.getLoginUserInfo().setUid("0");
+			// spf = this.getSharedPreferences("userinfo",
+			// Context.MODE_PRIVATE);
+			// spf.edit().putBoolean("AUTO_ISCHECK", false).commit();
+			// Intent intent = new Intent(this, LoginActivity.class);
+			// this.startActivity(intent);
+			// for(Activity activity : app.getAllActivity())
+			// {
+			// if(activity.getClass().getName().indexOf("Login") == -1)
+			// {
+			// activity.finish();
+			// }
+			// }
+
 			break;
 		}
 	}
@@ -161,7 +163,7 @@ public class BaseActivity extends Activity implements IBaseActivity {
 	protected void onStop() {
 		super.onStop();
 		if (!isAppOnForeground()) {
-			// 程序进入后台			
+			// 程序进入后台
 			app.setActive(false);
 			// MainService.isActive = false;
 
@@ -171,23 +173,16 @@ public class BaseActivity extends Activity implements IBaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		 if (!app.isActive) {
-		 // 程序 从后台唤醒，进入前台
-			 app.setActive(true);
-			 /*
-			 if(MainService.msgThread != null)
-			 {
-				 synchronized (MainService.msgThread) {
-						try {
-							MainService.msgThread.wait();
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-			 }
+		if (!app.isActive) {
+			// 程序 从后台唤醒，进入前台
+			app.setActive(true);
+			/*
+			 * if(MainService.msgThread != null) { synchronized
+			 * (MainService.msgThread) { try { MainService.msgThread.wait(); }
+			 * catch (InterruptedException e) { // TODO Auto-generated catch
+			 * block e.printStackTrace(); } } }
 			 */
-		 }
+		}
 
 	}
 
@@ -242,6 +237,6 @@ public class BaseActivity extends Activity implements IBaseActivity {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

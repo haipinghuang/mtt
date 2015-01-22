@@ -60,6 +60,7 @@
     <dimen name="view_height2">170dp</dimen>
     <dimen name="view_height3">2dp</dimen>
     <dimen name="view_width">1dp</dimen>
+    <dimen name="view_width2">74dp</dimen>
     <dimen name="text_height1">40.5dp</dimen>
     <dimen name="text_height4">47dp</dimen>
     <dimen name="dialog_width">304dp</dimen>

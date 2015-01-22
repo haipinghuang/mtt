@@ -91,7 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:text="@string/level1"
+                        android:text="@string/level_high"
                         android:textColor="@color/background_color1"
                         android:textSize="@dimen/text_size2" />
 

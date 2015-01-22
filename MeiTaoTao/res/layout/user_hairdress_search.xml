@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/signup_location_input_bg"
+        android:orientation="vertical"
+        android:paddingBottom="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goodat" />
+
+            <TextView
+                style="@style/hint_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/click_select" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="64dp"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/hairdress1" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="64dp"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/hairdress2" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="64dp"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/hairdress3" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="64dp"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/hairdress4" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/from_low_to_high" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/from_high_to_low" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/level" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/level_top" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/level_deep" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/level_high" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zonghe_level" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/from_high_to_low" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/finish_num2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="@string/from_high_to_low" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="南山区" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="南山区" />
+
+                <RadioButton
+                    style="@style/red_button_style"
+                    android:layout_width="@dimen/view_width2"
+                    android:background="@drawable/schedule_setprice_btn_choose"
+                    android:button="@null"
+                    android:text="南山区" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/tv_search"
+            style="@style/textview_style"
+            android:layout_height="@dimen/text_height1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
+            android:layout_marginLeft="@dimen/text_margin_left9"
+            android:layout_marginRight="@dimen/text_margin_left9"
+            android:background="@drawable/signup_signup_btn_check_bg"
+            android:text="@string/search" />
+    </RelativeLayout>
+
+</LinearLayout>

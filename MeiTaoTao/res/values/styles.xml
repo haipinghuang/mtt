@@ -23,6 +23,11 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
+    <style name="textview_common">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="RadioButton" parent="form_left_text_style">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">35dp</item>
@@ -32,11 +37,6 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginLeft">5dp</item>
         <item name="android:layout_marginRight">5dp</item>
-    </style>
-
-    <style name="textview_common">
-        <item name="android:textSize">14sp</item>
-        <item name="android:gravity">center</item>
     </style>
 
     <style name="scrollbar_style">
@@ -63,6 +63,16 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14.5sp</item>
+    </style>
+    <!-- 红色背景-按钮 -->
+    <style name="red_button_style" parent="textview_common">
+        <item name="android:layout_height">35dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
     </style>
 
     <style name="indicator_text_style" parent="textview_common">

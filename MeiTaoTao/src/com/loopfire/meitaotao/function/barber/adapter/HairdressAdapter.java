@@ -44,11 +44,10 @@ public class HairdressAdapter extends BaseAdapter{
 		}
 		TextView textview = (TextView) convertView.findViewById(R.id.textView);
 		ImageView image=(ImageView) convertView.findViewById(R.id.image);
-		int textId=context.getResources().getIdentifier(hairdressNames.get(position), "string", context.getPackageName());
+//		int textId=context.getResources().getIdentifier(hairdressNames.get(position), "values", context.getPackageName());
 		int imageId=context.getResources().getIdentifier(hairdressImages.get(position), "drawable", context.getPackageName());
 //		textview.setText(textId);
 		image.setImageResource(imageId);
-//		image.setBackgroundResource(imageId);
 		return convertView;
 	}
 

@@ -40,7 +40,10 @@
     <string name="work_location">工作地点</string>
     <string name="commit">提交</string>
     <string name="level">级别</string>
-    <string name="level1">首席理发师</string>
+    <string name="level_chief">首席理发师</string>
+    <string name="level_high">高级理发师</string>
+    <string name="level_top">总监</string>
+    <string name="level_deep">资深理发师</string>
     <string name="witnesser_name">证明人姓名</string>
     <string name="witnesser_phone">证明人手机号码</string>
     <string name="reminder_title">温馨提示</string>
@@ -168,5 +171,12 @@
     <string name="my_fans">我的粉丝</string>
     <string name="has_finish">已完成</string>
     <string name="hint_barber_price">该理发师的业务价格：</string>
+    <!-- 用户部分 -->
+    <string name="from_low_to_high">从低到高</string>
+    <string name="from_high_to_low">从高到低</string>
+    <string name="zonghe_level">综合星级</string>
+    <string name="finish_num2">完成单数</string>
+    <string name="location2">地址</string>
+    <string name="search">搜索</string>
 
 </resources>

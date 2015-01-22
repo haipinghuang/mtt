@@ -16,7 +16,7 @@
         android:layout_width="fill_parent"
         android:layout_height="55dip"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/tongyong_dilan" >
+        android:background="@drawable/tab_bg" >
 
         <LinearLayout
             android:id="@+id/guide_goup"
@@ -39,31 +39,29 @@
                     android:id="@+id/img_homeindex"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/tab_hairdress_background_selecter" />
 
                 <TextView
                     android:id="@+id/text_homeindex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-3dip"
+                    android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/hairdressing_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
             <!-- end -->
 
-            <include
-                android:layout_height="49dip"
-                android:layout_marginTop="8dip"
-                layout="@layout/comment_vertical_line" />
+
             <!-- 预约start -->
+
             <LinearLayout
-                android:id="@+id/sort"
+                android:id="@+id/bespeak"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
@@ -71,32 +69,30 @@
                 android:orientation="vertical" >
 
                 <ImageView
-                    android:id="@+id/img_sort"
+                    android:id="@+id/img_bespeak"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/tab_community_background_selecter" />
 
                 <TextView
-                    android:id="@+id/text_sort"
+                    android:id="@+id/text_bespeak"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-3dip"
+                    android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/bespeak_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
-           <!-- end -->
-            
-            <include
-                android:layout_height="49dip"
-                android:layout_marginTop="8dip"
-                layout="@layout/comment_vertical_line" />
-           <!-- 我的start -->
+            <!-- end -->
+
+
+            <!-- 我的start -->
+
             <LinearLayout
                 android:id="@+id/presonal"
                 android:layout_width="fill_parent"
@@ -109,30 +105,30 @@
                     android:id="@+id/img_presonal"
                     android:layout_width="30dip"
                     android:layout_height="30dip"
-                    android:layout_marginTop="10dip"
+                    android:layout_marginTop="5dip"
                     android:clickable="false"
                     android:focusable="false"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/tab_my_background_selecter" />
 
                 <TextView
                     android:id="@+id/text_presonal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-3dip"
+                    android:layout_marginTop="@dimen/text_margin_top4"
                     android:gravity="center|top"
                     android:text="@string/presonal_hint"
-                    android:textColor="#bfbfbf"
-                    android:textSize="12sp" />
+                    android:textColor="@color/tab_text_top_selecter"
+                    android:textSize="12.5sp" />
             </LinearLayout>
         </LinearLayout>
-           <!-- end -->
+        <!-- end -->
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="49dip"
             android:layout_alignParentBottom="true" >
 
-
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="49dip"
@@ -143,7 +139,6 @@
                 android:layout_height="49dip"
                 android:layout_weight="1" />
 
-            
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="49dip"

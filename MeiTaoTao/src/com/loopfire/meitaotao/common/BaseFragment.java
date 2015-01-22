@@ -68,6 +68,9 @@ public class BaseFragment extends Fragment implements FragmentCallback {
 	public void displayRight() {
 		button_right.setVisibility(View.INVISIBLE);
 	}
+	public void setRightBackground(int resid) {
+		button_right.setBackgroundResource(resid);
+	}
 
 	@Override
 	public void dialogControySure(Object... param) {

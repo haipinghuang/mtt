@@ -14,20 +14,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.loopfire.meitaotao.common.BaseFragmentActivity;
 import com.loopfire.meitaotao.function.user.bespeak.BespeakIndex;
 import com.loopfire.meitaotao.function.user.hairdressing.HairdressingForUserIndex;
 import com.loopfire.meitaotao.function.user.my.PersonalForUserIndex;
 
+public class UserMainActivity extends BaseFragmentActivity implements
+		OnClickListener {
 
-public class UserMainActivity extends BaseFragmentActivity implements OnClickListener {
+	private LinearLayout homeindex, bespeak, presonal;
 
-	private LinearLayout homeindex, sort, presonal;
-
-	private ImageView img_homeindex, img_sort,  img_presonal;
-
-	private TextView text_homeindex, text_sort, text_presonal;
+	private ImageView img_homeindex, img_bespeak, img_presonal;
+	private TextView text_homeindex, text_bespeak, text_presonal;
 
 	private HairdressingForUserIndex Hairdressing;
 
@@ -43,7 +41,7 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 
 	private int currentId;
 
-	//    private MessageGuideReceiver receiver;
+	// private MessageGuideReceiver receiver;
 
 	public static UserMainActivity guideActivity;
 
@@ -62,7 +60,7 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.user_activity_main);       
+		setContentView(R.layout.user_activity_main);
 
 		initView();
 		guideActivity = this;
@@ -72,54 +70,54 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 			currentContentFragmentTag = savedInstanceState.getString(SAVE_TAG);
 			removeAllFragment();
 		} else {
-			//currentId = R.id.opprotunity;
-			currentId=R.id.homeindex;
+			// currentId = R.id.opprotunity;
+			currentId = R.id.homeindex;
 			changeUI(currentId);
 		}
 
-
-		//        // 根据标识符判断是否从notification跳转
-		//        String fromNote = getIntent().getStringExtra("fromNotification");
-		//        if (fromNote != null && "1".equals(fromNote)) {
-		//            removeAllFragment();
-		//            changeUI(R.id.message);
-		//        } else {
-		//            if (savedInstanceState != null) {
-		//                DestoryId = savedInstanceState.getInt(SAVE_ID);
-		//                currentContentFragmentTag = savedInstanceState.getString(SAVE_TAG);
-		//                removeAllFragment();
-		//            } else {
-		////                currentId = R.id.opprotunity;
-		//            	currentId=R.id.message;
-		//                changeUI(currentId);
-		//            }
+		// // 根据标识符判断是否从notification跳转
+		// String fromNote = getIntent().getStringExtra("fromNotification");
+		// if (fromNote != null && "1".equals(fromNote)) {
+		// removeAllFragment();
+		// changeUI(R.id.message);
+		// } else {
+		// if (savedInstanceState != null) {
+		// DestoryId = savedInstanceState.getInt(SAVE_ID);
+		// currentContentFragmentTag = savedInstanceState.getString(SAVE_TAG);
+		// removeAllFragment();
+		// } else {
+		// // currentId = R.id.opprotunity;
+		// currentId=R.id.message;
+		// changeUI(currentId);
+		// }
 		//
-		//        }
+		// }
 		//
-		//        receiver = new MessageGuideReceiver();
-		//        IntentFilter filter = new IntentFilter("msg_in");
-		//        registerReceiver(receiver, filter);
-		//        unReadTotal = DataUtil.getUnReadTotal(this, CApplication.getInstance().getLoginUserInfo().getUid());
-		//        updateTotalUI(unReadTotal);       
-		//        
+		// receiver = new MessageGuideReceiver();
+		// IntentFilter filter = new IntentFilter("msg_in");
+		// registerReceiver(receiver, filter);
+		// unReadTotal = DataUtil.getUnReadTotal(this,
+		// CApplication.getInstance().getLoginUserInfo().getUid());
+		// updateTotalUI(unReadTotal);
+		//
 	}
 
 	private void initView() {
 		resources = getResources();
-		//        newMessageNum = (TextView) findViewById(R.id.message_num);
+		// newMessageNum = (TextView) findViewById(R.id.message_num);
 		homeindex = (LinearLayout) findViewById(R.id.homeindex);
-		sort = (LinearLayout) findViewById(R.id.sort);
+		bespeak = (LinearLayout) findViewById(R.id.bespeak);
 		presonal = (LinearLayout) findViewById(R.id.presonal);
 		homeindex.setOnClickListener(this);
-		sort.setOnClickListener(this);
+		bespeak.setOnClickListener(this);
 		presonal.setOnClickListener(this);
 
 		img_homeindex = (ImageView) findViewById(R.id.img_homeindex);
-		img_sort = (ImageView) findViewById(R.id.img_sort);
+		img_bespeak = (ImageView) findViewById(R.id.img_bespeak);
 		img_presonal = (ImageView) findViewById(R.id.img_presonal);
 
 		text_homeindex = (TextView) findViewById(R.id.text_homeindex);
-		text_sort = (TextView) findViewById(R.id.text_sort);
+		text_bespeak = (TextView) findViewById(R.id.text_bespeak);
 		text_presonal = (TextView) findViewById(R.id.text_presonal);
 	}
 
@@ -131,7 +129,8 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 			final FragmentManager fm = getSupportFragmentManager();
 			final FragmentTransaction tr = fm.beginTransaction();
 			if (currentContentFragmentTag != null) {
-				final Fragment currentFragment = fm.findFragmentByTag(currentContentFragmentTag);
+				final Fragment currentFragment = fm
+						.findFragmentByTag(currentContentFragmentTag);
 				if (currentFragment != null) {
 					tr.hide(currentFragment);// 将当前的Frament隐藏到后台去
 				}
@@ -147,7 +146,7 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 				}
 				Hairdressing = (HairdressingForUserIndex) fragment;
 				break;
-			case R.id.sort:
+			case R.id.bespeak:
 				tag = BespeakIndex.class.getSimpleName();
 				final Fragment bespeak = fm.findFragmentByTag(tag);
 				if (bespeak != null) {
@@ -159,7 +158,7 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 
 				Bespeak = (BespeakIndex) fragment;
 				break;
-	
+
 			case R.id.presonal:
 				tag = PersonalForUserIndex.class.getSimpleName();
 				final Fragment personal = fm.findFragmentByTag(tag);
@@ -194,46 +193,50 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 		}
 	}
 
-	//    @Override
-	//    protected void onNewIntent(Intent intent) {
-	//        // TODO Auto-generated method stub
-	//        super.onNewIntent(intent);
-	//        String fromNote = intent.getStringExtra("fromNotification");
-	//        if (fromNote != null && "1".equals(fromNote)) {
-	//            changeUI(R.id.message);
-	//        }
-	//    }
+	// @Override
+	// protected void onNewIntent(Intent intent) {
+	// // TODO Auto-generated method stub
+	// super.onNewIntent(intent);
+	// String fromNote = intent.getStringExtra("fromNotification");
+	// if (fromNote != null && "1".equals(fromNote)) {
+	// changeUI(R.id.message);
+	// }
+	// }
 
-	//    @Override
-	//    protected void onStart() {
-	//        super.onStart();
-	//        if (!isLoad) {
-	//            int total = DataUtil.getUnReadTotal(MainActivity.this, CApplication.getInstance().getLoginUserInfo().getUid());
-	//            updateTotalUI(total);
-	//        }
-	//        isLoad = false;
-	//        if (DestoryId != -1) {
-	//            changeUI(DestoryId);
-	//            DestoryId = -1;
-	//        }
-	//    }
-
+	// @Override
+	// protected void onStart() {
+	// super.onStart();
+	// if (!isLoad) {
+	// int total = DataUtil.getUnReadTotal(MainActivity.this,
+	// CApplication.getInstance().getLoginUserInfo().getUid());
+	// updateTotalUI(total);
+	// }
+	// isLoad = false;
+	// if (DestoryId != -1) {
+	// changeUI(DestoryId);
+	// DestoryId = -1;
+	// }
+	// }
 
 	private void removeAllFragment() {
 
 		FragmentManager fm = getSupportFragmentManager();
 		FragmentTransaction tr = fm.beginTransaction();
-		Fragment Hairdressing = fm.findFragmentByTag(HairdressingForUserIndex.class.getSimpleName());
+		Fragment Hairdressing = fm
+				.findFragmentByTag(HairdressingForUserIndex.class
+						.getSimpleName());
 		if (Hairdressing != null && Hairdressing.isAdded()) {
 			tr.hide(Hairdressing);
 			tr.remove(Hairdressing);
 		}
-		Fragment Bespeak = fm.findFragmentByTag(BespeakIndex.class.getSimpleName());
+		Fragment Bespeak = fm.findFragmentByTag(BespeakIndex.class
+				.getSimpleName());
 		if (Bespeak != null && Bespeak.isAdded()) {
 			tr.hide(Bespeak);
 			tr.remove(Bespeak);
 		}
-		Fragment personal = fm.findFragmentByTag(PersonalForUserIndex.class.getSimpleName());
+		Fragment personal = fm.findFragmentByTag(PersonalForUserIndex.class
+				.getSimpleName());
 		if (personal != null && personal.isAdded()) {
 			tr.hide(personal);
 			tr.remove(personal);
@@ -254,64 +257,55 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 
 		switch (checkid) {
 		case R.id.homeindex:
-			//            	img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_on));
-			//            	img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_down));
-			//            	img_discuss.setImageDrawable(resources.getDrawable(R.drawable.xiaoxi_down));
-			//            	img_presonal.setImageDrawable(resources.getDrawable(R.drawable.shezhi_down));
-			text_homeindex.setTextColor(resources.getColor(R.color.action_on));
-			text_sort.setTextColor(resources.getColor(R.color.action_down));
-			text_presonal.setTextColor(resources.getColor(R.color.action_down));
+			text_homeindex.setSelected(true);
+			text_bespeak.setSelected(false);
+			text_presonal.setSelected(false);
+			img_homeindex.setSelected(true);
+			img_bespeak.setSelected(false);
+			img_presonal.setSelected(false);
 			updateContent(checkid);
 			break;
-		case R.id.sort:
-			//            	img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_down));
-			//            	img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_on));
-			//            	img_presonal.setImageDrawable(resources.getDrawable(R.drawable.shezhi_down));
-			text_homeindex.setTextColor(resources.getColor(R.color.action_down));
-			text_sort.setTextColor(resources.getColor(R.color.action_on));
-			text_presonal.setTextColor(resources.getColor(R.color.action_down));
-			updateContent(checkid);
-			break;
-		case R.id.discuss:
-			//            	img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_down));
-			//            	img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_down));
-			//            	img_presonal.setImageDrawable(resources.getDrawable(R.drawable.shezhi_down));
-			text_homeindex.setTextColor(resources.getColor(R.color.action_down));
-			text_sort.setTextColor(resources.getColor(R.color.action_down));
-			text_presonal.setTextColor(resources.getColor(R.color.action_down));
+		case R.id.bespeak:
+			text_homeindex.setSelected(false);
+			text_bespeak.setSelected(true);
+			text_presonal.setSelected(false);
+			img_homeindex.setSelected(false);
+			img_bespeak.setSelected(true);
+			img_presonal.setSelected(false);
 			updateContent(checkid);
 			break;
 		case R.id.presonal:
-			//            	img_homeindex.setImageDrawable(resources.getDrawable(R.drawable.shangji_down));
-			//            	img_sort.setImageDrawable(resources.getDrawable(R.drawable.renmai_down));
-			//            	img_presonal.setImageDrawable(resources.getDrawable(R.drawable.hezhi_on));
-			text_homeindex.setTextColor(resources.getColor(R.color.action_down));
-			text_sort.setTextColor(resources.getColor(R.color.action_down));
-			text_presonal.setTextColor(resources.getColor(R.color.action_on));
+			text_homeindex.setSelected(false);
+			text_bespeak.setSelected(false);
+			text_presonal.setSelected(true);
+			img_homeindex.setSelected(false);
+			img_bespeak.setSelected(false);
+			img_presonal.setSelected(true);
 			updateContent(checkid);
 			break;
 		}
 
 	}
 
-	//    private class MessageGuideReceiver extends BroadcastReceiver {
+	// private class MessageGuideReceiver extends BroadcastReceiver {
 	//
-	//        @Override
-	//        public void onReceive(Context context, Intent intent) {
-	//            if ("msg_in".equals(intent.getAction())) {
-	//                android.os.Message message = new android.os.Message();
-	//                message.obj = DataUtil.getUnReadTotal(MainActivity.this, CApplication.getInstance().getLoginUserInfo().getUid());
-	//                message.what = RECEIVE_MSG;
-	//                mHandler.sendMessage(message);
-	//            }
-	//        }
-	//    }
+	// @Override
+	// public void onReceive(Context context, Intent intent) {
+	// if ("msg_in".equals(intent.getAction())) {
+	// android.os.Message message = new android.os.Message();
+	// message.obj = DataUtil.getUnReadTotal(MainActivity.this,
+	// CApplication.getInstance().getLoginUserInfo().getUid());
+	// message.what = RECEIVE_MSG;
+	// mHandler.sendMessage(message);
+	// }
+	// }
+	// }
 
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		//        unregisterReceiver(receiver);
+		// unregisterReceiver(receiver);
 	}
 
 	private long exitTime = 0;
@@ -321,15 +315,18 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+		if (keyCode == KeyEvent.KEYCODE_BACK
+				&& event.getAction() == KeyEvent.ACTION_DOWN) {
 			if ((System.currentTimeMillis() - exitTime) > 2000) {
-				Toast.makeText(getApplicationContext(), "再按一次退出", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "再按一次退出",
+						Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
 			} else {
-				Intent intent = new Intent(Intent.ACTION_MAIN);
-				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				intent.addCategory(Intent.CATEGORY_HOME);
-				startActivity(intent);
+				// Intent intent = new Intent(Intent.ACTION_MAIN);
+				// intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				// intent.addCategory(Intent.CATEGORY_HOME);
+				// startActivity(intent);
+				System.exit(0);
 			}
 			return true;
 		}
@@ -338,9 +335,10 @@ public class UserMainActivity extends BaseFragmentActivity implements OnClickLis
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		int id = v.getId();
-		changeUI(id);
-	}  
+		if (currentId != id) {
+			changeUI(id);
+		}
+	}
 
 }
