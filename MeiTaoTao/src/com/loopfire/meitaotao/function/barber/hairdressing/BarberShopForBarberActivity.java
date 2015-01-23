@@ -6,7 +6,9 @@ import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.common.BaseActivity;
 
 /**
- * 理发师--美发--理发店
+ * 次文件作废，已调至BarberShop
+ * 
+ * Activity 理发师--美发--理发店
  * 
  * @author Administrator
  * 
@@ -27,7 +29,7 @@ public class BarberShopForBarberActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.barber_hairdress_barbershop);
+		setContentView(R.layout.activity_hairdress_barbershop);
 		initView();
 		initListener();
 		setTitle(getString(R.string.barber_shop));
@@ -39,7 +41,7 @@ public class BarberShopForBarberActivity extends BaseActivity {
 		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.tv_sure:
-//			startActivity(new Intent(this, DialogCenterHintActivity.class));
+			// startActivity(new Intent(this, DialogCenterHintActivity.class));
 			break;
 		}
 	}

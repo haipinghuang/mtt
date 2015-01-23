@@ -1,28 +1,29 @@
 package com.loopfire.meitaotao.function.user.bespeak;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.SApplication;
 import com.loopfire.meitaotao.common.BaseFragment;
+import com.loopfire.meitaotao.function.user.hairdressing.SearchResultForUserActivity;
 
 /**
- * 预约
+ * 用户—预约
+ * 
  * @author Administrator
- *
+ * 
  */
-public class BespeakIndex extends BaseFragment implements OnClickListener{
+public class BespeakIndex extends BaseFragment implements OnClickListener {
+	private TextView tv_bespeak;
+	private Context context;
 
-    private Context context;
-    public BespeakIndex( ){
-        super();     
-    }
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -35,8 +36,10 @@ public class BespeakIndex extends BaseFragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.user_bespeak_index, container,false);
+		View view = inflater.inflate(R.layout.user_hairdress_search_result,
+				container, false);
 		initView(view);
+		initListener();
 		return view;
 	}
 
@@ -44,9 +47,16 @@ public class BespeakIndex extends BaseFragment implements OnClickListener{
 	public void initView(View view) {
 		// TODO Auto-generated method stubs
 		super.initView(view);
-		 setTitle("预约");
-	     displayLeft();
-	     displayRight();
+		tv_bespeak = (TextView) view.findViewById(R.id.bespeak);
+		setTitle(null);
+		displayLeft();
+		displayRight();
+	}
+
+	@Override
+	public void initListener() {
+		super.initListener();
+		tv_bespeak.setOnClickListener(this);
 	}
 
 	@Override
@@ -63,8 +73,13 @@ public class BespeakIndex extends BaseFragment implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
+		switch (v.getId()) {
+		case R.id.bespeak:
+			startActivity(new Intent(context,
+					BespeakProcedureForUserActivity.class));
+			break;
+		}
+
 	}
 
 }

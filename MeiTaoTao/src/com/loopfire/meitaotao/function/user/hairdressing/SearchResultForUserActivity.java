@@ -31,12 +31,12 @@ public class SearchResultForUserActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.user_hairdress_search);
+		setContentView(R.layout.user_hairdress_search_result);
 		initView();
 		initListener();
 		setLeft(null);
 		setTitle(getString(R.string.hairdressing_hint));
-		setRightBackground(R.drawable.ic_launcher);
+		setRightBackground(R.drawable.hairdressing_hairdressing_ico_search);
 	}
 
 	@Override

@@ -21,6 +21,7 @@ import com.loopfire.meitaotao.SApplication;
 import com.loopfire.meitaotao.common.BaseFragment;
 import com.loopfire.meitaotao.function.barber.adapter.HairdressAdapter;
 import com.loopfire.meitaotao.function.barber.adapter.MyPageAdapter;
+import com.loopfire.meitaotao.function.common.BarberShopActivity;
 
 /**
  * 理发师——美发
@@ -139,7 +140,7 @@ public class HairdressingForBarberIndex extends BaseFragment implements
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.barbershop:
-			startActivity(new Intent(context, BarberShopForBarberActivity.class));
+			startActivity(new Intent(context, BarberShopActivity.class));
 			break;
 		}
 	}

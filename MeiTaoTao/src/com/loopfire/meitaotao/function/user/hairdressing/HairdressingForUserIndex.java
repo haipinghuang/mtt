@@ -22,6 +22,7 @@ import com.loopfire.meitaotao.common.BaseFragment;
 import com.loopfire.meitaotao.function.barber.adapter.HairdressAdapter;
 import com.loopfire.meitaotao.function.barber.adapter.MyPageAdapter;
 import com.loopfire.meitaotao.function.barber.hairdressing.BarberShopForBarberActivity;
+import com.loopfire.meitaotao.function.common.BarberShopActivity;
 import com.loopfire.meitaotao.util.Util;
 
 /**
@@ -35,6 +36,7 @@ public class HairdressingForUserIndex extends BaseFragment implements
 	private ViewPager vPage;
 	private ImageView page0, page1;
 	private ArrayList<View> views;
+	@SuppressWarnings("unused")
 	private MyPageAdapter pageAdapter;
 	private int curPage;
 	private LayoutInflater inflater;
@@ -87,10 +89,8 @@ public class HairdressingForUserIndex extends BaseFragment implements
 		views.add(gv1);
 		vPage.setAdapter(new MyPageAdapter(views));
 		setTitle(null);
-		// displayLeft();
-		// displayRight();
 		button_right.setText(null);
-		setRightBackground(R.drawable.ic_launcher);
+		setRightBackground(R.drawable.hairdressing_hairdressing_ico_search);
 	}
 
 	@Override
@@ -98,6 +98,7 @@ public class HairdressingForUserIndex extends BaseFragment implements
 		super.initListener();
 		vPage.setOnPageChangeListener(new MyOnPageChangeListener());
 		button_right.setOnClickListener(this);
+		barbershop.setOnClickListener(this);
 	}
 
 	private View getGridChildView(int i) {
@@ -126,11 +127,14 @@ public class HairdressingForUserIndex extends BaseFragment implements
 
 	@Override
 	public void onClick(View v) {
-		Util.out(v.getId()+"");
+		Util.out(v.getId() + "");
 		switch (v.getId()) {
 		case R.id.title_right:
-			Util.out("121123");
 			startActivity(new Intent(context, SearchForUserActivity.class));
+			break;
+		case R.id.barbershop:
+			Util.out("12132");
+			startActivity(new Intent(context, BarberShopActivity.class));
 			break;
 		}
 	}

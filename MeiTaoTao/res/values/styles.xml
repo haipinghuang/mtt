@@ -105,5 +105,30 @@
         <item name="android:paddingLeft">11dp</item>
         <item name="android:background">@drawable/schedule_addprice_btn</item>
     </style>
+    <!-- spinner样式 -->
+    <style name="spinner_style" parent="textview_common">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!-- tablelayout 时间text样式 -->
+    <style name="tablelayout_time" parent="textview_common">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/text_color2</item>
+    </style>
+    <!-- tablelayout 被预约text样式 -->
+    <style name="tablelayout_already_bespeak" parent="tablelayout_time">
+        <item name="android:textColor">@color/hint_textcolor</item>
+        <item name="android:background">@color/body_backcolor</item>
+        <item name="android:text">@string/already_bespeak</item>
+    </style>
+    <!-- tablelayout 预约text样式 -->
+    <style name="tablelayout_bespeak" parent="tablelayout_time">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/lightblue</item>
+        <item name="android:text">@string/bespeak_hint</item>
+    </style>
 
 </resources>

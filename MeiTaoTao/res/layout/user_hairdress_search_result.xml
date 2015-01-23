@@ -9,28 +9,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="47dp"
         android:background="@drawable/signup_location_input_bg"
         android:paddingBottom="10dp" >
 
         <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/spinner_style"
+            android:entries="@array/spinner_level"
             android:gravity="center"
             android:spinnerMode="dropdown" />
 
         <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/spinner_style"
+            android:entries="@array/spinner_price"
             android:gravity="center"
             android:spinnerMode="dropdown" />
 
         <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/spinner_style"
+            android:entries="@array/spinner_finishNum"
             android:gravity="center"
             android:spinnerMode="dropdown" />
     </LinearLayout>
@@ -86,14 +83,12 @@
                                 android:textSize="@dimen/text_size5" />
 
                             <TextView
-                                android:layout_width="80dp"
+                                style="@style/blue_text_style"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left5"
-                                android:gravity="center_vertical"
-                                android:text="首肯店"
-                                android:textColor="@color/background_color1"
-                                android:textSize="@dimen/text_size5" />
+                                android:text="首肯店" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -137,6 +132,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/bespeak"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
                         android:layout_marginRight="15dp"
@@ -168,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:isIndicator="true"
                         android:numStars="4"
-                        android:stepSize="1" />
+                        android:progress="2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -220,6 +216,7 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical"
                 android:text="@string/new_opus"
+                android:textColor="@color/background_color1"
                 android:textSize="@dimen/text_size2" />
 
             <ImageView
@@ -230,35 +227,5 @@
         </LinearLayout>
     </LinearLayout>
     <!-- 一个listview的item结束 -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/signup_location_input_bg"
-        android:orientation="vertical"
-        android:paddingBottom="10dp" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="18dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <TextView
-                style="@style/form_left_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/goodat" />
-
-            <TextView
-                style="@style/hint_text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="@string/click_select" />
-        </LinearLayout>
-    </LinearLayout>
 
 </LinearLayout>

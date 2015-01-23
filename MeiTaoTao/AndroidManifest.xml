@@ -46,6 +46,7 @@
         <activity
             android:name="com.loopfire.meitaotao.function.common.DialogCenterHintActivity"
             android:theme="@style/DialogCenterHint" />
+        <activity android:name="com.loopfire.meitaotao.function.common.BarberShopActivity" />
         <!-- 理发师部分 -->
         <activity android:name="com.loopfire.meitaotao.function.barber.hairdressing.BarberShopForBarberActivity" />
         <activity android:name="com.loopfire.meitaotao.function.barber.schedule.SetUpPriceActivity" />
@@ -78,6 +79,17 @@
         <!-- 用户部分 -->
         <activity android:name="com.loopfire.meitaotao.function.user.hairdressing.SearchForUserActivity" />
         <activity android:name="com.loopfire.meitaotao.function.user.hairdressing.SearchResultForUserActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.user.hairdressing.JianFaForUserActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.user.bespeak.BespeakProcedureForUserActivity" />
+        <activity
+            android:name="com.loopfire.meitaotao.function.user.bespeak.HairdressTypeForUserActivity"
+            android:theme="@style/DialogCenterHint" />
+        <activity
+            android:name="com.loopfire.meitaotao.function.user.bespeak.SelectHairdressShopForUserActivity"
+            android:theme="@style/DialogCenterHint" />
+        <activity
+            android:name="com.loopfire.meitaotao.function.user.bespeak.BespeakTimeForUserActivity"
+            android:theme="@style/DialogCenterHint" />
     </application>
 
 </manifest>

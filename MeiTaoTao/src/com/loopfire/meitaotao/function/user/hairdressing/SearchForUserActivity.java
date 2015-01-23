@@ -38,9 +38,9 @@ public class SearchForUserActivity extends BaseActivity {
 		setContentView(R.layout.user_hairdress_search);
 		initView();
 		initListener();
-		setLeft(null);
+		setRight(null);
 		setTitle(getString(R.string.hairdressing_hint));
-		setRightBackground(R.drawable.ic_launcher);
+		setRightBackground(R.drawable.hairdressing_hairdressing_ico_search);
 	}
 
 	@Override
