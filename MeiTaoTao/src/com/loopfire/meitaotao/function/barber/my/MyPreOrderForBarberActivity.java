@@ -99,7 +99,7 @@ public class MyPreOrderForBarberActivity extends BaseActivity {
 		initView();
 		initListener();
 		setIndicator(curPage);
-		setRight(getString(R.string.mypre_order));
+		setTitle(getString(R.string.mypre_order));
 		displayRight();
 	}
 

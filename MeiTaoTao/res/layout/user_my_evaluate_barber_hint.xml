@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/image_margin_right2"
+        android:layout_marginRight="@dimen/image_margin_right2"
+        android:background="@drawable/signup_complete_bg"
+        android:orientation="vertical"
+        android:paddingLeft="8dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_height"
+                android:layout_marginLeft="@dimen/image_margin_left4"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/layout_margin_left1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingTop="8dp"
+                    android:text="allen"
+                    android:textColor="@color/background_color1"
+                    android:textSize="@dimen/text_size5" />
+
+                <TextView
+                    style="@style/blue_text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingBottom="8dp"
+                    android:text="@string/level_high" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/line_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="7dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/technology2"
+                android:textColor="@color/background_color1"
+                android:textSize="@dimen/text_size2" />
+
+            <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:numStars="4"
+                android:progress="2" />
+
+            <TextView
+                style="@style/blue_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="还不错" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginLeft="12dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/time_keep2"
+                android:textColor="@color/background_color1"
+                android:textSize="@dimen/text_size2" />
+
+            <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:numStars="4"
+                android:progress="2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="12dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/attitude2"
+                android:textColor="@color/background_color1"
+                android:textSize="@dimen/text_size2" />
+
+            <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:numStars="4"
+                android:progress="2" />
+        </LinearLayout>
+
+        <include layout="@layout/line_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="12dp"
+            android:gravity="center_vertical"
+            android:text="@string/comment2"
+            android:textColor="@color/background_color1"
+            android:textSize="@dimen/text_size2" />
+
+        <EditText
+            style="@style/form_right_editText_style"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="19dp"
+            android:hint="@string/hint_add_comment" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12dp"
+            android:gravity="center_vertical"
+            android:text="@string/upload_photo"
+            android:textColor="@color/background_color1"
+            android:textSize="@dimen/text_size2" />
+
+        <include layout="@layout/line_horizontal" />
+
+        <TextView
+            style="@style/blue_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="@string/sure" />
+    </LinearLayout>
+
+</RelativeLayout>

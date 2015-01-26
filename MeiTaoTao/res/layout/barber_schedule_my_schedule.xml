@@ -30,8 +30,7 @@
                 android:layout_height="1.5dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/tab_image_top_selecter"
-                android:textSize="14sp" />
+                android:src="@drawable/tab_image_top_selecter" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,8 +51,7 @@
                 android:layout_height="@dimen/image_height2"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/tab_image_top_selecter"
-                android:textSize="14sp" />
+                android:src="@drawable/tab_image_top_selecter" />
         </LinearLayout>
     </LinearLayout>
 

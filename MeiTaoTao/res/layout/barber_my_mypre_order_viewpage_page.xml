@@ -365,7 +365,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center_vertical|right"
             android:paddingRight="15dp"
-            android:text="已取消"
+            android:text="评价"
             android:textColor="@color/text_color5"
             android:textSize="@dimen/text_size5" />
     </LinearLayout>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/body_backcolor"
+    android:background="@drawable/bg"
     android:orientation="vertical" >
 
     <include layout="@layout/title_bar" />
@@ -11,34 +11,70 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="60dp"
         android:scaleType="centerInside"
-        android:src="@drawable/logo" />
+        android:src="@drawable/login_logo" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="@dimen/text_height1"
+        android:layout_height="@dimen/text_height2"
         android:layout_marginLeft="@dimen/text_margin_left2"
         android:layout_marginRight="@dimen/text_margin_right2"
-        android:background="@drawable/text_bg"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/my_personpage_btn_cancel_focus"
         android:hint="@string/hint_phone"
         android:inputType="phone"
         android:paddingLeft="@dimen/text_margin_left4"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size2" />
+        android:textSize="@dimen/text_size1" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="@dimen/text_height1"
+        android:layout_height="@dimen/text_height2"
         android:layout_marginLeft="@dimen/text_margin_left2"
         android:layout_marginRight="@dimen/text_margin_right2"
         android:layout_marginTop="@dimen/text_margin_top1"
-        android:background="@drawable/text_bg"
+        android:background="@drawable/my_personpage_btn_cancel_focus"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
         android:paddingLeft="@dimen/text_margin_left4"
         android:singleLine="true"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size2" />
+        android:textSize="@dimen/text_size1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height2"
+        android:layout_marginLeft="@dimen/text_margin_left2"
+        android:layout_marginRight="@dimen/text_margin_right2"
+        android:layout_marginTop="@dimen/text_margin_top1"
+        android:background="@drawable/signup_signup_btn_check_bg"
+        android:gravity="center"
+        android:paddingLeft="@dimen/text_margin_left4"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin_left2"
+        android:layout_marginRight="@dimen/text_margin_right2"
+        android:layout_marginTop="@dimen/text_margin_top1" >
+
+        <TextView
+            style="@style/white_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forget_password" />
+
+        <TextView
+            style="@style/white_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/quick_register" />
+    </RelativeLayout>
 
 </LinearLayout>

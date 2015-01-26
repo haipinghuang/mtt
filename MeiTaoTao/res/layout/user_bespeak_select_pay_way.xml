@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/body_backcolor"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        style="@style/hint_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="6dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="18dp"
+        android:paddingTop="10dp"
+        android:text="您已经成功预约了，请选择支付方式；\n请放心，在您理发完后确认没问题，我们才将金额打给理发师"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hairdressing_hairdressing_bg1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:paddingLeft="@dimen/layout_margin_left3" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/barber"
+                android:textColor="@color/text_color1" />
+
+            <TextView
+                style="@style/blue_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="张三" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:paddingLeft="@dimen/layout_margin_left3" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hairdress_type"
+                android:textColor="@color/text_color1" />
+
+            <TextView
+                style="@style/blue_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="##染发##烫发" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:paddingLeft="@dimen/layout_margin_left3" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_barbershop"
+                android:textColor="@color/text_color1" />
+
+            <TextView
+                style="@style/blue_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="海岸城首肯点" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_marginTop="9dp"
+            android:paddingLeft="@dimen/layout_margin_left3" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bespeak_time"
+                android:textColor="@color/text_color1" />
+
+            <TextView
+                style="@style/blue_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="2011-11-11 08：00" />
+        </LinearLayout>
+
+        <include layout="@layout/line_horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/signup_location_bg"
+        android:paddingLeft="@dimen/layout_margin_left3" >
+
+        <TextView
+            style="@style/form_left_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_payway"
+            android:textColor="@color/text_color1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height6"
+        android:layout_marginTop="1.5dp"
+        android:background="@drawable/signup_location_bg" >
+
+        <RelativeLayout
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/layout_width"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/schedule_wallet_ico_pay" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/iv_image"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/pay_type1"
+                android:textColor="@color/text_color1" />
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="推荐已安装支付宝客户端的用户使用" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/schedule_store_ico_check_choose" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height6"
+        android:layout_marginTop="1.5dp"
+        android:background="@drawable/signup_location_bg" >
+
+        <RelativeLayout
+            android:id="@+id/iv_image2"
+            android:layout_width="@dimen/layout_width"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/schedule_wallet_ico_wechat" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/iv_image2"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/pay_type1"
+                android:textColor="@color/text_color1" />
+
+            <TextView
+                style="@style/form_left_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="推荐已安装支付宝客户端的用户使用" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="13dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="@dimen/layout_margin_left2"
+        android:layout_marginRight="@dimen/layout_margin_right3"
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="@dimen/layout_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical" >
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/text_height1"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/text_margin_bottom" >
+
+            <TextView
+                android:id="@+id/tv_nowPay"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/schedule_store_mask"
+                android:gravity="center"
+                android:layout_marginRight="37dp"
+                android:text="@string/nowPay"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_afterPay"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/signup_signup_btn_check_bg"
+                android:gravity="center"
+                android:text="@string/afterPay"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

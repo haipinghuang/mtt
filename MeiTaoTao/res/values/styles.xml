@@ -51,18 +51,23 @@
         <item name="android:layout_marginTop">@dimen/layout_margin_top7</item>
     </style>
 
-    <!-- 白色文字，基本可通用 -->
-    <style name="textview_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:gravity">center</item>
-    </style>
-
     <style name="textview_style2" parent="textview_common">
         <item name="android:layout_height">match_parent</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14.5sp</item>
+    </style>
+
+    <style name="indicator_text_style" parent="textview_common">
+        <item name="android:layout_height">33dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/hint_textcolor</item>
+    </style>
+ <!-- 白色文字，基本可通用 -->
+    <style name="white_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
     </style>
     <!-- 红色背景-按钮 -->
     <style name="red_button_style" parent="textview_common">
@@ -73,12 +78,6 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginLeft">5dp</item>
         <item name="android:layout_marginRight">5dp</item>
-    </style>
-
-    <style name="indicator_text_style" parent="textview_common">
-        <item name="android:layout_height">33dp</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:textColor">@color/hint_textcolor</item>
     </style>
     <!-- 表单左边的灰色文字#696969 -->
     <style name="form_left_text_style" parent="blue_text_style">
@@ -93,6 +92,10 @@
     <!-- activity提示灰色文字 #AAAAAA -->
     <style name="hint_text_style" parent="blue_text_style">
         <item name="android:textColor">@color/hint_textcolor</item>
+    </style>
+    <!-- activity提示灰色文字 #4F4F4F 更灰一点 -->
+    <style name="hint_text_style2" parent="blue_text_style">
+        <item name="android:textColor">@color/text_link</item>
     </style>
     <!-- activity editText左边文字 #444444 -->
     <style name="left_text_style2" parent="blue_text_style">

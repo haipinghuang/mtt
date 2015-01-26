@@ -20,6 +20,7 @@
             android:orientation="vertical" >
 
             <TextView
+                style="@style/hint_text_style2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_margin_top7"
@@ -28,12 +29,12 @@
                 android:textSize="@dimen/text_size1" />
 
             <TextView
+                style="@style/hint_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_margin_top7"
                 android:paddingLeft="@dimen/text_margin_left3"
-                android:text="@string/hint_close"
-                android:textSize="@dimen/text_size2" />
+                android:text="@string/hint_close" />
         </LinearLayout>
 
         <View
@@ -49,6 +50,7 @@
             android:orientation="vertical" >
 
             <TextView
+                style="@style/hint_text_style2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_margin_top7"
@@ -57,13 +59,13 @@
                 android:textSize="@dimen/text_size1" />
 
             <TextView
+                style="@style/hint_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/text_margin_top7"
                 android:layout_marginTop="@dimen/text_margin_top7"
                 android:paddingLeft="@dimen/text_margin_left3"
-                android:text="@string/hint_exit_login"
-                android:textSize="@dimen/text_size2" />
+                android:text="@string/hint_exit_login" />
         </LinearLayout>
     </LinearLayout>
 

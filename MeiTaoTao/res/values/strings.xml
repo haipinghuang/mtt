@@ -49,6 +49,7 @@
     <string name="reminder_title">温馨提示</string>
     <string name="reminder_msg">尊敬的用户，您已经提交资料，我们将尽快核实资料后和你确认。</string>
     <string name="sure">确认</string>
+    <string name="sure_bespeak">确定预约</string>
     <string name="limit_appomint">限时抢约</string>
     <string name="week_stat">每周之星</string>
     <string name="recomment_for_you">为您推荐</string>
@@ -59,6 +60,9 @@
     <string name="technology">技术</string>
     <string name="time_keep">守时</string>
     <string name="attitude">态度</string>
+    <string name="technology2">技术:</string>
+    <string name="time_keep2">守时:</string>
+    <string name="attitude2">态度:</string>
     <string name="hairdress1">剪发</string>
     <string name="hairdress2">染发</string>
     <string name="hairdress3">冷烫</string>
@@ -89,6 +93,7 @@
     <string name="length2">长</string>
     <string name="length3">短</string>
     <string name="price">价格</string>
+    <string name="price2">价格:</string>
     <string name="hint_price">输入价格</string>
     <string name="delete">删除</string>
     <string name="add_one_line">添加一行</string>
@@ -121,7 +126,10 @@
     <string name="advance">反馈意见</string>
     <string name="hint_advance">建议描述</string>
     <string name="exit">退出</string>
+    <string name="login">登录</string>
     <string name="close">关闭</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="quick_register">快速注册</string>
     <string name="status">状态</string>
     <string name="hint_close">关闭后您无法知道客户预约你</string>
     <string name="exit_login">退出登录</string>
@@ -185,6 +193,17 @@
     <string name="already_bespeak">被预约</string>
     <string name="morning">上午</string>
     <string name="afternoon">下午</string>
+    <string name="barber">理发师：</string>
+    <string name="select_barbershop">选择理发店：</string>
+    <string name="select_payway">选择支付方式</string>
+    <string name="nowPay">现在付款</string>
+    <string name="afterPay">理完付款</string>
+    <string name="show_myself">自恋一下</string>
+    <string name="ask_for_be_barber">申请成为理发师</string>
+    <string name="personal_center">个人中心</string>
+    <string name="new_photo">最新靓照</string>
+    <string name="hint_add_comment">添加评价</string>
+    <string name="upload_photo">上传照片：</string>
 
     <string-array name="spinner_level">
         <item>@string/level</item>

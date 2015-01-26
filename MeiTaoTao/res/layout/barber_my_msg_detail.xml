@@ -14,23 +14,22 @@
         android:src="@drawable/ic_launcher" />
 
     <TextView
+        style="@style/hint_text_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:gravity="right"
-        android:paddingRight="20dp"
-        android:text="2011-11-11"
-        android:textColor="@color/text_color2"
-        android:textSize="17sp" />
+        android:paddingRight="15dp"
+        android:text="2011-11-11" />
 
     <TextView
+        style="@style/hint_text_style2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/text_margin_left1"
         android:layout_marginRight="@dimen/text_margin_left1"
         android:layout_marginTop="20dp"
-        android:text="       发送i金佛is大家佛法fid斯蒂芬森扫地扫地加速度扫地扫地的司机随即发生的\n       发送i金佛is大家佛法fid斯蒂芬森扫地扫地加速度扫地扫地的司机随即发生的"
-        android:textColor="@color/text_color2"
-        android:textSize="15sp" />
+        android:lineSpacingExtra="@dimen/lineSpaces"
+        android:text="       发送i金佛is大家佛法fid斯蒂芬森扫地扫地加速度扫地扫地的司机随即发生的\n       发送i金佛is大家佛法fid斯蒂芬森扫地扫地加速度扫地扫地的司机随即发生的" />
 
 </LinearLayout>

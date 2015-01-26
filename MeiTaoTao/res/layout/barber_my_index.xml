@@ -20,7 +20,7 @@
             android:src="@drawable/ic_launcher" />
 
         <TextView
-            style="@style/textview_style"
+            style="@style/white_text_style"
             android:text="谢文东" />
 
         <LinearLayout
@@ -38,12 +38,12 @@
 
                 <TextView
                     android:id="@+id/opus_num"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:text="11" />
 
                 <TextView
                     android:id="@+id/opus"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:layout_marginTop="3dp"
                     android:text="@string/opus" />
             </LinearLayout>
@@ -57,12 +57,12 @@
 
                 <TextView
                     android:id="@+id/attention_num"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:text="11" />
 
                 <TextView
                     android:id="@+id/attention"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:layout_marginTop="3dp"
                     android:text="@string/attention" />
             </LinearLayout>
@@ -76,12 +76,12 @@
 
                 <TextView
                     android:id="@+id/fans_num"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:text="11" />
 
                 <TextView
                     android:id="@+id/fans"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:layout_marginTop="3dp"
                     android:text="@string/fans" />
             </LinearLayout>
@@ -95,11 +95,11 @@
 
                 <TextView
                     android:id="@+id/message_num"
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:text="11" />
 
                 <TextView
-                    style="@style/textview_style"
+                    style="@style/white_text_style"
                     android:layout_marginTop="3dp"
                     android:text="@string/message" />
             </LinearLayout>

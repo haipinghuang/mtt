@@ -50,7 +50,7 @@
             android:id="@+id/sure_cancel"
             android:layout_width="match_parent"
             android:layout_height="@dimen/text_height4"
-            android:visibility="visible" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tv_cancel"

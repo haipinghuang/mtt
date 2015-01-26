@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
-            android:name="com.loopfire.meitaotao.UserMainActivity"
+            android:name="com.loopfire.meitaotao.BarberMainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,12 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--
         <activity
             android:name="com.loopfire.meitaotao.BarberMainActivity"
             android:launchMode="singleTop" >
         </activity>
-        <!--
-        <activity
+        
+         <activity
             android:name="com.loopfire.meitaotao.UserMainActivity"
             android:launchMode="singleTop" >
         </activity>
@@ -81,6 +82,9 @@
         <activity android:name="com.loopfire.meitaotao.function.user.hairdressing.SearchResultForUserActivity" />
         <activity android:name="com.loopfire.meitaotao.function.user.hairdressing.JianFaForUserActivity" />
         <activity android:name="com.loopfire.meitaotao.function.user.bespeak.BespeakProcedureForUserActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.user.bespeak.SelectPayWayForUserActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.user.my.PersonalCenterForUserActivity" />
+        <activity android:name="com.loopfire.meitaotao.function.user.my.EvaluateBarberForUserActivity" />
         <activity
             android:name="com.loopfire.meitaotao.function.user.bespeak.HairdressTypeForUserActivity"
             android:theme="@style/DialogCenterHint" />

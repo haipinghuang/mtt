@@ -294,7 +294,7 @@
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/tv_sure"
+            android:id="@+id/tv_sure_bespeak"
             android:layout_width="match_parent"
             android:layout_height="@dimen/text_height1"
             android:layout_alignParentBottom="true"
@@ -303,7 +303,8 @@
             android:layout_marginRight="@dimen/text_margin_left9"
             android:background="@drawable/signup_signup_btn_check_bg"
             android:gravity="center"
-            android:text="@string/sure" />
+            android:textColor="@color/white"
+            android:text="@string/sure_bespeak" />
     </RelativeLayout>
 
 </LinearLayout>

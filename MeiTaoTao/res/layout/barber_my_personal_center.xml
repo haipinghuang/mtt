@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="@dimen/layout_height7"
+        android:background="@drawable/my_home_pic_bg"
         android:orientation="vertical" >
 
         <RelativeLayout
@@ -25,11 +26,14 @@
                 android:src="@drawable/ic_launcher" />
 
             <TextView
+                style="@style/white_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="7dp"
                 android:layout_toRightOf="@id/user_image"
+                android:background="@drawable/my_personpage_btn_cancel_focus"
+                android:padding="6dp"
                 android:text="@string/cancel_attention" />
         </RelativeLayout>
 
@@ -39,6 +43,7 @@
             android:layout_marginTop="5dp" >
 
             <TextView
+                style="@style/white_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -46,6 +51,7 @@
                 android:text="谢文东" />
 
             <TextView
+                style="@style/white_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -71,12 +77,11 @@
                     android:layout_centerHorizontal="true" >
 
                     <TextView
+                        style="@style/white_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:gravity="center_vertical"
-                        android:text="@string/technology"
-                        android:textColor="@color/background_color1"
-                        android:textSize="@dimen/text_size5" />
+                        android:text="@string/technology" />
 
                     <RatingBar
                         style="?android:attr/ratingBarStyleSmall"
@@ -101,12 +106,11 @@
                     android:layout_centerHorizontal="true" >
 
                     <TextView
+                        style="@style/white_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:text="@string/time_keep"
-                        android:textColor="@color/background_color1"
-                        android:textSize="@dimen/text_size5" />
+                        android:text="@string/time_keep" />
 
                     <RatingBar
                         style="?android:attr/ratingBarStyleSmall"
@@ -131,12 +135,11 @@
                     android:layout_centerHorizontal="true" >
 
                     <TextView
+                        style="@style/white_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:text="@string/attitude"
-                        android:textColor="@color/background_color1"
-                        android:textSize="@dimen/text_size5" />
+                        android:text="@string/attitude" />
 
                     <RatingBar
                         style="?android:attr/ratingBarStyleSmall"
@@ -154,26 +157,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/signup_location_input_bg" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            style="@style/blue_text_style"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
-            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/my_personpage_btn_book"
+            android:gravity="center"
             android:text="@string/bespeak_hint"
             android:textSize="18sp" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="36.5dp"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp" >
+            android:layout_height="34dp" >
 
             <TextView
                 android:id="@+id/tv_opus"
@@ -181,7 +188,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:gravity="center"
+                android:onClick="tabclick"
                 android:text="@string/opus"
                 android:textSize="17sp" />
 
@@ -191,7 +200,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:gravity="center"
+                android:onClick="tabclick"
                 android:text="@string/goodat"
                 android:textSize="17sp" />
 
@@ -201,7 +212,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:gravity="center"
+                android:onClick="tabclick"
                 android:text="@string/comment"
                 android:textSize="17sp" />
 
@@ -211,34 +224,48 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:gravity="center"
+                android:onClick="tabclick"
                 android:text="@string/price"
                 android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="5dp" >
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp" >
 
             <ImageView
+                android:id="@+id/iv_opus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter2" />
 
             <ImageView
+                android:id="@+id/iv_goodat"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter2" />
 
             <ImageView
+                android:id="@+id/iv_comment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter2" />
 
             <ImageView
+                android:id="@+id/iv_price"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/tab_image_top_selecter2" />
         </LinearLayout>
     </LinearLayout>
 

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.common.BaseActivity;
 
@@ -17,6 +19,7 @@ public class BespeakProcedureForUserActivity extends BaseActivity {
 	private RelativeLayout lay_hairdress_type;
 	private RelativeLayout lay_select_hairdress_shop;
 	private RelativeLayout lay_bespeak_time;
+	private TextView tv_sure_bespeak;
 
 	@Override
 	public void initView() {
@@ -24,6 +27,7 @@ public class BespeakProcedureForUserActivity extends BaseActivity {
 		lay_hairdress_type = (RelativeLayout) findViewById(R.id.hairdress_type);
 		lay_select_hairdress_shop = (RelativeLayout) findViewById(R.id.select_hairdress_shop);
 		lay_bespeak_time = (RelativeLayout) findViewById(R.id.bespeak_time);
+		tv_sure_bespeak = (TextView) findViewById(R.id.tv_sure_bespeak);
 	}
 
 	@Override
@@ -33,6 +37,7 @@ public class BespeakProcedureForUserActivity extends BaseActivity {
 		lay_bespeak_time.setOnClickListener(this);
 		lay_select_hairdress_shop.setOnClickListener(this);
 		lay_hairdress_type.setOnClickListener(this);
+		tv_sure_bespeak.setOnClickListener(this);
 	}
 
 	@Override
@@ -60,6 +65,9 @@ public class BespeakProcedureForUserActivity extends BaseActivity {
 			break;
 		case R.id.bespeak_time:
 			startActivity(new Intent(this, BespeakTimeForUserActivity.class));
+			break;
+		case R.id.tv_sure_bespeak:
+			startActivity(new Intent(this, SelectPayWayForUserActivity.class));
 			break;
 		}
 	}

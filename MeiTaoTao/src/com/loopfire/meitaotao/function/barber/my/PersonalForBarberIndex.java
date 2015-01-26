@@ -129,7 +129,7 @@ public class PersonalForBarberIndex extends BaseFragment implements
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.barber_presonal_index, container,
+		View view = inflater.inflate(R.layout.barber_my_index, container,
 				false);
 		initView(view);
 		initListener();
