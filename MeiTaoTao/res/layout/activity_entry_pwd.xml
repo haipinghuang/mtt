@@ -48,8 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@drawable/signup_input_pw_btn_bg"
-            android:text="@string/btn_next"
-            android:textColor="@color/hint_textcolor"
+            android:text="@string/register"
+            android:textColor="@color/white"
             android:textSize="17sp" />
         <View
             android:layout_width="match_parent"

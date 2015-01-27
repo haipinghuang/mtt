@@ -4,38 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/body_backcolor"
     android:orientation="vertical" >
-<!-- 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/titile_barcolor" >
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="17dip"
-            android:background="@drawable/arrow" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/validate_phone"
-            android:textColor="@color/white"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dip"
-            android:text="@string/cancel"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size2" />
-    </RelativeLayout> -->
 	<include layout="@layout/title_bar"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -123,7 +91,8 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/signup_signup_text_bg"
                 android:hint="@string/hint_validate"
-                android:inputType="text"
+                android:inputType="number"
+                android:text="666666"
                 android:paddingLeft="@dimen/text_margin_left4"
                 android:singleLine="true"
                 android:textColor="@color/hint_textcolor"
@@ -220,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/service_protocol"
                 android:textColor="@color/text_link"
-                android:textSize="12sp" />
+                android:textSize="13.5sp" />
         </LinearLayout>
     </RelativeLayout>
 

@@ -23,6 +23,7 @@
     <!-- register -->
     <string name="validate_phone">验证手机</string>
     <string name="cancel">取消</string>
+    <string name="register">注册</string>
     <string name="l_am_user">我是用户</string>
     <string name="l_am_barber">我是理发师</string>
     <string name="hint_phone">请输入手机号</string>

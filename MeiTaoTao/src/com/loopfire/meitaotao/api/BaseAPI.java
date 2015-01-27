@@ -23,7 +23,9 @@ import com.loopj.android.http.RequestParams;
  */
 public abstract class BaseAPI {
 
-	public static final String API_SERVER = "http://192.168.1.9/mobileapi/index.php";
+	// public static final String API_SERVER =
+	// "http://192.168.1.9/mobileapi/index.php";
+	public static final String API_SERVER = "http://192.168.1.22:80/hairdressing";
 
 	public static AsyncHttpClient client = null;
 	public static PersistentCookieStore cookieStore;
@@ -51,7 +53,6 @@ public abstract class BaseAPI {
 		return API_SERVER + relativeUrl;
 	}
 
-	
 	/**
 	 * 请求无设置超时时间(默认值)
 	 * 
@@ -67,8 +68,6 @@ public abstract class BaseAPI {
 	 *            回调的activity
 	 * @param requestCode
 	 *            回调的请求码
-	 * @param timeout
-	 *            连接超时时间,调用需要新建子类API来调用此方法
 	 */
 
 	protected void request(final String url, final RequestParams params,
@@ -96,9 +95,9 @@ public abstract class BaseAPI {
 
 				public void onSuccess(String response) {
 					try {
-						Log.d("params", params.toString());
-						Log.d("url", url);
-						Log.d("response", response);
+						// Log.d("params", params.toString());
+						// Log.d("url", url);
+						Log.d("onSuccess", response);
 						JSONObject obj = new JSONObject(response);
 						/* 登录信息保存 end */
 						int state = obj.getInt("ret");
@@ -114,8 +113,13 @@ public abstract class BaseAPI {
 				}
 
 				public void onFailure(Throwable e, String response) {
-					Util.toastInfo(listener, "连接超时");
-					listener.refresh(requestCode, BaseActivity.ERROR);
+					Log.i("[onFailure]:", response);
+					if (response.contains("code")) {
+						listener.refresh(requestCode, response);
+					} else {
+						Util.toastInfo(listener, "连接超时");
+						listener.refresh(requestCode, BaseActivity.ERROR);
+					}
 				}
 
 				public void onFinish() {
@@ -217,6 +221,7 @@ public abstract class BaseAPI {
 				}
 
 				public void onFailure(Throwable e, String response) {
+					Log.i("", "BaseActivity [onFailure]:" + response);
 					listener.refresh(BaseActivity.ERROR);
 				}
 

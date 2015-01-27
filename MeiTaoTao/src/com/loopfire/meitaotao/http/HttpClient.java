@@ -356,7 +356,7 @@ public class HttpClient implements java.io.Serializable {
 				if (null != postParams || "POST".equals(httpMethod)) {
 					con.setRequestMethod("POST");
 					con.setRequestProperty("Content-Type",
-							"application/x-www-form-urlencoded");
+							"application/x-www-form-urlencod-ed");
 					con.setDoOutput(true);
 					con.setUseCaches(false);
 					String postParam = "";
