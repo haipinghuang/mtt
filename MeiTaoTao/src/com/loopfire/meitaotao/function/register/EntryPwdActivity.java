@@ -13,9 +13,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.loopfire.meitaotao.R;
+import com.loopfire.meitaotao.UserMainActivity;
 import com.loopfire.meitaotao.api.UserAPI;
 import com.loopfire.meitaotao.common.BaseActivity;
 import com.loopfire.meitaotao.entity.RegisterEntity;
+import com.loopfire.meitaotao.function.login.LoginActivity;
 import com.loopfire.meitaotao.util.Util;
 
 public class EntryPwdActivity extends BaseActivity {
@@ -30,6 +32,7 @@ public class EntryPwdActivity extends BaseActivity {
 		setContentView(R.layout.activity_entry_pwd);
 		initView();
 		initListener();
+		setTitle("输入密码");
 	}
 
 	@Override
@@ -69,11 +72,10 @@ public class EntryPwdActivity extends BaseActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
 		switch (code) {
 		case 0:
 			Util.toastInfo(EntryPwdActivity.this, "恭喜你注册成功");
-			startActivity(new Intent(this, UploadIDcardActivity.class));
+			startActivity(new Intent(this, LoginActivity.class));
 			break;
 		default:
 			Util.toastInfo(EntryPwdActivity.this, msg);
@@ -83,6 +85,7 @@ public class EntryPwdActivity extends BaseActivity {
 
 	@Override
 	public void onClick(View v) {
+		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.signup_btn_next:
 			register();

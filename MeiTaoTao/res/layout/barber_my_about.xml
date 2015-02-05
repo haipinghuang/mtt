@@ -15,8 +15,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:drawablePadding="5dp"
-            android:drawableTop="@drawable/ic_launcher"
+            android:drawablePadding="7dp"
+            android:drawableTop="@drawable/my_about_logo"
             android:gravity="center_horizontal"
             android:text="v1.0" />
     </RelativeLayout>

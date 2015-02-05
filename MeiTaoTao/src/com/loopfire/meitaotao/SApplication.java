@@ -19,7 +19,7 @@ import android.os.StatFs;
 
 /**
  * 应用程序全局
- *
+ * 
  */
 public class SApplication extends Application {
 	public static Context context;
@@ -36,35 +36,27 @@ public class SApplication extends Application {
 	// 将当前的activity加到Service中方便管理和调用
 	public ArrayList<Activity> allActivity = new ArrayList<Activity>();
 
-
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		instance = this;
 		// 通过隐式意图启动Service
 		SApplication.context = this.getApplicationContext();
-		notifyManager = (NotificationManager) context
-				.getSystemService(Context.NOTIFICATION_SERVICE);
-		SApplication.activityManager = (ActivityManager) getApplicationContext()
-				.getSystemService(Context.ACTIVITY_SERVICE);
+		notifyManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+		SApplication.activityManager = (ActivityManager) getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
 	}
 
-	
 	public static void initImageLoader(Context context) {
 
-		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
-				.threadPriority(Thread.NORM_PRIORITY - 2)
-				.denyCacheImageMultipleSizesInMemory()
-				.discCacheFileNameGenerator(new Md5FileNameGenerator())
-				.tasksProcessingOrder(QueueProcessingType.LIFO)
-				.build();
+		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context).threadPriority(Thread.NORM_PRIORITY - 2).denyCacheImageMultipleSizesInMemory()
+				.discCacheFileNameGenerator(new Md5FileNameGenerator()).tasksProcessingOrder(QueueProcessingType.LIFO).build();
 		ImageLoader.getInstance().init(config);
 	}
-	
+
 	public static SApplication getInstance() {
 		return instance;
 	}
-	
+
 	public NotificationManager getNotifyManager() {
 		return notifyManager;
 	}
@@ -115,11 +107,19 @@ public class SApplication extends Application {
 	}
 
 	public boolean existSDcard() {
-		if (android.os.Environment.MEDIA_MOUNTED.equals(android.os.Environment
-				.getExternalStorageState())) {
+		if (android.os.Environment.MEDIA_MOUNTED.equals(android.os.Environment.getExternalStorageState())) {
 			return true;
 		} else
 			return false;
+	}
+
+	public void finishAll() {
+		for (Activity ac : allActivity) {
+			if (!ac.isFinishing() && ac != null) {
+				ac.finish();
+			}
+		}
+		System.exit(0);
 	}
 
 	/**
@@ -135,4 +135,5 @@ public class SApplication extends Application {
 		long size = localStatFs.getBlockSize() * localStatFs.getBlockCount();
 		return size;
 	}
+
 }

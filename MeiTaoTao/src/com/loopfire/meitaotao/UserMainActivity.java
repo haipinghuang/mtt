@@ -19,8 +19,7 @@ import com.loopfire.meitaotao.function.user.bespeak.BespeakIndex;
 import com.loopfire.meitaotao.function.user.hairdressing.HairdressingForUserIndex;
 import com.loopfire.meitaotao.function.user.my.PersonalForUserIndex;
 
-public class UserMainActivity extends BaseFragmentActivity implements
-		OnClickListener {
+public class UserMainActivity extends BaseFragmentActivity implements OnClickListener {
 
 	private LinearLayout homeindex, bespeak, presonal;
 
@@ -129,8 +128,7 @@ public class UserMainActivity extends BaseFragmentActivity implements
 			final FragmentManager fm = getSupportFragmentManager();
 			final FragmentTransaction tr = fm.beginTransaction();
 			if (currentContentFragmentTag != null) {
-				final Fragment currentFragment = fm
-						.findFragmentByTag(currentContentFragmentTag);
+				final Fragment currentFragment = fm.findFragmentByTag(currentContentFragmentTag);
 				if (currentFragment != null) {
 					tr.hide(currentFragment);// 将当前的Frament隐藏到后台去
 				}
@@ -222,21 +220,17 @@ public class UserMainActivity extends BaseFragmentActivity implements
 
 		FragmentManager fm = getSupportFragmentManager();
 		FragmentTransaction tr = fm.beginTransaction();
-		Fragment Hairdressing = fm
-				.findFragmentByTag(HairdressingForUserIndex.class
-						.getSimpleName());
+		Fragment Hairdressing = fm.findFragmentByTag(HairdressingForUserIndex.class.getSimpleName());
 		if (Hairdressing != null && Hairdressing.isAdded()) {
 			tr.hide(Hairdressing);
 			tr.remove(Hairdressing);
 		}
-		Fragment Bespeak = fm.findFragmentByTag(BespeakIndex.class
-				.getSimpleName());
+		Fragment Bespeak = fm.findFragmentByTag(BespeakIndex.class.getSimpleName());
 		if (Bespeak != null && Bespeak.isAdded()) {
 			tr.hide(Bespeak);
 			tr.remove(Bespeak);
 		}
-		Fragment personal = fm.findFragmentByTag(PersonalForUserIndex.class
-				.getSimpleName());
+		Fragment personal = fm.findFragmentByTag(PersonalForUserIndex.class.getSimpleName());
 		if (personal != null && personal.isAdded()) {
 			tr.hide(personal);
 			tr.remove(personal);
@@ -315,18 +309,16 @@ public class UserMainActivity extends BaseFragmentActivity implements
 	 */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK
-				&& event.getAction() == KeyEvent.ACTION_DOWN) {
+		if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
 			if ((System.currentTimeMillis() - exitTime) > 2000) {
-				Toast.makeText(getApplicationContext(), "再按一次退出",
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "再按一次退出", Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
 			} else {
 				// Intent intent = new Intent(Intent.ACTION_MAIN);
 				// intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				// intent.addCategory(Intent.CATEGORY_HOME);
 				// startActivity(intent);
-				System.exit(0);
+				app.finishAll();
 			}
 			return true;
 		}

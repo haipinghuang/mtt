@@ -16,6 +16,9 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.SApplication;
 import com.loopfire.meitaotao.common.BaseFragment;
@@ -23,6 +26,7 @@ import com.loopfire.meitaotao.function.barber.adapter.HairdressAdapter;
 import com.loopfire.meitaotao.function.barber.adapter.MyPageAdapter;
 import com.loopfire.meitaotao.function.barber.hairdressing.BarberShopForBarberActivity;
 import com.loopfire.meitaotao.function.common.BarberShopActivity;
+import com.loopfire.meitaotao.listener.MyLocationListener;
 import com.loopfire.meitaotao.util.Util;
 
 /**
@@ -31,8 +35,7 @@ import com.loopfire.meitaotao.util.Util;
  * @author Administrator
  * 
  */
-public class HairdressingForUserIndex extends BaseFragment implements
-		OnClickListener {
+public class HairdressingForUserIndex extends BaseFragment implements OnClickListener {
 	private ViewPager vPage;
 	private ImageView page0, page1;
 	private ArrayList<View> views;
@@ -44,6 +47,10 @@ public class HairdressingForUserIndex extends BaseFragment implements
 	private List<String> hairdressImages = new ArrayList<String>();
 	private Context context;
 	private TextView barbershop;// 临时的，注意删除
+	// lbs变量-------
+	private String loc = null; // 保存定位信息
+	public LocationClient mLocationClient = null;
+	public BDLocationListener myLBSListener = null;
 
 	public HairdressingForUserIndex() {
 		super();
@@ -57,14 +64,27 @@ public class HairdressingForUserIndex extends BaseFragment implements
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.user_hairdress_index, container,
-				false);
+		View view = inflater.inflate(R.layout.user_hairdress_index, container, false);
 		initView(view);
 		initListener();
+		// 开启定位------------
+		myLBSListener = new MyLocationListener(button_left);
+		mLocationClient = new LocationClient(context.getApplicationContext()); // 声明LocationClient类
+		mLocationClient.registerLocationListener(myLBSListener); // 注册监听函数
+		LocationClientOption option = new LocationClientOption();
+		option.setOpenGps(true);// 打开GPS
+		option.setAddrType("all");// 返回的定位结果包含地址信息
+		option.setCoorType("bd09ll");// 返回的定位结果是百度经纬度,默认值gcj02
+		option.setScanSpan(1000 * 60);// 设置发起定位请求的间隔时间为1分钟
+		option.disableCache(false);// 禁止启用缓存定位
+		option.setPriority(LocationClientOption.NetWorkFirst);// 网络定位优先
+		mLocationClient.setLocOption(option);// 使用设置
+		mLocationClient.start();// 开启定位SDK
+		mLocationClient.requestLocation();// 开始请求位置
+		// 开启定位------------
 		return view;
 	}
 
@@ -77,8 +97,8 @@ public class HairdressingForUserIndex extends BaseFragment implements
 		vPage = (ViewPager) view.findViewById(R.id.viewPage1);
 		barbershop = (TextView) view.findViewById(R.id.barbershop);
 
-		page0 = (ImageView) view.findViewById(R.id.page0);
-		page1 = (ImageView) view.findViewById(R.id.page1);
+		// page0 = (ImageView) view.findViewById(R.id.page0);
+		// page1 = (ImageView) view.findViewById(R.id.page1);
 		// 初始化美发 文字和图片
 		for (int i = 0; i < 8; i++) {
 			hairdressNames.add("hairdress+" + (i + 1));
@@ -133,7 +153,6 @@ public class HairdressingForUserIndex extends BaseFragment implements
 			startActivity(new Intent(context, SearchForUserActivity.class));
 			break;
 		case R.id.barbershop:
-			Util.out("12132");
 			startActivity(new Intent(context, BarberShopActivity.class));
 			break;
 		}
@@ -155,16 +174,12 @@ public class HairdressingForUserIndex extends BaseFragment implements
 		public void onPageSelected(int arg0) {
 			switch (arg0) {
 			case 0:
-				page0.setImageDrawable(getResources().getDrawable(
-						R.drawable.hairdressing_hairdressing_ico_circle1));
-				page1.setImageDrawable(getResources().getDrawable(
-						R.drawable.hairdressing_hairdressing_ico_circle2));
+				page0.setImageDrawable(getResources().getDrawable(R.drawable.hairdressing_hairdressing_ico_circle1));
+				page1.setImageDrawable(getResources().getDrawable(R.drawable.hairdressing_hairdressing_ico_circle2));
 				break;
 			case 1:
-				page0.setImageDrawable(getResources().getDrawable(
-						R.drawable.hairdressing_hairdressing_ico_circle2));
-				page1.setImageDrawable(getResources().getDrawable(
-						R.drawable.hairdressing_hairdressing_ico_circle1));
+				page0.setImageDrawable(getResources().getDrawable(R.drawable.hairdressing_hairdressing_ico_circle2));
+				page1.setImageDrawable(getResources().getDrawable(R.drawable.hairdressing_hairdressing_ico_circle1));
 				break;
 			}
 			curPage = arg0;

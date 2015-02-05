@@ -38,18 +38,16 @@ public abstract class BaseAPI {
 
 	}
 
-	public static void get(String url, RequestParams params,
-			AsyncHttpResponseHandler responseHandler) {
+	public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
 		client.get(getAbsoluteUrl(url), params, responseHandler);
 	}
 
-	public static void post(String url, RequestParams params,
-			AsyncHttpResponseHandler responseHandler) {
+	public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
 		client.post(getAbsoluteUrl(url), params, responseHandler);
 	}
 
 	public static String getAbsoluteUrl(String relativeUrl) {
-		// Log.e("club====>",API_SERVER + relativeUrl+"");
+		// Log.i("club====>",API_SERVER + relativeUrl+"");
 		return API_SERVER + relativeUrl;
 	}
 
@@ -70,8 +68,7 @@ public abstract class BaseAPI {
 	 *            回调的请求码
 	 */
 
-	protected void request(final String url, final RequestParams params,
-			String postMethod, final boolean showDealing,
+	protected void request(final String url, final RequestParams params, String postMethod, final boolean showDealing,
 			final BaseActivity listener, final int requestCode) {
 		if (client == null) {
 			client = new AsyncHttpClient();
@@ -83,8 +80,8 @@ public abstract class BaseAPI {
 				public void onStart() {
 					if (showDealing) {
 						try {
-							mDialog = new AlertDialog.Builder(listener)
-									.create();
+							mDialog = new AlertDialog.Builder(listener).create();
+							// mDialog.setCanceledOnTouchOutside(false);
 							mDialog.show();
 							mDialog.setContentView(R.layout.loading_process_dialog_anim);
 						} catch (Exception ex) {
@@ -95,30 +92,34 @@ public abstract class BaseAPI {
 
 				public void onSuccess(String response) {
 					try {
-						// Log.d("params", params.toString());
-						// Log.d("url", url);
-						Log.d("onSuccess", response);
-						JSONObject obj = new JSONObject(response);
+						// Log.i("params", params.toString());
+						// Log.i("url", url);
+						Log.i("url", url);
+						Log.i("onSuccess", response + "");
+						// JSONObject obj = new JSONObject(response);
 						/* 登录信息保存 end */
-						int state = obj.getInt("ret");
-						if (state == BaseActivity.COOKIE_INVILD) {
-							listener.refresh(BaseActivity.COOKIE_INVILD);
-						} else {
-							listener.refresh(requestCode, response);
-						}
-					} catch (Exception ex) {
+						// int state = obj.getInt("ret");
+						// if (state == BaseActivity.COOKIE_INVILD) {
+						// listener.refresh(BaseActivity.COOKIE_INVILD);
+						// } else {
 						listener.refresh(requestCode, response);
+						// }
+					} catch (Exception ex) {
+						listener.refresh(requestCode, response + "");
 						ex.printStackTrace();
 					}
 				}
 
 				public void onFailure(Throwable e, String response) {
-					Log.i("[onFailure]:", response);
+					Log.i("url", url);
+					Log.i("[onFailure]:", response + "");
 					if (response.contains("code")) {
 						listener.refresh(requestCode, response);
 					} else {
+						// Log.i("[onFailure]:", "连接超时");
 						Util.toastInfo(listener, "连接超时");
-						listener.refresh(requestCode, BaseActivity.ERROR);
+						listener.refresh(BaseActivity.ERROR);
+						// listener.refresh(requestCode, BaseActivity.ERROR);
 					}
 				}
 
@@ -175,8 +176,7 @@ public abstract class BaseAPI {
 	 *            连接超时时间,调用需要新建子类API来调用此方法
 	 */
 
-	protected void request(final String url, final RequestParams params,
-			String postMethod, final boolean showDealing,
+	protected void request(final String url, final RequestParams params, String postMethod, final boolean showDealing,
 			final BaseActivity listener, final int requestCode, int timeout) {
 		if (client == null) {
 			client = new AsyncHttpClient();
@@ -191,8 +191,7 @@ public abstract class BaseAPI {
 				public void onStart() {
 					if (showDealing) {
 						try {
-							mDialog = new AlertDialog.Builder(listener)
-									.create();
+							mDialog = new AlertDialog.Builder(listener).create();
 							mDialog.show();
 							mDialog.setContentView(R.layout.loading_process_dialog_anim);
 						} catch (Exception ex) {
@@ -203,17 +202,17 @@ public abstract class BaseAPI {
 
 				public void onSuccess(String response) {
 					try {
-						Log.d("params", params.toString());
-						Log.d("url", url);
-						Log.d("response", response);
-						JSONObject obj = new JSONObject(response);
-						/* 登录信息保存 end */
-						int state = obj.getInt("ret");
-						if (state == BaseActivity.COOKIE_INVILD) {
-							listener.refresh(BaseActivity.COOKIE_INVILD);
-						} else {
-							listener.refresh(requestCode, response);
-						}
+						// Log.i("params", params.toString());
+						Log.i("url", url);
+						Log.i("onSuccess", "" + response);
+						// JSONObject obj = new JSONObject(response);
+						// /* 登录信息保存 end */
+						// int state = obj.getInt("ret");
+						// if (state == BaseActivity.COOKIE_INVILD) {
+						// listener.refresh(BaseActivity.COOKIE_INVILD);
+						// } else {
+						listener.refresh(requestCode, response);
+						// }
 					} catch (Exception ex) {
 						listener.refresh(requestCode, response);
 						ex.printStackTrace();
@@ -221,7 +220,8 @@ public abstract class BaseAPI {
 				}
 
 				public void onFailure(Throwable e, String response) {
-					Log.i("", "BaseActivity [onFailure]:" + response);
+					Log.i("url", url);
+					Log.i("", "BaseActivity [onFailure]:" + response + "");
 					listener.refresh(BaseActivity.ERROR);
 				}
 
@@ -259,8 +259,7 @@ public abstract class BaseAPI {
 		}
 	}
 
-	protected void request(final String url, final RequestParams params,
-			String postMethod, final boolean showDealing,
+	protected void request(final String url, final RequestParams params, String postMethod, final boolean showDealing,
 			final BaseFragment listener, final int requestCode) {
 		if (client == null) {
 			client = new AsyncHttpClient();
@@ -271,33 +270,32 @@ public abstract class BaseAPI {
 				public void onStart() {
 					if (showDealing) {
 						try {
-							mDialog = new AlertDialog.Builder(listener
-									.getContext()).create();
+							mDialog = new AlertDialog.Builder(listener.getActivity()).create();
 							mDialog.show();
 							mDialog.setContentView(R.layout.loading_process_dialog_anim);
 						} catch (Exception ex) {
-							Log.e("dialog_excption", "dialog_excption");
+							Log.i("dialog_excption", "dialog_excption");
 						}
 					}
 				}
 
 				public void onSuccess(String response) {
 					try {
-						if (params != null) {
-							Log.d("params", params.toString());
-						}
-						Log.d("url", url);
-						Log.d("response", response);
+						// if (params != null) {
+						// Log.i("params", params.toString());
+						// }
+						Log.i("url", url);
+						Log.i("onSuccess", response);
 						// Toast.makeText(listener.getContext(),"response"+response,
 						// Toast.LENGTH_LONG).show();
-						JSONObject obj = new JSONObject(response);
-						/* 登录信息保存 end */
-						int state = obj.getInt("ret");
-						if (state == BaseActivity.COOKIE_INVILD) {
-							listener.refresh(BaseActivity.COOKIE_INVILD);
-						} else {
-							listener.refresh(requestCode, response);
-						}
+						// JSONObject obj = new JSONObject(response);
+						// /* 登录信息保存 end */
+						// int state = obj.getInt("ret");
+						// if (state == BaseActivity.COOKIE_INVILD) {
+						// listener.refresh(BaseActivity.COOKIE_INVILD);
+						// } else {
+						listener.refresh(requestCode, response);
+						// }
 					} catch (Exception ex) {
 						listener.refresh(requestCode, response);
 						ex.printStackTrace();
@@ -305,7 +303,8 @@ public abstract class BaseAPI {
 				}
 
 				public void onFailure(Throwable e, String response) {
-					Log.e("onFailure", "" + response);
+					Log.i("url", url);
+					Log.i("onFailure", "" + response + "");
 					listener.refresh(BaseActivity.ERROR);
 				}
 
@@ -351,9 +350,7 @@ public abstract class BaseAPI {
 	 * @param postMethod
 	 * @param liste
 	 */
-	protected void requestNoLister(final String url,
-			final RequestParams params, String postMethod,
-			final MessageListener liste) {
+	protected void requestNoLister(final String url, final RequestParams params, String postMethod, final MessageListener liste) {
 		if (client == null) {
 			client = new AsyncHttpClient();
 		}
@@ -364,9 +361,9 @@ public abstract class BaseAPI {
 				}
 
 				public void onSuccess(String response) {
-					Log.d("count post url", url);
-					Log.d("count post params", params.toString());
-					Log.d("count post Success", response);
+					Log.i("count post url", url);
+					Log.i("count post params", params.toString());
+					Log.i("count post Success", response);
 					liste.OnMessageGet(response);
 				}
 
@@ -405,10 +402,8 @@ public abstract class BaseAPI {
 		public void OnMessageGet(String data);
 	}
 
-	protected void requestforframeactivity(final String url,
-			final RequestParams params, String postMethod,
-			final boolean showDealing, final BaseFragmentActivity listener,
-			final int requestCode) {
+	protected void requestforframeactivity(final String url, final RequestParams params, String postMethod, final boolean showDealing,
+			final BaseFragmentActivity listener, final int requestCode) {
 		if (client == null) {
 			client = new AsyncHttpClient();
 			client.setTimeout(45000);
@@ -418,8 +413,7 @@ public abstract class BaseAPI {
 				public void onStart() {
 					if (showDealing) {
 						try {
-							mDialog = new AlertDialog.Builder(listener)
-									.create();
+							mDialog = new AlertDialog.Builder(listener).create();
 							mDialog.show();
 							mDialog.setContentView(R.layout.loading_process_dialog_anim);
 						} catch (Exception ex) {
@@ -430,9 +424,9 @@ public abstract class BaseAPI {
 
 				public void onSuccess(String response) {
 					try {
-						Log.d("params", params.toString());
-						Log.d("url", url);
-						Log.d("response", response);
+						// Log.i("params", params.toString());
+						Log.i("url", url);
+						Log.i("response", response);
 						JSONObject obj = new JSONObject(response);
 						/* 登录信息保存 end */
 						int state = obj.getInt("ret");
@@ -485,8 +479,7 @@ public abstract class BaseAPI {
 		}
 	}
 
-	protected void request(final String url, final RequestParams params,
-			String postMethod, final BaseActivity listener,
+	protected void request(final String url, final RequestParams params, String postMethod, final BaseActivity listener,
 			final int requestCode) {
 		if (client == null) {
 			client = new AsyncHttpClient();

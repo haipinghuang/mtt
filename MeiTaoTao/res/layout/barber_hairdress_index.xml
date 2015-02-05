@@ -5,7 +5,7 @@
     android:background="@color/body_backcolor"
     android:orientation="vertical" >
 
-    <include layout="@layout/title_bar" />
+    <include layout="@layout/title_bar_location" />
 
     <ScrollView style="@style/scrollbar_style" >
 
@@ -14,52 +14,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="@dimen/view_height" >
 
-                <RelativeLayout
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPage1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/view_height" >
+                    android:layout_height="@dimen/view_height"
+                    android:layout_margin="0dp"
+                    android:padding="0dp" />
 
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/viewPage1"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/view_height" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="15dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal" >
-
-                        <ImageView
-                            android:id="@+id/page0"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleType="matrix"
-                            android:src="@drawable/hairdressing_hairdressing_ico_circle1" />
-
-                        <ImageView
-                            android:id="@+id/page1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/image_margin_left2"
-                            android:scaleType="matrix"
-                            android:src="@drawable/hairdressing_hairdressing_ico_circle2" />
-
-                        <ImageView
-                            android:id="@+id/page2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/image_margin_left2"
-                            android:scaleType="matrix"
-                            android:src="@drawable/hairdressing_hairdressing_ico_circle2" />
-                    </LinearLayout>
-                </RelativeLayout>
-            </FrameLayout>
+                <RadioGroup
+                    android:id="@+id/radioGroup_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal" >
+                </RadioGroup>
+            </RelativeLayout>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewPage2"
@@ -187,6 +162,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:gravity="center_vertical"
                                 android:text="@string/technology"
                                 android:textColor="@color/background_color1"
@@ -196,6 +172,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -203,6 +180,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left7"
                                 android:gravity="center_vertical"
                                 android:text="@string/time_keep"
@@ -213,6 +191,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -220,6 +199,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left7"
                                 android:gravity="center_vertical"
                                 android:text="@string/attitude"
@@ -230,6 +210,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -358,6 +339,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:gravity="center_vertical"
                                 android:text="@string/technology"
                                 android:textColor="@color/background_color1"
@@ -367,6 +349,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -374,6 +357,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left7"
                                 android:gravity="center_vertical"
                                 android:text="@string/time_keep"
@@ -384,6 +368,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -391,6 +376,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left7"
                                 android:gravity="center_vertical"
                                 android:text="@string/attitude"
@@ -401,6 +387,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -529,6 +516,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:gravity="center_vertical"
                                 android:text="@string/technology"
                                 android:textColor="@color/background_color1"
@@ -538,6 +526,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -545,6 +534,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left7"
                                 android:gravity="center_vertical"
                                 android:text="@string/time_keep"
@@ -555,6 +545,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />
@@ -562,6 +553,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="@dimen/text_margin_left7"
                                 android:gravity="center_vertical"
                                 android:text="@string/attitude"
@@ -572,6 +564,7 @@
                                 style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
                                 android:isIndicator="true"
                                 android:numStars="4"
                                 android:stepSize="1" />

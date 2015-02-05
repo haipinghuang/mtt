@@ -58,7 +58,7 @@
     <dimen name="image_height2">1.5dp</dimen>
     <dimen name="image_width">70dp</dimen>
     <dimen name="image_width2">60dp</dimen>
-    <dimen name="view_height">150dp</dimen>
+    <dimen name="view_height">118dp</dimen>
     <dimen name="view_height2">170dp</dimen>
     <dimen name="view_height3">2dp</dimen>
     <dimen name="view_width">1dp</dimen>

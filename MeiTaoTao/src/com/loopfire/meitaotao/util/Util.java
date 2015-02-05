@@ -3,15 +3,17 @@ package com.loopfire.meitaotao.util;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.Format;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -27,6 +29,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Gravity;
+import android.widget.EditText;
 import android.widget.Toast;
 
 /**
@@ -34,14 +37,43 @@ import android.widget.Toast;
  * 
  */
 public class Util {
+	private static Date today = new Date();
+	private static Format format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+	/**
+	 * 给定的日期与当天比较，
+	 * 
+	 * @param date
+	 * @return
+	 */
+	public static int compareToToday(String date) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(today);
+		int today = c.get(Calendar.DAY_OF_YEAR);
+		Date d = null;
+		try {
+			d = (Date) format.parseObject(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		c.setTime(d);
+		int time = c.get(Calendar.DAY_OF_YEAR);
+		return time - today;
+	}
+
+	public static String getText(EditText et) {
+		return et.getText().toString().trim();
+
+	}
 
 	// private final static MCipher phoneCipher = new
 	// MCipher(MeeetDataIF.PHO_KEY);
 	// private final static MCipher nameCipher = new
 	// MCipher(MeeetDataIF.NAME_key);
-	public static void out(String str){
+	public static void out(String str) {
 		System.out.println(str);
 	}
+
 	/**
 	 * 把数值型字符串转换为日期型字符串
 	 * 
@@ -57,8 +89,7 @@ public class Util {
 			String hour = time.substring(8, 10);
 			String minute = time.substring(10, 12);
 			String second = time.substring(12, 14);
-			date = String.format("%s-%s-%s %s:%s:%s", year, mouth, day, hour,
-					minute, second);
+			date = String.format("%s-%s-%s %s:%s:%s", year, mouth, day, hour, minute, second);
 		}
 		return date;
 	}
@@ -83,8 +114,7 @@ public class Util {
 			hour = time.substring(11, 13);
 			minute = time.substring(14, 16);
 			second = time.substring(17, 19);
-			String newTime = String.format("%s%s%s%s%s%s", year, month, day,
-					hour, minute, second);
+			String newTime = String.format("%s%s%s%s%s%s", year, month, day, hour, minute, second);
 			return newTime;
 		} else
 			return time;
@@ -92,32 +122,18 @@ public class Util {
 
 	public static String timeToDay(String timeStr) {
 		Calendar cal = Calendar.getInstance();
-		String dayStart = String.format("%04d%02d%02d000000",
-				cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1,
-				cal.get(Calendar.DATE));
-		String nextDayStart = String.format("%04d%02d%02d000000",
-				cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 2,
-				cal.get(Calendar.DATE));
-		String lastYearEnd = String.format("%04d1231606060",
-				cal.get(Calendar.YEAR) - 1);
+		String dayStart = String.format("%04d%02d%02d000000", cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DATE));
+		String nextDayStart = String.format("%04d%02d%02d000000", cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 2, cal.get(Calendar.DATE));
+		String lastYearEnd = String.format("%04d1231606060", cal.get(Calendar.YEAR) - 1);
 		String strText = "";
 		if (timeStr != null) {
-			if (timeStr.compareTo(dayStart) >= 0
-					&& timeStr.compareTo(nextDayStart) < 0) {
-				strText = "今天  " + timeStr.substring(8, 10) + ":"
-						+ timeStr.substring(10, 12);
+			if (timeStr.compareTo(dayStart) >= 0 && timeStr.compareTo(nextDayStart) < 0) {
+				strText = "今天  " + timeStr.substring(8, 10) + ":" + timeStr.substring(10, 12);
 			} else {
 				if (timeStr.compareTo(lastYearEnd) >= 0) {
-					strText = timeStr.substring(4, 6) + "-"
-							+ timeStr.substring(6, 8) + " "
-							+ timeStr.substring(8, 10) + ":"
-							+ timeStr.substring(10, 12);
+					strText = timeStr.substring(4, 6) + "-" + timeStr.substring(6, 8) + " " + timeStr.substring(8, 10) + ":" + timeStr.substring(10, 12);
 				} else {
-					strText = timeStr.substring(0, 4) + "-"
-							+ timeStr.substring(4, 6) + "-"
-							+ timeStr.substring(6, 8) + " "
-							+ timeStr.substring(8, 10) + ":"
-							+ timeStr.substring(10, 12);
+					strText = timeStr.substring(0, 4) + "-" + timeStr.substring(4, 6) + "-" + timeStr.substring(6, 8) + " " + timeStr.substring(8, 10) + ":" + timeStr.substring(10, 12);
 				}
 			}
 		}
@@ -136,8 +152,7 @@ public class Util {
 		if (!Util.isEmpty(url)) {
 			int index = newUrl.indexOf(".jpg");
 			if (index != -1) {
-				newUrl = newUrl.substring(0, index) + "_" + type
-						+ newUrl.substring(index);
+				newUrl = newUrl.substring(0, index) + "_" + type + newUrl.substring(index);
 			}
 		}
 		return newUrl;
@@ -169,9 +184,7 @@ public class Util {
 	 * @return
 	 */
 	public static boolean checkNet(Activity act) {
-		ConnectivityManager manager = (ConnectivityManager) act
-				.getApplicationContext().getSystemService(
-						Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager manager = (ConnectivityManager) act.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (manager == null) {
 			return false;
 		}
@@ -299,8 +312,7 @@ public class Util {
 	 */
 	public static String getFileName() {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss_SS");
-		String fileName = format.format(new Timestamp(System
-				.currentTimeMillis()));
+		String fileName = format.format(new Timestamp(System.currentTimeMillis()));
 		return fileName;
 	}
 
@@ -361,17 +373,13 @@ public class Util {
 			e.printStackTrace();
 		}
 		if (exif != null) {
-			Log.d("nilai exif ",
-					exif.getAttribute(ExifInterface.TAG_ORIENTATION));
-			if (exif.getAttribute(ExifInterface.TAG_ORIENTATION)
-					.equalsIgnoreCase("6")) {
+			Log.d("nilai exif ", exif.getAttribute(ExifInterface.TAG_ORIENTATION));
+			if (exif.getAttribute(ExifInterface.TAG_ORIENTATION).equalsIgnoreCase("6")) {
 
 				readimage = Util.rotate(readimage, 90);
-			} else if (exif.getAttribute(ExifInterface.TAG_ORIENTATION)
-					.equalsIgnoreCase("8")) {
+			} else if (exif.getAttribute(ExifInterface.TAG_ORIENTATION).equalsIgnoreCase("8")) {
 				readimage = Util.rotate(readimage, 270);
-			} else if (exif.getAttribute(ExifInterface.TAG_ORIENTATION)
-					.equalsIgnoreCase("3")) {
+			} else if (exif.getAttribute(ExifInterface.TAG_ORIENTATION).equalsIgnoreCase("3")) {
 				readimage = Util.rotate(readimage, 180);
 			}
 
@@ -407,10 +415,8 @@ public class Util {
 		return bitmap;
 	}
 
-	public static int computeSampleSize(BitmapFactory.Options options,
-			int minSideLength, int maxNumOfPixels) {
-		int initialSize = computeInitialSampleSize(options, minSideLength,
-				maxNumOfPixels);
+	public static int computeSampleSize(BitmapFactory.Options options, int minSideLength, int maxNumOfPixels) {
+		int initialSize = computeInitialSampleSize(options, minSideLength, maxNumOfPixels);
 		int roundedSize;
 		if (initialSize <= 8) {
 			roundedSize = 1;
@@ -423,14 +429,11 @@ public class Util {
 		return roundedSize;
 	}
 
-	private static int computeInitialSampleSize(BitmapFactory.Options options,
-			int minSideLength, int maxNumOfPixels) {
+	private static int computeInitialSampleSize(BitmapFactory.Options options, int minSideLength, int maxNumOfPixels) {
 		double w = options.outWidth;
 		double h = options.outHeight;
-		int lowerBound = (maxNumOfPixels == -1) ? 1 : (int) Math.ceil(Math
-				.sqrt(w * h / maxNumOfPixels));
-		int upperBound = (minSideLength == -1) ? 128 : (int) Math.min(
-				Math.floor(w / minSideLength), Math.floor(h / minSideLength));
+		int lowerBound = (maxNumOfPixels == -1) ? 1 : (int) Math.ceil(Math.sqrt(w * h / maxNumOfPixels));
+		int upperBound = (minSideLength == -1) ? 128 : (int) Math.min(Math.floor(w / minSideLength), Math.floor(h / minSideLength));
 		if (upperBound < lowerBound) {
 			// return the larger one when there is no overlapping zone.
 			return lowerBound;
@@ -470,11 +473,9 @@ public class Util {
 		String pre2 = "file://" + FileUtils.SDCARD_MNT + File.separator;
 
 		if (mUriString.startsWith(pre1)) {
-			filePath = Environment.getExternalStorageDirectory().getPath()
-					+ File.separator + mUriString.substring(pre1.length());
+			filePath = Environment.getExternalStorageDirectory().getPath() + File.separator + mUriString.substring(pre1.length());
 		} else if (mUriString.startsWith(pre2)) {
-			filePath = Environment.getExternalStorageDirectory().getPath()
-					+ File.separator + mUriString.substring(pre2.length());
+			filePath = Environment.getExternalStorageDirectory().getPath() + File.separator + mUriString.substring(pre2.length());
 		}
 		return filePath;
 	}
@@ -517,8 +518,7 @@ public class Util {
 	}
 
 	// /////////中文转换成拼音///////////
-	public static String converterToPinYin(String chinese)
-			throws BadHanyuPinyinOutputFormatCombination {
+	public static String converterToPinYin(String chinese) throws BadHanyuPinyinOutputFormatCombination {
 		if (chinese == null)
 			return "";
 
@@ -534,8 +534,7 @@ public class Util {
 			if (charArray[i] > 128) {
 				// charAt(0)取出首字母
 
-				String[] strarray = PinyinHelper.toHanyuPinyinStringArray(
-						charArray[i], defaultFormat);
+				String[] strarray = PinyinHelper.toHanyuPinyinStringArray(charArray[i], defaultFormat);
 				if (strarray != null && strarray.length > 0) {
 					String tmpstr = strarray[0];
 					if (tmpstr != null && tmpstr.length() > 0)
@@ -557,8 +556,7 @@ public class Util {
 	public static int getVerCode(Context context) {
 		int verCode = -1;
 		try {
-			verCode = context.getPackageManager().getPackageInfo(
-					context.getPackageName(), 0).versionCode;
+			verCode = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
 		} catch (NameNotFoundException e) {
 			Log.e("getVerCode", e.getMessage());
 		}
@@ -568,8 +566,7 @@ public class Util {
 	public static String getVerName(Context context) {
 		String verName = "";
 		try {
-			verName = context.getPackageManager().getPackageInfo(
-					context.getPackageName(), 0).versionName;
+			verName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
 		} catch (NameNotFoundException e) {
 			Log.e("getVerCode", e.getMessage());
 		}
@@ -579,8 +576,7 @@ public class Util {
 	public static Bitmap createRepeater(int width, Bitmap src) {
 		int count = (width + src.getWidth() - 1) / src.getWidth();
 
-		Bitmap bitmap = Bitmap.createBitmap(width, src.getHeight(),
-				Config.ARGB_8888);
+		Bitmap bitmap = Bitmap.createBitmap(width, src.getHeight(), Config.ARGB_8888);
 		Canvas canvas = new Canvas(bitmap);
 
 		for (int idx = 0; idx < count; ++idx) {

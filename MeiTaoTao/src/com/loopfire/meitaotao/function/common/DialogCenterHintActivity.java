@@ -30,28 +30,25 @@ public class DialogCenterHintActivity extends BaseActivity {
 
 	@Override
 	public void initView() {
-		// TODO Auto-generated method stub
 		super.initView();
 		tv_sure = (TextView) findViewById(R.id.tv_sure);
-		tv_sure2 = (TextView) findViewById(R.id.tv_sure2);
-		tv_cancel = (TextView) findViewById(R.id.tv_cancel);
-		layout = (LinearLayout) findViewById(R.id.sure_cancel);
-		type = getIntent().getStringExtra("type");
-		if (null != type) {
-			if ("2".equals(type)) {
-				tv_sure.setVisibility(View.GONE);
-				layout.setVisibility(View.VISIBLE);
-			}
-		}
+//		tv_sure2 = (TextView) findViewById(R.id.tv_sure2);
+//		tv_cancel = (TextView) findViewById(R.id.tv_cancel);
+//		layout = (LinearLayout) findViewById(R.id.sure_cancel);
+//		type = getIntent().getStringExtra("type");
+//		if (null != type) {
+//			if ("2".equals(type)) {
+//				tv_sure.setVisibility(View.GONE);
+//				layout.setVisibility(View.VISIBLE);
+//			}
+//		}
 	}
 
 	@Override
 	public void initListener() {
-		// TODO Auto-generated method stub
-		super.initListener();
 		tv_sure.setOnClickListener(this);
-		tv_sure2.setOnClickListener(this);
-		tv_cancel.setOnClickListener(this);
+//		tv_sure2.setOnClickListener(this);
+//		tv_cancel.setOnClickListener(this);
 	}
 
 	@Override
@@ -62,9 +59,9 @@ public class DialogCenterHintActivity extends BaseActivity {
 		case R.id.tv_sure:
 			startActivity(new Intent(this, BarberMainActivity.class));
 			break;
-		case R.id.tv_sure2:
-			this.finish();
-			break;
+//		case R.id.tv_sure2:
+//			this.finish();
+//			break;
 		}
 	}
 

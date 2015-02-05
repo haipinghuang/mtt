@@ -9,7 +9,7 @@
         android:id="@+id/loading_process_dialog_progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="false"
+        android:indeterminate="true"
         android:indeterminateDrawable="@anim/loading" />
 
     <TextView

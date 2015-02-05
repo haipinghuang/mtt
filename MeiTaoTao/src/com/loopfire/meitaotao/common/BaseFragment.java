@@ -1,10 +1,10 @@
 package com.loopfire.meitaotao.common;
 
-
 import java.util.List;
 
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -17,20 +17,20 @@ import com.loopfire.meitaotao.SApplication;
 public class BaseFragment extends Fragment implements FragmentCallback {
 
 	public TextView title_txt;
-	public Button button_left;
+	public TextView button_left;
 	public TextView button_right;
 	public SApplication app;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		app=(SApplication) SApplication.getInstance().getApplicationContext();
+		app = (SApplication) SApplication.getInstance().getApplicationContext();
 	}
-	
+
 	@Override
 	public void initView(View view) {
 		title_txt = (TextView) view.findViewById(R.id.tvTitle);
-		button_left = (Button) view.findViewById(R.id.title_Left);
+		button_left = (TextView) view.findViewById(R.id.title_Left);
 		button_right = (TextView) view.findViewById(R.id.title_right);
 	}
 
@@ -61,6 +61,14 @@ public class BaseFragment extends Fragment implements FragmentCallback {
 		title_txt.setText(text);
 	}
 
+	public void setTitleRight(String text) {
+		button_right.setText(text);
+	}
+
+	public void setTitleLeft(String text) {
+		button_left.setText(text);
+	}
+
 	public void displayLeft() {
 		button_left.setVisibility(View.INVISIBLE);
 	}
@@ -68,6 +76,7 @@ public class BaseFragment extends Fragment implements FragmentCallback {
 	public void displayRight() {
 		button_right.setVisibility(View.INVISIBLE);
 	}
+
 	public void setRightBackground(int resid) {
 		button_right.setBackgroundResource(resid);
 	}
@@ -75,33 +84,33 @@ public class BaseFragment extends Fragment implements FragmentCallback {
 	@Override
 	public void dialogControySure(Object... param) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void dialogControyCancel() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
-		 if (!app.isActive) {
-		 // 程序 从后台唤醒，进入前台
-			 app.setActive(true);
-		 }
+		if (!app.isActive) {
+			// 程序 从后台唤醒，进入前台
+			app.setActive(true);
+		}
 	}
-	
+
 	@Override
 	public void onStop() {
 		super.onStop();
 		if (!isAppOnForeground()) {
-			// 程序进入后台			
+			// 程序进入后台
 			app.setActive(false);
 		}
 	}
-	
+
 	/**
 	 * 程序是否在前台运行
 	 * 
@@ -112,15 +121,13 @@ public class BaseFragment extends Fragment implements FragmentCallback {
 		// device
 		String packageName = app.getPackageName();
 
-		List<RunningAppProcessInfo> appProcesses = SApplication.activityManager
-				.getRunningAppProcesses();
+		List<RunningAppProcessInfo> appProcesses = SApplication.activityManager.getRunningAppProcesses();
 		if (appProcesses == null)
 			return false;
 
 		for (RunningAppProcessInfo appProcess : appProcesses) {
 			// The name of the process that this object is associated with.
-			if (appProcess.processName.equals(packageName)
-					&& appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+			if (appProcess.processName.equals(packageName) && appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
 				return true;
 			}
 		}

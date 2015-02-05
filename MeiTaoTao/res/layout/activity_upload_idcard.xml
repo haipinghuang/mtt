@@ -16,15 +16,47 @@
         android:text="@string/upload_IDcard_info"
         android:textColor="@color/text_color2"
         android:textSize="@dimen/text_size2" />
-    <ImageView 
-        android:id="@+id/iv_idcard"
-        android:layout_width="294dp"
-        android:layout_height="192dp"
-        android:src="@drawable/ic_launcher"
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
         android:layout_marginTop="@dimen/image_margin_top1"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/signup_idcard__bg"
-        />
+        android:background="@drawable/schedule_store_ico_check" >
+
+        <ImageView
+            android:id="@+id/iv_idcard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:id="@+id/btn_upload_idcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/upload"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="11dp"
+                android:text="@string/click_upload_photo"
+                android:textColor="@color/text_color8"
+                android:textSize="@dimen/text_size2" />
+        </LinearLayout>
+    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

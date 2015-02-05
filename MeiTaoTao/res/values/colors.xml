@@ -340,6 +340,7 @@
     <color name="text_color6">#444444</color>
     <!-- 橙色 -->
     <color name="text_color7">#ff9f4a</color>
+    <color name="text_color8">#fe7569</color>
     <color name="background_color1">#4F4F4F</color>
     <color name="line_color1">#4F4F4F</color>
     <color name="line_color2">#DDDDDD</color>

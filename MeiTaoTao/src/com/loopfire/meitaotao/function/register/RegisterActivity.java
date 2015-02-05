@@ -5,10 +5,12 @@ import org.json.JSONObject;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.drm.DrmStore.Action;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +20,10 @@ import com.loopfire.meitaotao.R;
 import com.loopfire.meitaotao.api.UserAPI;
 import com.loopfire.meitaotao.common.BaseActivity;
 import com.loopfire.meitaotao.entity.RegisterEntity;
+import com.loopfire.meitaotao.entity.RegisterEntity.Type;
 import com.loopfire.meitaotao.receiver.SMSBroadcastReceiver;
 import com.loopfire.meitaotao.receiver.SMSBroadcastReceiver.MessageListener;
+import com.loopfire.meitaotao.util.Util;
 
 public class RegisterActivity extends BaseActivity {
 	private TextView tv_user, tv_barber, tv_identifyCode, tv_gain_identifyCode;
@@ -31,6 +35,8 @@ public class RegisterActivity extends BaseActivity {
 	MyAsyncTask task = null;
 	private UserAPI api;
 	private SMSBroadcastReceiver smsReceiver;
+	private int smsFlag = 1;// 1倒计时线程可以运行，0不可以
+
 	@Override
 	public void initView() {
 		// TODO Auto-generated method stub
@@ -59,7 +65,6 @@ public class RegisterActivity extends BaseActivity {
 	public void refresh(Object... param) {
 		super.refresh(param);
 		final Integer flag = Integer.parseInt(param[0].toString());
-		Log.i("refresh code", flag.toString());
 		switch (flag) {
 		case REQUEST_CODE:
 			Log.i("", "[refresh] data:" + param[1].toString());
@@ -84,10 +89,12 @@ public class RegisterActivity extends BaseActivity {
 		api = new UserAPI();
 		initView();
 		initListener();
+		setTitle("验证手机");
 	}
 
 	@Override
 	public void onClick(View v) {
+		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.tv_user:
 			if (currentUser != 0) {
@@ -111,7 +118,6 @@ public class RegisterActivity extends BaseActivity {
 			break;
 		case R.id.signup_btn_next:
 			goEnterPwd();
-
 			break;
 		case R.id.tv_gain_identifyCode:
 			gainIdentifyCode();
@@ -120,23 +126,36 @@ public class RegisterActivity extends BaseActivity {
 
 	}
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK
+				&& event.getAction() == KeyEvent.ACTION_DOWN) {
+			smsFlag = 0;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
 	/*
 	 * 跳到输入密码
 	 */
 	private void goEnterPwd() {
 		String phoneNum = et_phoneNum.getText().toString().trim();
 		String identifyCode = et_identifyCode.getText().toString().trim();
-		if (TextUtils.isEmpty(phoneNum)) {
-			Toast.makeText(getApplicationContext(), "请输入手机号",
-					Toast.LENGTH_SHORT).show();
+		if (phoneNum.length() != 11) {
+			Util.toastInfo(getApplicationContext(), "手机号格式不正确");
 			return;
 		}
-		if (TextUtils.isEmpty(identifyCode)) {
-			Toast.makeText(getApplicationContext(), "请输入验证码",
-					Toast.LENGTH_SHORT).show();
+		if (identifyCode.length() != 6) {
+			Util.toastInfo(getApplicationContext(), "验证码格式不正确");
 			return;
 		}
-		RegisterEntity entity = new RegisterEntity(phoneNum, identifyCode);
+		RegisterEntity entity = null;
+		// if (currentUser == 0) {
+		// entity = new RegisterEntity(phoneNum, identifyCode, Type.USER);
+		// } else {
+		// entity = new RegisterEntity(phoneNum, identifyCode, Type.BARBER);
+		// }
+		entity = new RegisterEntity(phoneNum, identifyCode, Type.USER);
 		Intent intent = new Intent(this, EntryPwdActivity.class);
 		Bundle bundle = new Bundle();
 		bundle.putSerializable("entity", entity);
@@ -150,9 +169,8 @@ public class RegisterActivity extends BaseActivity {
 	 */
 	private void gainIdentifyCode() {
 		String phoneNum = et_phoneNum.getText().toString().trim();
-		if (TextUtils.isEmpty(phoneNum)) {
-			Toast.makeText(getApplicationContext(), "请输入手机号",
-					Toast.LENGTH_SHORT).show();
+		if (phoneNum.length() != 11) {
+			Util.toastInfo(getApplicationContext(), "手机号格式不正确");
 			return;
 		} else {
 			registerSMSReceiver(phoneNum);
@@ -167,19 +185,18 @@ public class RegisterActivity extends BaseActivity {
 		if (smsReceiver != null) {
 			unregisterReceiver(smsReceiver);
 		}
-		{
-			smsReceiver = new SMSBroadcastReceiver(new MessageListener() {
-				@Override
-				public void onReceived(String msg) {
-					et_identifyCode.setText(msg);
+		smsReceiver = new SMSBroadcastReceiver(new MessageListener() {
+			@Override
+			public void onReceived(String msg) {
+				Log.i("msg", msg);
+				et_identifyCode.setText(msg);
 
-				}
-			}, phoneNum);
-			IntentFilter filter = new IntentFilter();
-			filter.setPriority(Integer.MAX_VALUE);
-			filter.addAction("android.provider.Telephony.SMS_RECEIVED");
-			registerReceiver(smsReceiver, filter);
-		}
+			}
+		}, phoneNum);
+		IntentFilter filter = new IntentFilter();
+		filter.setPriority(Integer.MAX_VALUE);
+		filter.addAction("android.provider.Telephony.SMS_RECEIVED");
+		registerReceiver(smsReceiver, filter);
 
 	}
 
@@ -193,6 +210,9 @@ public class RegisterActivity extends BaseActivity {
 		protected String doInBackground(Integer... params) {
 			int i = 29;
 			for (; i >= 0; i--) {
+				if (smsFlag == 0) {
+					break;
+				}
 				publishProgress(i);
 				try {
 					Thread.sleep(1000);

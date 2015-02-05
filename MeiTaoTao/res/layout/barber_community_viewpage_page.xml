@@ -5,40 +5,11 @@
     android:background="@color/body_backcolor"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="16.5dp"
-        android:text="最新最热理发样式"
-        android:textColor="@color/text_color1"
-        android:textSize="14sp" />
-
-    <ListView
-        android:id="@+id/listView1"
+    <com.loopfire.meitaotao.view.xlistview.XListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@color/body_backcolor"
-        android:dividerHeight="4dp" >
-    </ListView>
-
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="16.5dp"
-        android:text="最新最热理发样式"
-        android:textColor="@color/text_color1"
-        android:textSize="14sp" />
-
-    <ListView
-        android:id="@+id/listView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/body_backcolor"
-        android:dividerHeight="4dp" >
-    </ListView>
+        android:divider="@color/body_backcolor" >
+    </com.loopfire.meitaotao.view.xlistview.XListView>
 
 </LinearLayout>

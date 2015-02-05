@@ -4,10 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     android:orientation="vertical" >
-
-    <include layout="@layout/title_bar" />
-
-    <ImageView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -16,6 +13,7 @@
         android:src="@drawable/login_logo" />
 
     <EditText
+        android:id="@+id/phoneNum"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_height2"
         android:layout_marginLeft="@dimen/text_margin_left2"
@@ -24,12 +22,15 @@
         android:background="@drawable/my_personpage_btn_cancel_focus"
         android:hint="@string/hint_phone"
         android:inputType="phone"
+        android:maxLength="11"
         android:paddingLeft="@dimen/text_margin_left4"
         android:singleLine="true"
+        android:text="13005421335"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size1" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/text_height2"
         android:layout_marginLeft="@dimen/text_margin_left2"
@@ -38,8 +39,10 @@
         android:background="@drawable/my_personpage_btn_cancel_focus"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
+        android:maxLength="25"
         android:paddingLeft="@dimen/text_margin_left4"
         android:singleLine="true"
+        android:text="123456"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size1" />
 

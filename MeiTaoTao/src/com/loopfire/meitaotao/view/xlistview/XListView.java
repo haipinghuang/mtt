@@ -160,7 +160,6 @@ public class XListView extends ListView implements OnScrollListener {
 			mHeaderViewContent.setVisibility(View.VISIBLE);
 		}
 	}
-
 	/**
 	 * enable or disable pull up load more feature.
 	 * 

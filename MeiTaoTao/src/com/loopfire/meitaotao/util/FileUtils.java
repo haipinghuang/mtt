@@ -10,19 +10,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 
 import com.loopfire.meitaotao.SApplication;
+import com.loopfire.meitaotao.entity.UserInf;
 import com.loopfire.meitaotao.entity.UserInfo;
 
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
+import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 
 /**
@@ -38,13 +43,14 @@ public class FileUtils {
 
 	public final static String SDCARD_MNT = "/mnt/sdcard";
 	public final static String SDCARD = "/sdcard";
-	private final static String company_path = "/emessoft";
-	private final static String context_path = "/club";
-	private  static String pic_path = "/pic";
-	private  static String portrait_path = "/portrait";
+	private final static String company_path = "/meitaotao";
+	private final static String context_path = "/mtt";
+	private static String pic_path = "/pic";
+	private static String portrait_path = "/portrait";
 	private final static String data_path = "/.data";
 	private final static String voice = "/.voice";
-//	public final static String application_name = "meeet.apk";
+
+	// public final static String application_name = "meeet.apk";
 
 	/**
 	 * 写文本文件 在Android系统中，文件保存在 /data/data/PACKAGE_NAME/files 目录下
@@ -124,7 +130,8 @@ public class FileUtils {
 		if (!destDir.exists()) {
 			destDir.mkdirs();
 		}
-		return new File(folderPath, fileName + fileName);
+		return new File(folderPath, fileName);
+		// return new File(folderPath, fileName + fileName);
 	}
 
 	/**
@@ -250,7 +257,7 @@ public class FileUtils {
 			outputStream.flush();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-//			 Log.e("write2cache", e.getMessage());
+			// Log.e("write2cache", e.getMessage());
 		} finally {
 			try {
 				if (out != null)
@@ -258,7 +265,7 @@ public class FileUtils {
 				if (outputStream != null)
 					outputStream.close();
 			} catch (IOException e) {
-//				Log.e("write2cache", e.getMessage());
+				// Log.e("write2cache", e.getMessage());
 			}
 
 		}
@@ -383,6 +390,52 @@ public class FileUtils {
 	}
 
 	/**
+	 * 压缩图片至固定大小以下
+	 * 
+	 * @param imagePath
+	 * @param maxImageSize
+	 *            //图片最大尺寸
+	 * @return
+	 */
+	public static String compressAndSaveImage(String imagePath, int maxImageSize) {
+		String tempImagePath = imagePath;
+		if (!TextUtils.isEmpty(imagePath)) {
+			Log.i("src size", getFileSize(imagePath) + "");
+			if (getFileSize(imagePath) > maxImageSize) {
+				int ratio = (int) (1.0 * maxImageSize / getFileSize(imagePath) * 100);
+				Log.i("ratio", ratio + "");
+				Bitmap bitmap = null;
+				bitmap = BitmapFactory.decodeFile(imagePath);
+				ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+				bitmap.compress(CompressFormat.JPEG, ratio, outStream);
+				Log.i("ByteArray", outStream.toByteArray().length + "");
+				FileOutputStream fos = null;
+				File tempFile = createFile(getImagesPath(), "idcard.jpg");
+				try {
+					fos = new FileOutputStream(tempFile);
+					outStream.writeTo(fos);
+					outStream.flush();
+					fos.flush();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						outStream.close();
+						fos.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				tempImagePath = tempFile.getAbsolutePath();
+				Log.i("file path", tempImagePath);
+				Log.i("file now 2", getFileSize(tempImagePath) + "");
+			}
+
+		}
+		return tempImagePath;
+	}
+
+	/**
 	 * 压缩并保存
 	 * 
 	 * @param imgName
@@ -408,12 +461,11 @@ public class FileUtils {
 				newOptions.inSampleSize = options.outWidth / 320;
 			}
 			bitmap = BitmapFactory.decodeFile(imgName, newOptions);
-			if(bitmap == null)
-			{
+			if (bitmap == null) {
 				return "";
 			}
 			bitmap = Util.getRotateBitmap(imgName, bitmap);
-			
+
 			File filePath = new File(newImgName.substring(0,
 					newImgName.lastIndexOf("/")));
 			fileName = newImgName.substring(newImgName.lastIndexOf("/") + 1);
@@ -426,7 +478,7 @@ public class FileUtils {
 			} catch (Exception ex) {
 				Log.v("compress_save", ex.getMessage());
 			}
-			
+
 			boolean result = bitmap.compress(Bitmap.CompressFormat.JPEG, 50,
 					fOut);
 			if (result) {
@@ -497,16 +549,15 @@ public class FileUtils {
 		}
 		return fileName;
 	}
-	
 
 	public static void createCacheFile() {
 		// /先创建公司文件夹
-		if(SApplication.isSee){
-			pic_path="/.pic";
-			portrait_path="/.portrait";
-		}else{
-			pic_path="/pic";
-			portrait_path="/portrait";
+		if (SApplication.isSee) {
+			pic_path = "/.pic";
+			portrait_path = "/.portrait";
+		} else {
+			pic_path = "/pic";
+			portrait_path = "/portrait";
 		}
 		File company = new File(getCompanyPath());
 		if (!(company.exists()) && !(company.isDirectory())) {
@@ -551,12 +602,13 @@ public class FileUtils {
 	 */
 	public static String getImagesPath() {
 		try {
-			if(SApplication.isSee){
-				pic_path="/.pic";
-				portrait_path="/.portrait";
-			}else{
-				pic_path="/pic";
-				portrait_path="/portrait";
+			if (SApplication.isSee) {
+				// pic_path = "/.pic";
+				pic_path = "/pic";
+				portrait_path = "/.portrait";
+			} else {
+				pic_path = "/pic";
+				portrait_path = "/portrait";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -575,12 +627,12 @@ public class FileUtils {
 	 * @return
 	 */
 	public static String getPortraitPath() {
-		if(SApplication.isSee){
-			pic_path="/.pic";
-			portrait_path="/.portrait";
-		}else{
-			pic_path="/pic";
-			portrait_path="/portrait";
+		if (SApplication.isSee) {
+			pic_path = "/.pic";
+			portrait_path = "/.portrait";
+		} else {
+			pic_path = "/pic";
+			portrait_path = "/portrait";
 		}
 		String path = getContextPath() + portrait_path;
 		File file = new File(path);
@@ -648,7 +700,7 @@ public class FileUtils {
 	 * @return
 	 */
 	public static String getContextPath() {
-		
+
 		String path = getCompanyPath() + context_path;
 		File file = new File(path);
 		if (!(file.exists()) && !(file.isDirectory())) {
@@ -659,6 +711,7 @@ public class FileUtils {
 
 	/**
 	 * 保存至手机内存中
+	 * 
 	 * @param app
 	 * @param filename
 	 * @param object
@@ -667,7 +720,7 @@ public class FileUtils {
 	public static void saveDataToCache(SApplication app, String filename,
 			Object object) {
 		if (app != null /* && object != null */) {
-			//filename += app.getLoginUserInfo().getUid();
+			// filename += app.getLoginUserInfo().getUid();
 			filename = MD5Util.MD5(filename);
 			try {
 				FileOutputStream ops = app.openFileOutput(filename,
@@ -677,36 +730,29 @@ public class FileUtils {
 				outputStream.writeObject(object);
 				outputStream.flush();
 				outputStream.close();
-			}catch (Exception e) {
+			} catch (Exception e) {
 				Log.w("saveDataToCache file is :" + filename, e.toString());
 			}
 		}
 	}
-	public static void deleteFile(SApplication app,String filename){
-		if(filename!=null){
-			//filename += app.getLoginUserInfo().getUid();
-			filename = MD5Util.MD5(filename);
-			File file=new File(filename);
-			if(file.exists()){
-				file.delete();
-			}
-		}
-	}
+
 	/**
-	 * 保存数据到缓存中  吴超凡
+	 * 保存数据到缓存中 吴超凡
+	 * 
 	 * @param app
 	 * @param filename
 	 * @param object
 	 */
-	public static void saveDataToCache1(SApplication app, String filename,Object object) {
+	public static void saveDataToCache1(SApplication app, String filename,
+			Object object) {
 		if (app != null && object != null) {
-			//filename += app.getLoginUserInfo().getUid();
+			// filename += app.getLoginUserInfo().getUid();
 			filename = MD5Util.MD5(filename);
-			File file=new File(filename);
+			File file = new File(filename);
 			try {
-				if(file.exists()){
+				if (file.exists()) {
 					file.delete();
-					}
+				}
 				FileOutputStream ops = app.openFileOutput(filename,
 						Context.MODE_PRIVATE);
 				ObjectOutputStream outputStream = null;
@@ -714,21 +760,34 @@ public class FileUtils {
 				outputStream.writeObject(object);
 				outputStream.flush();
 				outputStream.close();
-			}catch (Exception e) {
+			} catch (Exception e) {
 				Log.w("saveDataToCache file is :" + filename, e.toString());
 			}
 		}
 	}
+
+	public static void deleteFile(SApplication app, String filename) {
+		if (filename != null) {
+			// filename += app.getLoginUserInfo().getUid();
+			filename = MD5Util.MD5(filename);
+			File file = new File(filename);
+			if (file.exists()) {
+				file.delete();
+			}
+		}
+	}
+
 	/**
-	 * 读取缓存  
+	 * 读取缓存
+	 * 
 	 * @param app
 	 * @param filename
 	 * @return
 	 */
 	public static Object getDataFromCache(SApplication app, String filename) {
 		Object obj = null;
-		if (app != null ) {
-			//filename += app.getLoginUserInfo().getUid();
+		if (app != null) {
+			// filename += app.getLoginUserInfo().getUid();
 			filename = MD5Util.MD5(filename);
 			try {
 				InputStream ies = app.openFileInput(filename);
@@ -742,7 +801,7 @@ public class FileUtils {
 		}
 		return obj;
 	}
-	
+
 	/**
 	 * 保存用户数据
 	 * 
@@ -770,7 +829,8 @@ public class FileUtils {
 	}
 
 	/**
-	 * 读取用户数据 
+	 * 读取用户数据
+	 * 
 	 * @param context
 	 * @return
 	 */
@@ -794,16 +854,17 @@ public class FileUtils {
 				}
 			}
 		} catch (Exception e) {
-			UserInfo temp = new UserInfo();
+			UserInf temp = new UserInf();
 			temp.setUid("0");
-//			e.printStackTrace();
+			// e.printStackTrace();
 		}
 
 		return null;
 	}
-	
+
 	/**
-	 * 通过uri获取文件的绝对路径	
+	 * 通过uri获取文件的绝对路径
+	 * 
 	 * @param uri
 	 * @return
 	 */
@@ -811,7 +872,8 @@ public class FileUtils {
 		String imagePath = "";
 		String[] proj = { MediaStore.Images.Media.DATA };
 		Activity activity = (Activity) context;
-		Cursor cursor = activity.managedQuery(uri, proj, // Which columns to return
+		Cursor cursor = activity.managedQuery(uri, proj, // Which columns to
+															// return
 				null, // WHERE clause; which rows to return (all rows)
 				null, // WHERE clause selection arguments (none)
 				null); // Order-by clause (ascending by name)
@@ -828,8 +890,9 @@ public class FileUtils {
 
 	/**
 	 * 递归删除文件和文件夹
+	 * 
 	 * @param file
-	 *要删除的根目录
+	 *            要删除的根目录
 	 */
 	public static void RecursionDeleteFile(File file) {
 		if (file.isFile()) {

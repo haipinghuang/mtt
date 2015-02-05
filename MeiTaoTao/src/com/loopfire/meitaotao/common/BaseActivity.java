@@ -7,6 +7,7 @@ import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -36,7 +37,7 @@ public class BaseActivity extends Activity implements IBaseActivity {
 	public LinearLayout title_left;
 	public LinearLayout title_background;
 	public LinearLayout title_right;
-	public Button button_left;
+	public TextView button_left;
 	public TextView button_right;
 	private SharedPreferences spf;
 
@@ -87,6 +88,10 @@ public class BaseActivity extends Activity implements IBaseActivity {
 		button_right.setBackgroundResource(resid);
 	}
 
+	public void setLeftBackground(int resid) {
+		button_left.setBackgroundResource(resid);
+	}
+
 	public void onDestroy() {
 		app.allActivity.remove(this);
 		super.onDestroy();
@@ -122,14 +127,15 @@ public class BaseActivity extends Activity implements IBaseActivity {
 		title_txt = (TextView) findViewById(R.id.tvTitle);
 		title_left = (LinearLayout) findViewById(R.id.top_left_linear);
 		title_right = (LinearLayout) findViewById(R.id.top_right_linear);
-		button_left = (Button) findViewById(R.id.title_Left);
+		button_left = (TextView) findViewById(R.id.title_Left);
 		button_right = (TextView) findViewById(R.id.title_right);
 		title_background = (LinearLayout) findViewById(R.id.title_background);
 	}
 
 	public void initListener() // / 初始化事件
 	{
-
+		title_left.setOnClickListener(this);
+		title_right.setOnClickListener(this);
 	}
 
 	@Override
@@ -138,7 +144,7 @@ public class BaseActivity extends Activity implements IBaseActivity {
 		int flag = ((Integer) param[0]).intValue();// 获取第一个参数
 		switch (flag) {
 		case BaseActivity.ERROR:
-			// Toast.makeText(this, "网络中断,请稍后操作！", 3000).show();
+			Toast.makeText(this, "网络中断,请稍后操作！", 3000).show();
 			break;
 		case BaseActivity.COOKIE_INVILD:
 			Toast.makeText(this, R.string.cookie_invild, 3000).show();
@@ -219,15 +225,13 @@ public class BaseActivity extends Activity implements IBaseActivity {
 		// device
 		String packageName = getApplicationContext().getPackageName();
 
-		List<RunningAppProcessInfo> appProcesses = SApplication.activityManager
-				.getRunningAppProcesses();
+		List<RunningAppProcessInfo> appProcesses = SApplication.activityManager.getRunningAppProcesses();
 		if (appProcesses == null)
 			return false;
 
 		for (RunningAppProcessInfo appProcess : appProcesses) {
 			// The name of the process that this object is associated with.
-			if (appProcess.processName.equals(packageName)
-					&& appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+			if (appProcess.processName.equals(packageName) && appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
 				return true;
 			}
 		}
@@ -236,7 +240,14 @@ public class BaseActivity extends Activity implements IBaseActivity {
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.top_left_linear:
+			this.finish();
+			break;
+
+		default:
+			break;
+		}
 
 	}
 }

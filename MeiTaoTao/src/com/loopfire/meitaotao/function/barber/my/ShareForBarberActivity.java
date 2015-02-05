@@ -15,12 +15,10 @@ public class ShareForBarberActivity extends BaseActivity {
 
 	@Override
 	public void initView() {
-		super.initView();
 	}
 
 	@Override
 	public void initListener() {
-		super.initListener();
 	}
 
 	@Override

@@ -50,7 +50,7 @@ public class AboutActivity extends BaseActivity {
 		super.onClick(v);
 		switch (v.getId()) {
 		case R.id.exit:
-			startActivity(new Intent(this, ExitForBarberActivity.class));
+			app.finishAll();
 			break;
 		case R.id.advance:
 			startActivity(new Intent(this, AdviceActivity.class));

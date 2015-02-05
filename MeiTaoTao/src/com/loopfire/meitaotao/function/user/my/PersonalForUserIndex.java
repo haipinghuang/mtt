@@ -2,6 +2,7 @@ package com.loopfire.meitaotao.function.user.my;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.loopfire.meitaotao.function.barber.my.MyPhoneForBarberActivity;
 import com.loopfire.meitaotao.function.barber.my.MyPreOrderForBarberActivity;
 import com.loopfire.meitaotao.function.barber.my.PersonalCenterForBarberActivity;
 import com.loopfire.meitaotao.function.barber.my.ShareForBarberActivity;
+import com.loopfire.meitaotao.function.register.ServeProtocolActivity;
 
 /**
  * 用户——我的
@@ -28,11 +30,10 @@ import com.loopfire.meitaotao.function.barber.my.ShareForBarberActivity;
  * @author Administrator
  * 
  */
-public class PersonalForUserIndex extends BaseFragment implements
-		OnClickListener {
+public class PersonalForUserIndex extends BaseFragment implements OnClickListener {
 	private RelativeLayout lay_order;
 	private RelativeLayout lay_ask_for_be_barber;
-	private RelativeLayout lay_level;
+	private RelativeLayout lay_exit;
 	private RelativeLayout lay_phoneNo;
 	private RelativeLayout lay_share;
 	private RelativeLayout lay_kefu;
@@ -56,12 +57,9 @@ public class PersonalForUserIndex extends BaseFragment implements
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.user_my_index, container,
-				false);
+		View view = inflater.inflate(R.layout.user_my_index, container, false);
 		initView(view);
 		initListener();
 		return view;
@@ -69,12 +67,10 @@ public class PersonalForUserIndex extends BaseFragment implements
 
 	@Override
 	public void initView(View view) {
-		// TODO Auto-generated method stubs
 		super.initView(view);
 		lay_order = (RelativeLayout) view.findViewById(R.id.order);
-		lay_ask_for_be_barber = (RelativeLayout) view
-				.findViewById(R.id.ask_for_be_barber);
-//		lay_level = (RelativeLayout) view.findViewById(R.id.level);
+		lay_ask_for_be_barber = (RelativeLayout) view.findViewById(R.id.ask_for_be_barber);
+		lay_exit = (RelativeLayout) view.findViewById(R.id.exit);
 		lay_phoneNo = (RelativeLayout) view.findViewById(R.id.phoneNo);
 		lay_share = (RelativeLayout) view.findViewById(R.id.share);
 		lay_kefu = (RelativeLayout) view.findViewById(R.id.kefu);
@@ -88,7 +84,6 @@ public class PersonalForUserIndex extends BaseFragment implements
 
 	@Override
 	public void initListener() {
-		// TODO Auto-generated method stub
 		super.initListener();
 		btn_show_myself.setOnClickListener(this);
 		btn_message.setOnClickListener(this);
@@ -98,7 +93,7 @@ public class PersonalForUserIndex extends BaseFragment implements
 		lay_kefu.setOnClickListener(this);
 		lay_share.setOnClickListener(this);
 		lay_phoneNo.setOnClickListener(this);
-//		lay_level.setOnClickListener(this);
+		lay_exit.setOnClickListener(this);
 		lay_ask_for_be_barber.setOnClickListener(this);
 		lay_order.setOnClickListener(this);
 		iv_head.setOnClickListener(this);
@@ -126,28 +121,28 @@ public class PersonalForUserIndex extends BaseFragment implements
 			startActivity(new Intent(context, MyPreOrderForBarberActivity.class));
 			break;
 		case R.id.ask_for_be_barber:
-			// startActivity(new Intent(context,
-			// ask_for_be_barberForBarberActivity.class));
-			break;
-		case R.id.level:
+			startActivity(new Intent(context, ServeProtocolActivity.class));
 			break;
 		case R.id.kefu:
+			Intent intent = new Intent(Intent.ACTION_CALL);
+			intent.setData(Uri.parse("tel:15879949335"));
+			startActivity(intent);
+			break;
+		case R.id.exit:
+			app.finishAll();
 			break;
 		case R.id.share:
 			startActivity(new Intent(context, ShareForBarberActivity.class));
 			break;
-
 		case R.id.phoneNo:
 			startActivity(new Intent(context, MyPhoneForBarberActivity.class));
 			break;
 		case R.id.iv_head:
-			startActivity(new Intent(context,
-					PersonalCenterForUserActivity.class));
+			startActivity(new Intent(context, PersonalCenterForUserActivity.class));
 			break;
 		// -------------
 		case R.id.btn_attention:
-			startActivity(new Intent(context,
-					MyAttentionForBarberActivity.class));
+			startActivity(new Intent(context, MyAttentionForBarberActivity.class));
 			break;
 		case R.id.btn_message:
 			startActivity(new Intent(context, MyMsgForBarberActivity.class));

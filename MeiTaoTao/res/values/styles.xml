@@ -1,6 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+    <!-- <style name="AppBaseTheme" parent="android:Theme.Light"></style> -->
+    <style name="AppBaseTheme" parent="@android:style/Theme.Light.NoTitleBar"></style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme"></style>
@@ -62,7 +63,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/hint_textcolor</item>
     </style>
- <!-- 白色文字，基本可通用 -->
+    <!-- 白色文字，基本可通用 -->
     <style name="white_text_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
